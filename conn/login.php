@@ -14,8 +14,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     $user_data = mysqli_fetch_assoc($result);
     $_SESSION['user_id'] = $user_data['user_id'];
-    header("Location: \\Web_HairSalon\\customer\\index.php");
-    die;
+
+    switch ($user_data['user_type']) {
+      case 'Employee':
+          header("Location: \\Web_HairSalon\\customer\\about.php");
+        break;
+      case 'Customer':
+          header("Location: \\Web_HairSalon\\customer\\index.php");
+        break;
+      case 'Admin':
+          header("Location: \\Web_HairSalon\\customer\\payment.php");
+        break;
+    }
+
+
+
+
+
   }
   else {
     header("Location: \\Web_HairSalon\\login.php");
