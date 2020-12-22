@@ -1,3 +1,19 @@
+<?php
+require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
+$user_id = $_SESSION['user_id'];
+
+$type_id = 4;
+$product_query = "SELECT * from services WHERE type_id LIKE '$type_id'";
+$all_products = mysqli_query($con, $product_query);
+$products = array();
+
+while($products_row = mysqli_fetch_assoc($all_products)){
+//inserting row of data into products_array
+$products[]= $products_row;
+
+}
+ ?>
+
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
   <head>
@@ -57,6 +73,39 @@
       <div class="d-flex justify-content-center align-items-center" style="background: #D7DBDD;height: 10vh;">
         <p class="m-0 h3 text-dark" style="font-family:Brush Script MT; font-size: 300%;">Extensions</p>
       </div>
+
+      <div class=" d-flex row p-3 mt-3 justify-content-center ">
+  <?php
+     foreach($products as $record => $data) {
+   ?>
+
+   <div class="col-4 m-2 p-3 w-25 flex-column d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+     <p class = "m-0 h5 text-dark text-center h-75"> <?php echo $data['service_name']; ?> </p>
+     <p class = "m-0 text-dark text-center h-25 p-2"> <?php echo $data['service_price']; ?> </p>
+
+     <button  name="button" id = "<?php echo $data['service_id']; ?>"  type = "button" class = "mt-2 btn btn-outline-dark select_service">
+
+       <i class = "fas fa-book-service"></i>
+       SELECT SERVICE <small class = "quantity" id = "0"> </small>
+
+     </button>
+
+   </div>
+
+ <?php }
+
+  ?>
+</div>
+
+   </div>
+
+ </body>
+</html>
+
+
+
+
+
     </div>
 
   </body>
