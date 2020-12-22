@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <h1>Sign up</h1>
+        <div class="container">
+            <div class="sign-up-content">
+                <form method="POST" class="signup-form" action="\Web_HairSalon\conn\employee_reg.php">
+                    <h2 class="form-title">What type of user are you ?</h2>
+
+                    <div class="form-radio">
+                        <input type="radio" name="user_type" value="1" id="newbie" checked="checked" />
+                        <label for="newbie">Customer</label>
+
+                        <input type="radio" name="user_type" value="2" id="average" />
+                        <label for="average">Employee</label>
+
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="name">First Name:</label>
+                        <input type="text" name="f_name" id="name" required />
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="name">Last Name:</label>
+                        <input type="text" name="l_name" id="name" required/>
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="name">Username:</label>
+                        <input type="text" name="username" id="name" required />
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="name">Password:</label>
+                        <input type="password" name="password" id="name" required />
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="name">Address:</label>
+                        <input type="text" name="address" id="name" required />
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="phone_number">Phone Number:</label>
+                        <input type="text" name="p_number" id="p_number" required/>
+                    </div>
+
+                    <div class="form-textbox">
+                        <label for="phone_number">Email:</label>
+                        <input type="text" name="email" id="p_number"  required/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                    </div>
+
+                    <div class="form-textbox">
+                        <input type="submit" name="submit" id="submit" class="submit" value="Create account" />
+                    </div>
+                </form>
+
+                <p class="loginhere">
+                    Already have an account ?<a href="\Web_HairSalon\login.php" class="class="ml-2"> Login</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

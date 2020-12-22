@@ -82,10 +82,10 @@ while ($rows = mysqli_fetch_assoc($result)) {
         <p class="m-0 h3 text-dark" style="font-family:Brush Script MT; font-size: 300%;"  >ABOUT US</p>
       </div>
 
-      <div class="d-flex justify-content-center align-items-center" style="background: #FFFFFF;height: 10vh; ">
+      <div class="d-flex justify-content-center align-items-center" style="background: #FFFFFF;">
         </div>
 
-        <img src="\Web_HairSalon\image\about.png" alt="" width="500" height="300">
+        <img src="\Web_HairSalon\image\about.png" alt="" style="width: 100%; height: 450px; ">
 
     </div>
 
