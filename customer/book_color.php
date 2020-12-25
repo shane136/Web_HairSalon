@@ -59,6 +59,14 @@ $products[]= $products_row;
           </div>
           </div>
 
+          <button id="book_now" class="btn btn-outline-light rounded-0 pt-0" style="color:black; font-size:100%;">
+            <p class="m-0">
+              <i class="fas fa-shopping-cart"></i>
+              <!-- <small id="num_of_items"> (0)</small> -->
+              <small class="">Book Now</small>
+            </p>
+          </button>
+
     </div>
 
 
@@ -89,21 +97,53 @@ $products[]= $products_row;
      <p class = "m-0 h5 text-dark text-center h-75"> <?php echo $data['service_name']; ?> </p>
      <p class = "m-0 text-dark text-center h-25 p-2"> <?php echo $data['service_price']; ?> </p>
 
-     <button  name="button" id = "<?php echo $data['service_id']; ?>"  type = "button" class = "mt-2 btn btn-outline-dark select_service">
+     <button  name="button" id = "<?php echo $data['service_id']; ?>"  type = "button" class = "mt-2 btn btn-outline-dark add_to_cart">
 
-       <i class = "fas fa-book-service"></i>
-       SELECT SERVICE <small class = "quantity" id = "0"> </small>
+       <i class = "fas fa-shopping-cart"></i>
+       SELECT SERVICE <small class = "quantity" id = "1"> </small>
 
      </button>
 
+   </body>
+  </html>
    </div>
-
  <?php }
-
   ?>
 </div>
-
     </div>
-
   </body>
 </html>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+// I'm using jquery (search google for what is jquery)
+  var cart = []; // an array in which the product_id is being stored
+    $(document).ready(function(){
+      var add_to_cart_btn = $('.add_to_cart'); // get all the element containg with class name "add_to_cart"
+      add_to_cart_btn.click(function(){
+
+        var get_product_id = $(this).attr('id') // get the element id of the specific element being click in the class "add_to_cart"
+        // alert(get_product_id); // just for you to know what is id being clicked
+        cart.push(get_product_id); // push the product id to the cart array
+        //alert(cart); // just for you to know what is inside in the cart array
+        $('#num_of_items').html('('+ cart.length +')'); // update cart item number
+
+      var quantity = $(this).children('small').attr('id');
+      quantity = Number(quantity);
+      $(this).children('small').attr('id',quantity);
+      $(this).children('small').html('x'+quantity);
+
+    });
+
+    var checkout = $('#book_now');
+    checkout.click(function(){
+      // I'll show you what is $_GET and how it being done in php
+      // observe the url in your brower (e.g localhost/website/...)
+      var url = '../customer/book_now.php?pid='+cart;
+      window.location.replace(url);
+    });
+  });
+</script>
