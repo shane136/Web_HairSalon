@@ -2,6 +2,11 @@
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM customer where user_id = '$user_id'";
+$fn = "";
+$ln = "";
+$contact_number = "";
+$email = "";
+$address = "";
 
 $result = mysqli_query($con,$sql);
 while ($rows = mysqli_fetch_assoc($result)) {

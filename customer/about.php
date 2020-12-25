@@ -85,7 +85,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
       <div class="d-flex justify-content-center align-items-center" style="background: #FFFFFF;">
         </div>
 
-        <img src="\Web_HairSalon\image\about.png" alt="" style="width: 100%; height: 490px; ">
+        <img src="\Web_HairSalon\image\about.png" class="center" alt="" style="width: 100%; height: 490px; display: block; margin-left: auto; margin-right: auto;">
 
     </div>
 

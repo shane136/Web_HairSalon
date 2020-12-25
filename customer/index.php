@@ -2,7 +2,7 @@
 <html class = "h-100"lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title></title> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -28,22 +28,13 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <small>Offered Services</small></button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a href="\Web_HairSalon\customer\book_color.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
-            <br>
+            <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_color.php" style="width: 100%;" class=" btn btn-outline-dark rounded-1 pt-0"><small>Color</small></p></a>
+            <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_styling.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Styling</small></p></a>
+            <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_waxing.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Waxing</small></p></a>
+            <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_extensions.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Extensions</small></p></a>
+            <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_design.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Design</small></p></a>
+            <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_grooming.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Grooming</small></p></a>
 
-            <a href="\Web_HairSalon\customer\book_styling.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Styling</small></p></a><br>
-
-            <a href="\Web_HairSalon\customer\book_waxing.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Waxing</small></p></a><br>
-
-            <a href="\Web_HairSalon\customer\book_extensions.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Extensions</small></p></a><br>
-
-            <a href="\Web_HairSalon\customer\book_design.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Design</small></p></a><br>
-
-            <a href="\Web_HairSalon\customer\book_grooming.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Grooming</small></p></a><br>
-
-
-            <div class="btn btn-outline-light pt-0">
-          </div>
           </div>
 
       <a href="\Web_HairSalon\customer\about.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>

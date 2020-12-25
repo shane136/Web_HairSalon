@@ -20,10 +20,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
           header("Location: \\Web_HairSalon\\customer\\about.php");
         break;
       case 'Customer':
-          header("Location: \\Web_HairSalon\\customer\\index.php");
+          header("Location: \\Web_HairSalon\\employee\\index.php");
         break;
       case 'Admin':
-          header("Location: \\Web_HairSalon\\customer\\payment.php");
+          header("Location: \\Web_HairSalon\\employee\\index.php");
         break;
     }
 
