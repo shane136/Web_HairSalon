@@ -57,7 +57,7 @@ $products[]= $products_row;
           <button id="book_now" class="btn btn-outline-light rounded-0 pt-0" style="color:black; font-size:100%;">
             <p class="m-0">
               <i class="fas fa-shopping-cart"></i>
-              <small id="num_of_items"> (0)</small>
+              <!-- <small id="num_of_items"> (0)</small> -->
               <small class="">Book Now</small>
             </p>
           </button>
@@ -90,14 +90,13 @@ $products[]= $products_row;
      <p class = "m-0 h5 text-dark text-center h-75"> <?php echo $data['service_name']; ?> </p>
      <p class = "m-0 text-dark text-center h-25 p-2"> <?php echo $data['service_price']; ?> </p>
 
-     <button  name="button" id = "<?php echo $data['service_id']; ?>"  type = "button" class = "mt-2 btn btn-outline-dark select_service">
+     <button  name="button" id = "<?php echo $data['service_id']; ?>"  type = "button" class = "mt-2 btn btn-outline-dark add_to_cart">
 
-       <i class = "fas fa-book-service"></i>
-       SELECT SERVICE <small class = "quantity" id = "0"> </small>
+       <i class = "fas fa-shopping-cart"></i>
+       SELECT SERVICE <small class = "quantity" id = "1"> </small>
 
      </button>
 
-     /body>
 </html>
 <script type="text/javascript">
 // I'm using jquery (search google for what is jquery)
@@ -113,7 +112,7 @@ $products[]= $products_row;
         $('#num_of_items').html('('+ cart.length +')'); // update cart item number
 
       var quantity = $(this).children('small').attr('id');
-      quantity = Number(quantity) + 1;
+      quantity = Number(quantity);
       $(this).children('small').attr('id',quantity);
       $(this).children('small').html('x'+quantity);
 
