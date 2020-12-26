@@ -18,13 +18,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     switch ($user_data['user_type']) {
       case 'Employee':
-          header("Location: \\Web_HairSalon\\customer\\about.php");
+          header("Location: \\Web_HairSalon\\employee\\index.php");
         break;
       case 'Customer':
           header("Location: \\Web_HairSalon\\customer\\index.php");
         break;
       case 'Admin':
-          header("Location: \\Web_HairSalon\\customer\\payment.php");
+          header("Location: \\Web_HairSalon\\employee\\index.php");
         break;
     }
 

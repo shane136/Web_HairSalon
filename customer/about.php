@@ -1,5 +1,4 @@
 <?php
-
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM customer where user_id = '$user_id'";
@@ -40,7 +39,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
       <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
-      <!-- <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
+       <!-- <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
       <a href="" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Styling</small></p></a>
       <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Waxing</small></p></a>
       <a href="" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Extensions</small></p></a>
@@ -57,6 +56,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
             <a href="\Web_HairSalon\customer\book_extensions.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Extensions</small></p></a><br>
             <a href="\Web_HairSalon\customer\book_design.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Design</small></p></a><br>
             <a href="\Web_HairSalon\customer\book_grooming.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Grooming</small></p></a><br>
+
             <div class="btn btn-outline-light pt-0">
           </div>
           </div> -->
@@ -82,9 +82,10 @@ while ($rows = mysqli_fetch_assoc($result)) {
         <p class="m-0 h3 text-dark" style="font-family:Brush Script MT; font-size: 300%;"  >ABOUT US</p>
       </div>
 
-        <img src="\Web_HairSalon\image\about.png" alt="" style="width: 100%; height: 500px;">
+      <div class="d-flex justify-content-center align-items-center" style="background: #FFFFFF;">
+        </div>
 
-
+        <img src="\Web_HairSalon\image\about.png" class="center" alt="" style="width: 100%; height: 490px; display: block; margin-left: auto; margin-right: auto;">
 
     </div>
 

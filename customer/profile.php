@@ -10,14 +10,14 @@ $address = "";
 
 $result = mysqli_query($con,$sql);
 while ($rows = mysqli_fetch_assoc($result)) {
-     $fn = $rows['f_name'];
-     $ln = $rows['l_name'];
-     $contact_number = $rows['phone_number'];
-     $email = $rows['email'];
-     $address = $rows['address'];
-     // $address
- }
- ?>
+  $fn = $rows['f_name'];
+  $ln = $rows['l_name'];
+  $contact_number = $rows['phone_number'];
+  $email = $rows['email'];
+  $address = $rows['address'];
+ // $address
+}
+?>
 
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
