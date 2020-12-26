@@ -37,14 +37,28 @@ session_start();
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" required class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="password" id="myInput" required class="form-control input_pass" value="" placeholder="password">
 						</div>
+              <input type="checkbox" onclick="myFunction()"> Show Password
+
+              <script>
+              function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                  x.type = "text";
+                } else {
+                  x.type = "password";
+                }
+              }
+            </script>
+
 						<div class="form-group">
 
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
 				 	<button type="submit" name="button" class="btn login_btn">Login</button>
 				   </div>
+
 					</form>
 				</div>
 				<?php if(isset($_SESSION['ERROR 1'])){

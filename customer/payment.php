@@ -82,7 +82,7 @@ while($rows = mysqli_fetch_assoc($result)){
              <div class="h-auto rounded p-3" style="background: #ffe6e6;">
                  <p class="h3" style="text-align:center;">PAYMENT DETAILS</p>
                  <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-                   <p class="col m-2" style="color:black">Booking Sched</p>
+                   <p class="col m-2" style="color:black">Booking Schedule</p>
                    <p class="col m-2" style="color:black">Total Price</p>
 
                  </div>
