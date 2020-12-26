@@ -188,6 +188,61 @@ $counter = 1;
                  </form>
 
        </div>
+
+       <br>
+       <div class="h-auto rounded p-3" style="background: #ffe6e6;">
+         <p class="h3" style="text-align:center;">BOOK SCHEDULE</p>
+
+         <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
+
+           <p class="col m-2" style="color:black">Service Name</p>
+           <p class="col m-2" style="color:black">Price</p>
+           <p class="col m-2" style="color:black">Schedule</p>
+
+         </div>
+
+         <?php
+
+         $get_id = "SELECT * FROM customer WHERE user_id ='$user_id'";
+         $get_result = mysqli_query($con, $get_id);
+         while($customer = mysqli_fetch_assoc($get_result))
+         {
+           $customer_id = $customer['customer_id'];
+         }
+
+         $sql = "SELECT * FROM bookings WHERE customer_id = '$customer_id' AND date_sched IS NOT NULL";
+         $result = mysqli_query($con, $sql);
+
+         while($rows = mysqli_fetch_assoc($result))
+         { $date_sched = $rows['date_sched'];
+
+           $service_id = $rows['service_id'];
+           $query = "SELECT * from services WHERE service_id = '$service_id'";
+           $get_query = mysqli_query($con, $query);
+
+           while($row = mysqli_fetch_assoc($get_query))
+           {
+             $service_name = $row['service_name'];
+             $service_price = $row['service_price'];
+           }
+
+          ?>
+
+         <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
+
+           <p class="col m-2" style="color:black"><?php echo "$service_name"; ?></p>
+           <p class="col m-2" style="color:black">PHP<?php echo "$service_price"; ?></p>
+           <p class="col m-2" style="color:black"><?php echo "$date_sched"; ?></p>
+
+         </div>
+
+         <?php
+
+        }
+          ?>
+         </div>
+
+
      </div>
 
    </body>

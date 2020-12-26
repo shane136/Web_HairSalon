@@ -88,7 +88,7 @@ $products[]= $products_row;
 
    <div class="col-4 m-2 p-3 w-25 flex-column d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
      <p class = "m-0 h5 text-dark text-center h-75"> <?php echo $data['service_name']; ?> </p>
-     <p class = "m-0 text-dark text-center h-25 p-2"> <?php echo $data['service_price']; ?> </p>
+     <p class = "m-0 text-dark text-center h-25 p-2"> PHP<?php echo $data['service_price']; ?> </p>
 
      <button  name="button" id = "<?php echo $data['service_id']; ?>"  type = "button" class = "mt-2 btn btn-outline-dark add_to_cart">
 
