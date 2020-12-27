@@ -47,12 +47,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     mysqli_query($con,$sql);
 
     $_SESSION['date_sched'] = $date_sched;
+    $_SESSION['counter'] = $counter;
+    $_SESSION['book'] = 1;
 
     header("Location: \\Web_HairSalon\\customer\\payment.php");
     die;
   }
 
   else {
+    // $_SESSION['Book Successfully'] = 2;
+    $_SESSION['book'] = 2;    
     header("Location: \\Web_HairSalon\\customer\\book_now.php");
     die;
   }

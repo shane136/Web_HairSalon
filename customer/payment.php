@@ -1,6 +1,8 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $date_sched = "";
+$user_id = $_SESSION['user_id'];
+
 if(isset($_SESSION['date_sched'])){
   $date_sched =  $_SESSION['date_sched'];
 }
@@ -32,7 +34,7 @@ while($rows = mysqli_fetch_assoc($result)){
    </head>
 
    <body class = "d-flex flex-row h-100">
-     <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+     <div class="col-2 border border-danger flex-column d-flex"style="height:130%;background: #ffe6e6 !important;">
        <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
 
        <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
@@ -96,7 +98,7 @@ while($rows = mysqli_fetch_assoc($result)){
 
              <div class=" h-auto rounded p-3  flex-row text-center"  style="background: #ffe6e6;">
                    <select name="payment_type" required>
-                       <option value = "">Choose option</option>
+                       <option value="">Choose option</option>
                        <option value = "1">Cash</option>
                        <option value = "2">Mobile Cash</option>
                    </select>
@@ -110,6 +112,84 @@ while($rows = mysqli_fetch_assoc($result)){
 
             </form>
 
-      </div>
-</body>
-</html>
+            <br>
+                  <div class="h-auto rounded p-3" style="background: #ffe6e6;">
+                      <p class="h3" style="text-align:center;">RECEIPT</p>
+                      <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
+                        <p class="col m-2" style="color:black">Customer Name</p>
+                        <p class="col m-2" style="color:black">Schedule</p>
+                        <p class="col m-2" style="color:black">Payment Type</p>
+                        <p class="col m-2" style="color:black">Total Amount</p>
+                        <p class="col m-2" style="color:black">Your Cash</p>
+                        <p class="col m-2" style="color:black">Payment Date</p>
+
+                      </div>
+
+                      <?php
+                          $get_id = "SELECT * FROM customer where user_id = '$user_id'";
+                          $result = mysqli_query($con,$get_id);
+                          while ($rows = mysqli_fetch_assoc($result)) {
+                            $customer_id = $rows['customer_id'];
+                            $customer_name = $rows['f_name']." ".$rows['l_name'];
+                          }
+
+                          $query = "SELECT * FROM payment_details where user_id = '$user_id'";
+                          $payment_details = mysqli_query($con,$query);
+
+                          while ($row = mysqli_fetch_assoc($payment_details)) {
+                                $date_sched = $row['booking_sched'];
+                                $payment_type = $row['payment_type'];
+                                $total = $row['total_amount'];
+                                $cash = $row['cash'];
+                                $payment_date = $row['payment_date'];
+                       ?>
+                      <div class="border h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
+                        <p class="col m-2"><?php echo "$customer_name"; ?></p>
+                        <p class="col m-2"><?php echo "$date_sched"; ?></p>
+                        <p class="col m-2"><?php echo "$payment_type"; ?></p>
+                        <p class="col m-2"><?php echo "$total"; ?></p>
+                        <p class="col m-2"><?php echo "$cash"; ?></p>
+                        <p class="col m-2"><?php echo "$payment_date"; ?></p>
+
+                      </div>
+                      <?php
+                        }
+                      ?>
+                  </div>
+            </div>
+      </body>
+      </html>
+      <script type="text/javascript">
+
+<?php if(isset($_SESSION['Paid Successfully'])){
+      if ($_SESSION['Paid Successfully'] == 1) {
+        ?>alert('Paid Successfully');<?php
+      }
+      else {
+        ?> alert('Paid Not Successful');<?php
+      }
+  ?>
+    console.log(<?php echo $_SESSION['Paid Successfully']; ?>);
+  <?php
+   unset($_SESSION['Paid Successfully']);
+    }
+  ?>
+</script>
+
+<script type="text/javascript">
+
+<?php if(isset($_SESSION['book'])){
+      if ($_SESSION['book'] == 1) {
+        ?>alert('Book Successfully');<?php
+      }
+
+      else {
+        ?> alert('Book Not Successful');<?php
+      }
+  ?>
+    console.log(<?php echo $_SESSION['book']; ?>);
+  <?php
+   unset($_SESSION['book']);
+    }
+  ?>
+</script>

@@ -33,8 +33,9 @@ while ($rows = mysqli_fetch_assoc($result)) {
   </head>
 
   <body class = "d-flex flex-row h-100">
-    <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+    <div class="col-2 border border-danger flex-column d-flex"style="height:120%;background: #ffe6e6 !important;">
       <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
+
 
       <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
@@ -65,6 +66,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
 
     </div>
 
+
   <div class="col border border-danger h-100">
       <!-- <div class="container-fluid border border-danger d-flex flex-row" style="height:50px;background: #ffe6e6 !important;">
         <div class="col-5 d-flex flex-row pt-2 pb-2 justify-content-end">
@@ -85,7 +87,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
       <div class="d-flex justify-content-center align-items-center" style="background: #FFFFFF;">
         </div>
 
-        <img src="\Web_HairSalon\image\about.png" class="center" alt="" style="width: 100%; height: 490px; display: block; margin-left: auto; margin-right: auto;">
+        <img src="\Web_HairSalon\about.png" class="center" alt="" style="width: 100%; height: 490px; display: block; margin-left: auto; margin-right: auto;">
 
     </div>
 
