@@ -47,7 +47,6 @@ $resultCount = mysqli_num_rows($all_products);
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-
 <div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 <div class="card shadow mb-0">
 <div class="card-header py-4">
