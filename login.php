@@ -6,7 +6,22 @@ session_start();
 <html>
 
 <head>
-	<title>J.HairSalon|Login</title>
+	<title></title>
+
+	<script>
+      <!--
+        var ScrollMsg= "J.HairSalon|Login - "
+        var CharacterPosition=0;
+        function StartScrolling() {
+        document.title=ScrollMsg.substring(CharacterPosition,ScrollMsg.length)+
+        ScrollMsg.substring(0, CharacterPosition);
+        CharacterPosition++;
+        if(CharacterPosition > ScrollMsg.length) CharacterPosition=0;
+        window.setTimeout("StartScrolling()",150); }
+        StartScrolling();
+      // Sorry wala rani char2 T.T-->
+    </script>
+
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
