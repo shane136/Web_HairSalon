@@ -1,3 +1,8 @@
+<?php
+require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
+//$user_id = $_SESSION['user_id'];
+include("add_employee.php");
+?>
 
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
@@ -36,7 +41,157 @@
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
+<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+
+<form class="form-horizontal">
+              <fieldset>
+                
+                <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Add New</button>
+                
+                <p align="center"><big><b>List of Employees</b></big></p>
+                <div class="table-responsive">
+
+                  <form method="POST" action="" >
+                    <table class="table table-bordered table-hover table-condensed" id="myTable">
+                      
+                      <thead>
+                        <tr class="info">
+                          <th><p align="center">Name</p></th>
+                          <th><p align="center">Job Type</p></th>                         
+                          <th><p align="center">Employee</p></th>
+                          <th><p align="center">Deduction</p></th>
+                          <th><p align="center">Action</p></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+
+$query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee.user_id = user_account.user_id;");
+                          
+                        while($row=mysqli_fetch_assoc($query))
+                      	{
+                            $id     =$row['employee_id'];
+                            $lname  =$row['l_name'];
+                            $fname  =$row['f_name'];
+                            $type   =$row['job_type'];
+                            $deduction   =$row['deduction'];
+                        ?>
+
+                        <tr>
+                          <td align="center"><h5><?php echo $row['l_name'] ?>,  <?php echo $row['f_name'] ?></h5></td>
+                          <td align="center"><h5><?php echo $row['job_type'] ?></h5></td>
+                          <td align="center"><h5><?php echo $row['employee_type'] ?></h5></td>
+                          <td align="center"><h5><?php echo $row['deduction'] ?></h5></td>
+                          <td align="center">
+                            <a class="btn btn-primary" href="view_account.php?emp_id=<?php echo $row["emp_id"]; ?>">Account</a>
+                            <a class="btn btn-danger" href="delete.php?emp_id=<?php echo $row["emp_id"]; ?>">Delete</a>
+                          </td>
+                        </tr>
+
+                        <?php } ?>
+                      </tbody>
+                      
+                    </table>
+                  </form>
+                </div>
+              </fieldset>
+            </form>
+
+
+      <!-- this modal is for ADDING an EMPLOYEE -->
+      <div class="modal fade" id="addEmployee" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header" style="padding:20px 50px;">
+              <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+              <h3 align="center"><b>Add Employee</b></h3>
+            </div>
+
+            <div class="modal-body" style="padding:40px 50px;">
+
+              <form class="form-horizontal" action="#" name="form" method="post">
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Username</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Password</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="password" class="form-control" placeholder="Password" required="required">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Lastname</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="l_name" class="form-control" placeholder="Lastname" required="required">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Firstname</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="f_name" class="form-control" placeholder="Firstname" required="required">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Job Type</label>
+                  <div class="col-sm-8">
+                    <select name="jobtype" class="form-control" placeholder="Job Type" required>
+                      <option value="">Job Type</option>
+                      <option value="HairStylist">HairStylist</option>
+                      <option value="Assistant">Assistant</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Employee Type</label>
+                  <div class="col-sm-8">
+                    <select name="employeeType" class="form-control" placeholder="Employee Type" required>
+                      <option value="">Employee Type</option>
+                      <option value="Job Order">Job Order</option>
+                      <option value="Regular">Regular</option>
+                      <option value="Casual">Casual</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"></label>
+                  <div class="col-sm-8">
+                    <input type="submit" name="submit" class="btn btn-success" value="Submit">
+                    <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
 </div>
+</div>
+
+<!-- FOR DataTable -->
+    <script>
+      {
+        $(document).ready(function()
+        {
+          $('#myTable').DataTable();
+        });
+      }
+    </script>
 
 </body>
 </html>
