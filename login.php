@@ -61,11 +61,14 @@ session_start();
 
 					</form>
 				</div>
+
 				<?php if(isset($_SESSION['ERROR 1'])){
 					?>
-					<div class="">
-						<p>INVALID PASSWORD OR USERNAME</p>
-					</div>
+
+            <script type="text/javascript">
+						alert('INVALID PASSWORD OR USERNAME');
+				    </script>
+
 					<?php
 					unset($_SESSION['ERROR 1']);
 				} ?>
@@ -79,6 +82,7 @@ session_start();
 
           </div>
 				</div>
+
 			</div>
 		</div>
 	</div>

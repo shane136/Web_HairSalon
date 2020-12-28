@@ -123,7 +123,7 @@ $counter = 1;
 
        <div class="container h-100 p-3" style="background: #0F222D;">
              <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                 <p class="h3" style="text-align:center;">BOOKING DETAILS</p>
+                 <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOKING DETAILS</p>
 
                  <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
                    <p class="col m-2" style="color:black">Service Name</p>
@@ -189,7 +189,7 @@ $counter = 1;
 
        <br>
        <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-         <p class="h3" style="text-align:center;">BOOK SCHEDULE</p>
+         <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOK SCHEDULE</p>
 
          <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
 
