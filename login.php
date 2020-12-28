@@ -75,7 +75,7 @@ session_start();
 
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="registration\registration.html" class="ml-2">Sign Up</a>
+						Don't have an account? <a href="registration\registration.html" class="ml-2">Create Account</a>
 
 					</div>
 
