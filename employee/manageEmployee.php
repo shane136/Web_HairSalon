@@ -64,7 +64,7 @@ $resultCount = mysqli_num_rows($all_products);
                             </tr>
                         </thead>
                         <tbody>
-                        	<?php\/. de-yjhgfd
+                        	<?php
                         		if($resultCount>0){
 
                         			while ($products = mysqli_fetch_assoc($all_products)) {
