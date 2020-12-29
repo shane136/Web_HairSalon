@@ -76,7 +76,7 @@ $counter = 1;
    </head>
 
    <body class = "d-flex flex-row h-100">
-     <div class="col-2 border border-danger flex-column d-flex"style="height:130%;background: #ffe6e6 !important;">
+    <div class="col-2 border border-danger flex-column d-flex"style=" height:130%; background: #ffe6e6 !important;">
        <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
 
        <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>

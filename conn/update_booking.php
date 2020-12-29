@@ -22,11 +22,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $counter = $_POST['counter'];
   $date_sched = $_POST['date_sched'];
   // echo "<br>";
-  // echo "date_time";
+  // echo "date_sched";
+
+  $date = substr($date_sched,0,10);
+   // echo "<br>";
+   // echo $date;
+   // echo "<br>";
+
+   $time = substr($date_sched,11,2);
+   // echo $time;
+   // echo "<br>";
+   // echo gettype($time);
+   // echo "<br>";
+   $get_time = (int)$time;
+   // echo $get_time;
+   // echo "<br>";
+   // echo gettype($get_time);
+   if($get_time > 12){
+     $get_time = $get_time - 12;
+   }
+   // echo "<br>";
+   // echo $get_time;
+   $final_time = $date_sched ." "."0".(string)$get_time;
+   // echo "<br>";
+   // echo $final_time;
+
   $get_update =  substr_replace($date_sched," ",10,1);
   $get_update = $get_update.":00";
   // echo "<br>";
   // echo "get_update";
+  //echo "<br>";
   // echo $get_update;
 
   $test_sched = "SELECT * FROM bookings";
@@ -56,7 +81,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   else {
     // $_SESSION['Book Successfully'] = 2;
-    $_SESSION['book'] = 2;    
+
+    $_SESSION['book'] = 2;
     header("Location: \\Web_HairSalon\\customer\\book_now.php");
     die;
   }

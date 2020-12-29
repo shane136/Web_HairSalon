@@ -54,7 +54,8 @@ while($rows = mysqli_fetch_assoc($result)){
              <br>
              <a href="\Web_HairSalon\customer\book_styling.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Styling</small></p></a><br>
              <a href="\Web_HairSalon\customer\book_waxing.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Waxing</small></p></a><br>
-             <a href="\Web_HairSalon\customer\book_extensions.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Extensions</small></p></a><br>
+             <a href="\Web_HairSalon\customer\book_extensions.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align
+             center;"><small>Extensions</small></p></a><br>
              <a href="\Web_HairSalon\customer\book_design.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Design</small></p></a><br>
              <a href="\Web_HairSalon\customer\book_grooming.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Grooming</small></p></a><br>
              <div class="btn btn-outline-light pt-0">
@@ -79,7 +80,7 @@ while($rows = mysqli_fetch_assoc($result)){
          </div>
        </div>
 
-       <div class="container h-100 p-3" style="background: #60a3bc;">
+       <div class="container h-100 p-3" style="background: #0F222D;">
             <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
              <div class="h-auto rounded p-3" style="background: #ffe6e6;">
                  <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">PAYMENT DETAILS</p>
@@ -142,14 +143,57 @@ while($rows = mysqli_fetch_assoc($result)){
                                 $total = $row['total_amount'];
                                 $cash = $row['cash'];
                                 $payment_date = $row['payment_date'];
+                                $get_month = "";
+                                $time_get = "";
+                                $last_part = "";
+
+                          //getting the month
+                          $get_month = substr($date_sched,0,10);
+
+                          //getting the time
+                          $time = substr($date_sched,11,2);
+                          $last_part = substr($date_sched,14,2);
+
+                          //test if time is past 12
+                          if ($time > 12) {
+                            $time = $time - 12;
+                            $time_get = $get_month. "".(string)$time . ":".$last_part."PM";
+                          }
+
+                          else {
+                            $temp = substr($date_sched,0,11);
+                            $time = substr($date_sched,12,5);
+                            $time_get = $temp."".$time ."AM";
+                          }
+
+                          $pay_month = substr($payment_date,0,10);
+
+                          //converting payment date to AM and PM
+                          //getting the time
+                          $pay_time = substr($payment_date,11,2);
+                          $last_pay = substr($payment_date,14,2);
+
+                          //test if time is past 12
+                          if ($pay_time > 12) {
+                            $pay_time = $pay_time - 12;
+                            $pay_time_get = $pay_month."".(string)$pay_time . ":".$last_pay."PM";
+                          }
+
+                          else {
+                            $tem = substr($payment_date,0,11);
+                            $pay_time = substr($payment_date,12,5);
+                            $pay_time_get = $tem."".$pay_time."AM";
+                          }
+
                        ?>
                       <div class="border h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
                         <p class="col m-2"><?php echo "$customer_name"; ?></p>
-                        <p class="col m-2"><?php echo "$date_sched"; ?></p>
+                        <p class="col m-2"><?php echo "$time_get"; ?></p>
                         <p class="col m-2"><?php echo "$payment_type"; ?></p>
                         <p class="col m-2"><?php echo "$total"; ?></p>
                         <p class="col m-2"><?php echo "$cash"; ?></p>
-                        <p class="col m-2"><?php echo "$payment_date"; ?></p>
+                        <p class="col m-2"><?php echo "$pay_time_get"; ?></p>
+
 
                       </div>
                       <?php
