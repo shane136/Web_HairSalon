@@ -157,32 +157,48 @@ while($rows = mysqli_fetch_assoc($result)){
                           //test if time is past 12
                           if ($time > 12) {
                             $time = $time - 12;
-                            $time_get = $get_month. "".(string)$time . ":".$last_part."PM";
+                            $time_get = $get_month. " ".(string)$time . ":".$last_part." PM";
+                          }
+
+                          elseif($time == 0){
+                            $time = 12;
+                            $temp = substr($date_sched,0,11);
+                            $shane = substr($date_sched,14,2); //ilisi lng ug var_name hahhaha
+                            $time_get = $temp. " ".$time. ":".$shane. " AM";
+
                           }
 
                           else {
                             $temp = substr($date_sched,0,11);
-                            $time = substr($date_sched,12,5);
-                            $time_get = $temp."".$time ."AM";
+                            $time = substr($date_sched,12,4);
+                            $time_get = $temp." ".$time ." AM";
                           }
 
                           $pay_month = substr($payment_date,0,10);
 
                           //converting payment date to AM and PM
                           //getting the time
+                          //string manipulation
                           $pay_time = substr($payment_date,11,2);
                           $last_pay = substr($payment_date,14,2);
 
                           //test if time is past 12
                           if ($pay_time > 12) {
                             $pay_time = $pay_time - 12;
-                            $pay_time_get = $pay_month."".(string)$pay_time . ":".$last_pay."PM";
+                            $pay_time_get = $pay_month." ".(string)$pay_time . ":".$last_pay." PM";
+
                           }
 
+                          elseif($time == 0){ //why equals to 0? kay ang 12NN sa db kay 00:00
+                            $pay_time = 12;
+                            $temp = substr($payment_date,0,11);
+                            $paglinawan = substr($payment_date,14,2); //ilisi lng ug var_name hahha '$paglinawan'
+                            $time_get = $temp. " ".$pay_time. ":".$paglinawan. " AM";
+                            }
                           else {
                             $tem = substr($payment_date,0,11);
-                            $pay_time = substr($payment_date,12,5);
-                            $pay_time_get = $tem."".$pay_time."AM";
+                            $pay_time = substr($payment_date,12,4);
+                            $pay_time_get = $tem." ".$pay_time." AM";
                           }
 
                        ?>

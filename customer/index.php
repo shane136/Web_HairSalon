@@ -12,10 +12,9 @@
   </head>
 
   <body class = "d-flex flex-row h-100">
-    <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:auto;background: #ffe6e6 !important;">
+    <div class="col-2 border border-danger flex-column d-flex"style="height:120%;background: #ffe6e6 !important;">
       <a href="profile.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Profile</small></p></a>
 
-      <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
       <!-- <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
@@ -37,14 +36,15 @@
             <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_grooming.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Grooming</small></p></a>
           </div>
 
-      <a href="\Web_HairSalon\customer\about.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>
-
       <a href="\Web_HairSalon\customer\book_now.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Booking Details</small></p></a>
 
       <a href="\Web_HairSalon\customer\payment.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Payment</small></p></a>
 
-    </div>
+      <a href="\Web_HairSalon\customer\about.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>
 
+      <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
+
+    </div>
 
   <div class="col border border-danger h-100">
       <!-- <div class="container-fluid border border-danger d-flex flex-row" style="height:50px;background: #ffe6e6 !important;">

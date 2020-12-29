@@ -20,8 +20,10 @@ include("add_employee.php");
 </head>
 
 <body class = "d-flex flex-row h-100">
-  
+
 <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+
+<a href="\Web_HairSalon\admin\index.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Home</small></p></a> 
 
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
 
@@ -45,19 +47,19 @@ include("add_employee.php");
 <div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 <form class="form-horizontal">
               <fieldset>
-                
+
                 <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Add New</button>
-                
+
                 <p align="center"><big><b>List of Employees</b></big></p>
                 <div class="table-responsive">
 
                   <form method="post" action="" >
                     <table class="table table-bordered table-hover table-condensed" id="myTable">
-                      
+
                       <thead>
                         <tr class="info">
                           <th><p align="center">Name</p></th>
-                          <th><p align="center">Job Type</p></th>                         
+                          <th><p align="center">Job Type</p></th>
                           <th><p align="center">Employee</p></th>
                           <th><p align="center">Deduction</p></th>
                           <th><p align="center">Action</p></th>
@@ -67,7 +69,7 @@ include("add_employee.php");
                         <?php
 
 $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee.user_id = user_account.user_id;");
-                          
+
                         while($row=mysqli_fetch_assoc($query))
                       	{
                             $id     =$row['employee_id'];
@@ -90,7 +92,7 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
 
                         <?php } ?>
                       </tbody>
-                      
+
                     </table>
                   </form>
                 </div>
@@ -144,17 +146,17 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
 <div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 <form class="form-horizontal">
 <fieldset>
-  
+
   <p align="center"><big><b>List of User Account</b></big></p>
   <div class="table-responsive">
 
     <form method="" action="" >
       <table class="table table-bordered table-hover table-condensed" id="">
-        
+
         <thead>
           <tr class="info">
             <th><p align="center">ID</p></th>
-            <th><p align="center">User Name</p></th>                         
+            <th><p align="center">User Name</p></th>
             <th><p align="center">Password</p></th>
             <th><p align="center">Status</p></th>
             <th><p align="center">Action</p></th>
@@ -164,7 +166,7 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
           <?php
 
 $query = mysqli_query($con, "SELECT * from user_account;");
-            
+
           while($row=mysqli_fetch_assoc($query))
           {
               switch ($row['user_type']) {
@@ -178,7 +180,7 @@ $query = mysqli_query($con, "SELECT * from user_account;");
             <td align="center"><h5><?php
               $query = mysqli_query($con, "SELECT * from user_account, employee WHERE user_account.user_id = employee.user_id;");
               $avail=mysqli_fetch_assoc($query)
-              
+
             ?></h5></td>
             <td align="center">
               <a class="btn btn-danger" href="delete.php?user_id = <?php echo $row["user_id"];?>">Delete</a>
@@ -187,12 +189,12 @@ $query = mysqli_query($con, "SELECT * from user_account;");
 
           <?php break; } } ?>
         </tbody>
-        
+
       </table>
     </form>
   </div>
 </fieldset>
-</form>  
+</form>
 </div>
 </div>
 
