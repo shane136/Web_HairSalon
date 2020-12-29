@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
           header("Location: \\Web_HairSalon\\customer\\index.php");
         break;
       case 'Admin':
-          header("Location: \\Web_HairSalon\\employee\\index.php");
+          header("Location: \\Web_HairSalon\\admin\\index.php");
         break;
     }
 
