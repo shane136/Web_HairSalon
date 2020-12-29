@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 
-  if(isset($_POST['submit'])!="")
+/*  if(isset($_POST['submit'])!="")
   {
     $username       = $_POST['username'];
     $password       = $_POST['password'];
@@ -31,4 +31,5 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
       <?php 
     }
   }
+  */
 ?>  
