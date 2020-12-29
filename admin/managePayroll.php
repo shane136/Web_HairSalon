@@ -25,13 +25,13 @@ include("add_employee.php");
 
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
 
-<a href="../employee/manageService.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Manage Service</small></p></a>
+<a href="../admin/manageService.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Manage Service</small></p></a>
 
-<a href="../employee/manageEmployee.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Manage Employee</small></p></a>
+<a href="../admin/manageEmployee.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Manage Employee</small></p></a>
 
-<a href="../employee/managePayroll.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Manage Payroll</small></p></a>
+<a href="../admin/managePayroll.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Manage Payroll</small></p></a>
 
-<a href="../employee/reports.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Sales Reports</small></p></a>
+<a href="../admin/reports.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Sales Reports</small></p></a>
 
 <a href="" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>
 
@@ -124,44 +124,6 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                   <label class="col-sm-4 control-label">Password</label>
                   <div class="col-sm-8">
                     <input type="text" name="password" class="form-control" placeholder="Password" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Lastname</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="l_name" class="form-control" placeholder="Lastname" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Firstname</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="f_name" class="form-control" placeholder="Firstname" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Job Type</label>
-                  <div class="col-sm-8">
-                    <select name="jobtype" class="form-control" placeholder="Job Type" required>
-                      <option value="">Job Type</option>
-                      <option value="HairStylist">HairStylist</option>
-                      <option value="Assistant">Assistant</option>
-                    </select>
-                  </div>
-                </div>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Employee Type</label>
-                  <div class="col-sm-8">
-                    <select name="employeeType" class="form-control" placeholder="Employee Type" required>
-                      <option value="">Employee Type</option>
-                      <option value="Job Order">Job Order</option>
-                      <option value="Regular">Regular</option>
-                      <option value="Casual">Casual</option>
-                    </select>
                   </div>
                 </div>
 
