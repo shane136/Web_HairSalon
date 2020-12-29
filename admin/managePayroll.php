@@ -41,8 +41,8 @@ include("add_employee.php");
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 
+<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 <form class="form-horizontal">
               <fieldset>
                 
@@ -51,7 +51,7 @@ include("add_employee.php");
                 <p align="center"><big><b>List of Employees</b></big></p>
                 <div class="table-responsive">
 
-                  <form method="POST" action="" >
+                  <form method="post" action="" >
                     <table class="table table-bordered table-hover table-condensed" id="myTable">
                       
                       <thead>
@@ -83,8 +83,8 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                           <td align="center"><h5><?php echo $row['employee_type'] ?></h5></td>
                           <td align="center"><h5><?php echo $row['deduction'] ?></h5></td>
                           <td align="center">
-                            <a class="btn btn-primary" href="view_account.php?emp_id=<?php echo $row["emp_id"]; ?>">Account</a>
-                            <a class="btn btn-danger" href="delete.php?emp_id=<?php echo $row["emp_id"]; ?>">Delete</a>
+                            <a class="btn btn-primary" href="view_account.php?employee_id=<?php echo $row["employee_id"]; ?>">Account</a>
+                            <a class="btn btn-danger" href="delete.php?employee_id=<?php echo $row["employee_id"]; ?>">Delete</a>
                           </td>
                         </tr>
 
@@ -140,8 +140,59 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
           </div>
         </div>
       </div>
+</div>
+<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+<form class="form-horizontal">
+<fieldset>
+  
+  <p align="center"><big><b>List of User Account</b></big></p>
+  <div class="table-responsive">
 
-      
+    <form method="" action="" >
+      <table class="table table-bordered table-hover table-condensed" id="">
+        
+        <thead>
+          <tr class="info">
+            <th><p align="center">ID</p></th>
+            <th><p align="center">User Name</p></th>                         
+            <th><p align="center">Password</p></th>
+            <th><p align="center">Status</p></th>
+            <th><p align="center">Action</p></th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+
+$query = mysqli_query($con, "SELECT * from user_account;");
+            
+          while($row=mysqli_fetch_assoc($query))
+          {
+              switch ($row['user_type']) {
+                case 'Employee':
+          ?>
+
+          <tr>
+            <td align="center"><h5><?php echo $row['user_id'] ?></h5></td>
+            <td align="center"><h5><?php echo $row['user_name'] ?></h5></td>
+            <td align="center"><h5><?php echo $row['user_password'] ?></h5></td>
+            <td align="center"><h5><?php
+              $query = mysqli_query($con, "SELECT * from user_account, employee WHERE user_account.user_id = employee.user_id;");
+              $avail=mysqli_fetch_assoc($query)
+              
+            ?></h5></td>
+            <td align="center">
+              <a class="btn btn-danger" href="delete.php?user_id = <?php echo $row["user_id"];?>">Delete</a>
+            </td>
+          </tr>
+
+          <?php break; } } ?>
+        </tbody>
+        
+      </table>
+    </form>
+  </div>
+</fieldset>
+</form>  
 </div>
 </div>
 

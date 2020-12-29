@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 
-/*  if(isset($_POST['submit'])!="")
+  if(isset($_POST['submit'])!="")
   {
     $username       = $_POST['username'];
     $password       = $_POST['password'];
@@ -10,13 +10,10 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 
     if($sqluser)
     {
-      $results = mysqli_query($con, "SELECT user_id FROM user_account ORDER BY user_id DESC LIMIT 1;");
-      $idid = mysqli_fetch_field($results);
-      $usid = $idid['user_id'];
       ?>
         <script>
             alert('Employee had been successfully added.');
-            window.location.href='add_details.php?pass=$usid';
+            window.location.href='managePayroll.php?page=1';
         </script>
       <?php 
     }
@@ -31,5 +28,5 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
       <?php 
     }
   }
-  */
+
 ?>  
