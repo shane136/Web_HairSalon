@@ -169,15 +169,15 @@ while($rows = mysqli_fetch_assoc($result)){
                         elseif($time == 0){
                           $time = 12;
                           $temp = substr($date,0,11);
-                          $check_time = substr($date,14,2); 
-                          $time_get = $temp. " ".$time. ":".$check_time. " AM";
+                          $check_time = substr($date,14,2);
+                          $time_get = $temp. " ".$time. ":".$check_time. " AM ";
 
                         }
 
                         else {
                           $temp = substr($date,0,11);
-                          $time = substr($date,12,4);
-                          $time_get = $temp." ".$time ." AM";
+                          $time = substr($date,11,5);
+                          $time_get = $temp." ".$time ." NN ";
                         }
 
                        ?>

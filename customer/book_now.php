@@ -224,13 +224,41 @@ $counter = 1;
              $service_price = $row['service_price'];
            }
 
+           //getting the month
+           $get_month = substr($date_sched,0,10);
+
+           //getting the time
+           $time = substr($date_sched,11,2);
+           $last_part = substr($date_sched,14,2);
+
+           //test if time is past 12
+           if ($time > 12) {
+             $time = $time - 12;
+             $time_get = $get_month. " ".(string)$time . ":".$last_part." PM";
+           }
+
+           elseif($time == 0){
+             $time = 12;
+             $temp = substr($date_sched,0,11);
+             $check_time = substr($date_sched,14,2);
+             $time_get = $temp. " ".$time. ":".$check_time. " AM ";
+
+           }
+
+           else {
+             $temp = substr($date_sched,0,11);
+             $time = substr($date_sched,11,5);
+             $time_get = $temp." ".$time ." NN ";
+           }
+
           ?>
 
          <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
 
            <p class="col m-2" style="color:black"><?php echo "$service_name"; ?></p>
            <p class="col m-2" style="color:black">PHP<?php echo "$service_price"; ?></p>
-           <p class="col m-2" style="color:black"><?php echo "$date_sched"; ?></p>
+           <P class="col m-2" style="color:black"><?php echo "$time_get";?></p>
+
 
          </div>
 
