@@ -169,8 +169,8 @@ while($rows = mysqli_fetch_assoc($result)){
                         elseif($time == 0){
                           $time = 12;
                           $temp = substr($date,0,11);
-                          $shane = substr($date,14,2); //ilisi lng ug var_name hahhaha
-                          $time_get = $temp. " ".$time. ":".$shane. " AM";
+                          $check_time = substr($date,14,2); 
+                          $time_get = $temp. " ".$time. ":".$check_time. " AM";
 
                         }
 
