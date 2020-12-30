@@ -72,10 +72,10 @@ $resultCount = mysqli_num_rows($all_products);
                         			while ($products = mysqli_fetch_assoc($all_products)) {
                         				echo '<tr>';
                         				echo '<td>'.$products['service_id'].'</td>';
-	                            		echo '<td>'.$products['service_name'].'</td>';
-	                            		echo '<td>'.$products['service_price'].'</td>';
-	                            		echo '<td>'.$products['type_name'].'</td>';
-	                            		echo '</tr>';
+	                            	echo '<td>'.$products['service_name'].'</td>';
+	                            	echo '<td>'.$products['service_price'].'</td>';
+	                            	echo '<td>'.$products['type_name'].'</td>';
+	                            	echo '</tr>';
                         			}
                         		}
                         	?>

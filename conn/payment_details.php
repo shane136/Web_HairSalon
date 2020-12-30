@@ -27,10 +27,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         unset($_SESSION['date_sched']);
       }
       header("Location: \\Web_HairSalon\\customer\\book_now.php");
-
+      //globalization of var
       if(isset($_SESSION['counter'])){
               unset($_SESSION['counter']);
             }
+      if(isset($_SESSION['count'])){
+
+            unset($_SESSION['count']);
+      }
             $_SESSION['Paid Successfully'] = 1;
             header("Location: \\Web_HairSalon\\customer\\payment.php");
       die;

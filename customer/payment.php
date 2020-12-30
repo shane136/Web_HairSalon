@@ -2,6 +2,13 @@
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $date_sched = "";
 $user_id = $_SESSION['user_id'];
+$counter = "";
+$book_2 = "";
+$book_3 = "";
+
+if(isset($_SESSION['count'])){
+  $counter = $_SESSION['count'];
+}
 
 if(isset($_SESSION['date_sched'])){
   $date_sched =  $_SESSION['date_sched'];
@@ -10,6 +17,8 @@ $total_price = 0;
 $sql = "SELECT * FROM bookings where date_sched = '$date_sched'";
 $result = mysqli_query($con,$sql);
 while($rows = mysqli_fetch_assoc($result)){
+  $book_2 = $rows['book_date'];
+  $book_3 = substr($book_2,0,11);
   $service_id = $rows['service_id'];
   $query = "SELECT * FROM services where service_id = '$service_id'";
   $get_query = mysqli_query($con,$query);
@@ -82,143 +91,160 @@ while($rows = mysqli_fetch_assoc($result)){
 
        <div class="container h-100 p-3" style="background: #0F222D;">
             <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
-             <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                 <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">PAYMENT DETAILS</p>
-                 <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-                   <p class="col m-2" style="color:black">Booking Schedule</p>
-                   <p class="col m-2" style="color:black">Total Price</p>
 
-                 </div>
-              <div class="border h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-                   <input type="hidden" name="date_sched" value="<?php echo "$date_sched"; ?>">
-                  <input type="hidden" name="total_price" value="<?php echo "$total_price"; ?>">
-                 <p class="col m-2"><?php echo $date_sched;?></p>
-                 <p class="col m-2"><?php echo $total_price;?></p>
-              </div>
-             </div>
+              <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-             <div class=" h-auto rounded p-3  flex-row text-center"  style="background: #ffe6e6;">
-                   <select name="payment_type" required>
-                       <option value="">Choose option</option>
-                       <option value = "1">Cash</option>
-                       <option value = "2">Mobile Cash</option>
-                   </select>
-               <!-- <p class="col m-2" style="">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp
-                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                 Cash</p> -->
-               <input type="text" name="amount_paid" value="" class="col" placeholder="Input your cash" required>
-               <button type="submit" class="btn btn-dark" name="button">Pay Now</button>
-             </div>
+<div class="container">
+    <div class="row">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>J.HairSalon</strong>
+                        <br>
+                        Roxas Street, Iligan City
+                        <br>
+                        Philippines
+                        <br>
+                        <abbr title="Phone">P:</abbr> (213) 484-6829
+                    </address>
+                </div>
 
-            </form>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                     <p class="" style="color:black">Date: <?php echo "$book_3"; ?> </p>
+                </div>
 
-            <br>
-                  <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                      <p class="h3" style="text-align:center;">RECEIPT</p>
-                      <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-                        <p class="col m-2" style="color:black">Customer Name</p>
-                        <p class="col m-2" style="color:black">Schedule</p>
-                        <p class="col m-2" style="color:black">Payment Type</p>
-                        <p class="col m-2" style="color:black">Total Amount</p>
-                        <p class="col m-2" style="color:black">Your Cash</p>
-                        <p class="col m-2" style="color:black">Payment Date</p>
+            </div>
 
-                      </div>
-
+            <div class="row">
+                <div class="text-center">
+                    <h1>Receipt</h1>
+                </div>
+                </span>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th class="text-center">Book Schedule</th>
+                            <th class="text-center">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                       <?php
-                          $get_id = "SELECT * FROM customer where user_id = '$user_id'";
-                          $result = mysqli_query($con,$get_id);
-                          while ($rows = mysqli_fetch_assoc($result)) {
-                            $customer_id = $rows['customer_id'];
-                            $customer_name = $rows['f_name']." ".$rows['l_name'];
-                          }
 
-                          $query = "SELECT * FROM payment_details where user_id = '$user_id'";
-                          $payment_details = mysqli_query($con,$query);
+                        $book = "SELECT * from bookings WHERE counter = '$counter'";
+                        $get_result = mysqli_query($con, $book);
+                        $total_price = 0;
 
-                          while ($row = mysqli_fetch_assoc($payment_details)) {
-                                $date_sched = $row['booking_sched'];
-                                $payment_type = $row['payment_type'];
-                                $total = $row['total_amount'];
-                                $cash = $row['cash'];
-                                $payment_date = $row['payment_date'];
-                                $get_month = "";
-                                $time_get = "";
-                                $last_part = "";
+                        while($row = mysqli_fetch_assoc($get_result)){
 
-                          //getting the month
-                          $get_month = substr($date_sched,0,10);
+                          $service = $row['service_id'];
+                          $date = $row['date_sched'];
+                          $services = "SELECT * FROM services WHERE service_id = '$service'";
+                          $services_result = mysqli_query($con, $services);
 
-                          //getting the time
-                          $time = substr($date_sched,11,2);
-                          $last_part = substr($date_sched,14,2);
+                        while($var = mysqli_fetch_assoc($services_result)){
 
-                          //test if time is past 12
-                          if ($time > 12) {
-                            $time = $time - 12;
-                            $time_get = $get_month. " ".(string)$time . ":".$last_part." PM";
-                          }
+                          $name = $var['service_name'];
+                          $price = $var['service_price'];
 
-                          elseif($time == 0){
-                            $time = 12;
-                            $temp = substr($date_sched,0,11);
-                            $shane = substr($date_sched,14,2); //ilisi lng ug var_name hahhaha
-                            $time_get = $temp. " ".$time. ":".$shane. " AM";
+                        }
+                        $total_price = $total_price + $price;
 
-                          }
+                        //getting the month
+                        $get_month = substr($date,0,10);
 
-                          else {
-                            $temp = substr($date_sched,0,11);
-                            $time = substr($date_sched,12,4);
-                            $time_get = $temp." ".$time ." AM";
-                          }
+                        //getting the time
+                        $time = substr($date,11,2);
+                        $last_part = substr($date,14,2);
 
-                          $pay_month = substr($payment_date,0,10);
+                        //test if time is past 12
+                        if ($time > 12) {
+                          $time = $time - 12;
+                          $time_get = $get_month. " ".(string)$time . ":".$last_part." PM";
+                        }
 
-                          //converting payment date to AM and PM
-                          //getting the time
-                          //string manipulation
-                          $pay_time = substr($payment_date,11,2);
-                          $last_pay = substr($payment_date,14,2);
+                        elseif($time == 0){
+                          $time = 12;
+                          $temp = substr($date,0,11);
+                          $shane = substr($date,14,2); //ilisi lng ug var_name hahhaha
+                          $time_get = $temp. " ".$time. ":".$shane. " AM";
 
-                          //test if time is past 12
-                          if ($pay_time > 12) {
-                            $pay_time = $pay_time - 12;
-                            $pay_time_get = $pay_month." ".(string)$pay_time . ":".$last_pay." PM";
+                        }
 
-                          }
-
-                          elseif($time == 0){ //why equals to 0? kay ang 12NN sa db kay 00:00
-                            $pay_time = 12;
-                            $temp = substr($payment_date,0,11);
-                            $paglinawan = substr($payment_date,14,2); //ilisi lng ug var_name hahha '$paglinawan'
-                            $time_get = $temp. " ".$pay_time. ":".$paglinawan. " AM";
-                            }
-                          else {
-                            $tem = substr($payment_date,0,11);
-                            $pay_time = substr($payment_date,12,4);
-                            $pay_time_get = $tem." ".$pay_time." AM";
-                          }
+                        else {
+                          $temp = substr($date,0,11);
+                          $time = substr($date,12,4);
+                          $time_get = $temp." ".$time ." AM";
+                        }
 
                        ?>
-                      <div class="border h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-                        <p class="col m-2"><?php echo "$customer_name"; ?></p>
-                        <p class="col m-2"><?php echo "$time_get"; ?></p>
-                        <p class="col m-2"><?php echo "$payment_type"; ?></p>
-                        <p class="col m-2"><?php echo "$total"; ?></p>
-                        <p class="col m-2"><?php echo "$cash"; ?></p>
-                        <p class="col m-2"><?php echo "$pay_time_get"; ?></p>
+                        <tr>
 
+                            <td><?php echo "$name"; ?></td>
+                            <td class="text-center"><?php echo "$time_get";?></td>
+                            <td class="text-center"><?php echo "$price"; ?></td>
+                            <!-- <td class="text-right"> -->
+
+                        </tr>
+
+                        <?php
+                      }
+
+                        ?>
+
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-center"><h4><strong>Total: PHP <?php echo "$total_price"; ?> </strong></h4></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+        <!-- <div class="row"> -->
+
+          <form class="" action="Web_HairSalon\conn\payment_details.php" method="post">
+
+            <div class="">
+                <p class="h3" style="text-align:center;">PAYMENT TYPE</p>
+                <!-- <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;"> -->
+
+                  <div class=" h-auto rounded p-3  flex-row text-center d-flex"  style="background: #ffe6e6; margin-left: 5px;">
+                        <select name="payment_type" style="margin-right: 10px;" required>
+
+                            <option value="">Choose option</option>
+                            <option value = "1">Cash</option>
+                            <option value = "2">Mobile Cash</option>
+                        </select>
+
+                        <input type="hidden" name="date_sched" value="<?php echo "$date_sched"; ?>">
+                        <input type="hidden" name="total_price" value="<?php echo "$total_price"; ?>">
+                        <input type="text" name="amount_paid" value="" class="text-center" style="margin-right: 10px;" placeholder="Input your cash" required>
+
+
+                        <button type="submit" class="btn btn-success btn-lg btn-block">
+                            Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
 
                       </div>
-                      <?php
-                        }
-                      ?>
+                    </div>
+                    </form>
                   </div>
-            </div>
+                <!-- </div> -->
+              <!-- </div> -->
+
+
+
       </body>
       </html>
+
       <script type="text/javascript">
 
 <?php if(isset($_SESSION['Paid Successfully'])){

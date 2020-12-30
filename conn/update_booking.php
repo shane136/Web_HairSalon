@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['date_sched'] = $date_sched;
     $_SESSION['counter'] = $counter;
     $_SESSION['book'] = 1;
-
+    $_SESSION['count'] = $counter;
     header("Location: \\Web_HairSalon\\customer\\payment.php");
     die;
   }
