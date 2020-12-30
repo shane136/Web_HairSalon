@@ -108,7 +108,7 @@ while($rows = mysqli_fetch_assoc($result)){
                         <br>
                         Philippines
                         <br>
-                        <abbr title="Phone">P:</abbr> (213) 484-6829
+                        <abbr title="Phone">P.:</abbr> (213) 484-6829
                     </address>
                 </div>
 
@@ -165,36 +165,27 @@ while($rows = mysqli_fetch_assoc($result)){
                           $time = $time - 12;
                           $time_get = $get_month. " ".(string)$time . ":".$last_part." PM";
                         }
-
                         elseif($time == 0){
                           $time = 12;
                           $temp = substr($date,0,11);
                           $check_time = substr($date,14,2);
-                          $time_get = $temp. " ".$time. ":".$check_time. " AM ";
-
+                          $time_get = $temp. " ".$time. ":".$check_time. " AM";
                         }
-
                         else {
                           $temp = substr($date,0,11);
                           $time = substr($date,11,5);
                           $time_get = $temp." ".$time ." NN ";
                         }
-
                        ?>
                         <tr>
-
                             <td><?php echo "$name"; ?></td>
                             <td class="text-center"><?php echo "$time_get";?></td>
                             <td class="text-center"><?php echo "$price"; ?></td>
                             <!-- <td class="text-right"> -->
-
                         </tr>
-
                         <?php
                       }
-
                         ?>
-
                         <tr>
                             <td>   </td>
                             <td>   </td>
@@ -228,7 +219,6 @@ while($rows = mysqli_fetch_assoc($result)){
                         <input type="hidden" name="total_price" value="<?php echo "$total_price"; ?>">
                         <input type="text" name="amount_paid" value="" class="text-center" style="margin-right: 10px;" placeholder="Input your cash" required>
 
-
                         <button type="submit" class="btn btn-success btn-lg btn-block">
                             Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
                         </button>
@@ -240,14 +230,12 @@ while($rows = mysqli_fetch_assoc($result)){
                 <!-- </div> -->
               <!-- </div> -->
 
-
-
       </body>
       </html>
 
       <script type="text/javascript">
 
-<?php if(isset($_SESSION['Paid Successfully'])){
+      <?php if(isset($_SESSION['Paid Successfully'])){
       if ($_SESSION['Paid Successfully'] == 1) {
         ?>alert('Paid Successfully');<?php
       }
@@ -256,26 +244,28 @@ while($rows = mysqli_fetch_assoc($result)){
       }
   ?>
     console.log(<?php echo $_SESSION['Paid Successfully']; ?>);
-  <?php
+      <?php
    unset($_SESSION['Paid Successfully']);
     }
-  ?>
-</script>
+      ?>
 
-<script type="text/javascript">
+    </script>
 
-<?php if(isset($_SESSION['book'])){
-      if ($_SESSION['book'] == 1) {
-        ?>alert('Book Successfully');<?php
-      }
+    <script type="text/javascript">
 
-      else {
-        ?> alert('Book Not Successful');<?php
-      }
-  ?>
-    console.log(<?php echo $_SESSION['book']; ?>);
-  <?php
-   unset($_SESSION['book']);
-    }
-  ?>
-</script>
+          <?php if(isset($_SESSION['book'])){
+            if ($_SESSION['book'] == 1) {
+          ?>alert('Book Successfully');<?php
+          }
+
+          else {
+          ?>alert('Book Not Successful');<?php
+          }
+          ?>
+          console.log(<?php echo $_SESSION['book']; ?>);
+          <?php
+          unset($_SESSION['book']);
+          }
+          ?>
+
+    </script>
