@@ -20,7 +20,7 @@ session_start();
         window.setTimeout("StartScrolling()",150); }
         StartScrolling();
       // Sorry wala rani char2 T.T-->
-      // HAHAHAH sana all modagan
+    
     </script>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
