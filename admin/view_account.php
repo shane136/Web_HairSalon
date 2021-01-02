@@ -2,6 +2,15 @@
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 	$id=$_GET['employee_id'];
 
+$sql = mysqli_query($con, "SELECT * from deductions WHERE deduction_id='1'");
+  while($row = mysqli_fetch_array($sql))
+  {
+    $phil = $row['philhealth'];
+    $bir = $row['bir'];
+    $gsis = $row['gsis'];
+    $love = $row['pag_ibig'];
+    $loans = $row['loans'];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +44,80 @@
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div style="text-align:right; padding:1em 0;">
+<div style="width:450px;height:100%; text-align:left; margin: auto; padding: 10px;">
+<?php
+    $id=$_REQUEST['employee_id'];
+    $query = "SELECT * from employee where employee_id='".$id."'";
+    $result = mysqli_query($con, $query) or die ( mysql_error());
 
+    $query  = mysqli_query($con, "SELECT * from overtime");
+    while($row=mysqli_fetch_array($query))
+    {
+      $rate   = $row['rate'];
+    }
+
+    $query  = mysqli_query($con, "SELECT * from salary");
+    while($row=mysqli_fetch_array($query))
+    {
+      $salary   = $row['commission_rate'];
+    }
+
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        $overtime     = $row['overtime'] * $rate;
+        $deduction  = $row['deduction'];
+        $income   = $overtime  + $salary;
+        $netpay   = $income - $deduction;
+      ?>
+
+          <form style="margin: auto; padding: 10px;" action="update_account.php" method="post" name="form">
+            <input type="hidden" name="new" value="1" />
+            <input name="id" type="hidden" value="<?php echo $row['employee_id'];?>" />
+              <div class="">
+                <label class="col-sm-1 control-label"></label>
+                <div class="col-sm-0">
+                  <h2><?php 
+                  echo $row['l_name']; ?>, <?php echo $row['f_name']; ?></h2>
+                </div>
+              </div>
+              <div class="">
+                <label class="col-sm-0 control-label">Deduction/s  :</label>
+                <div class="col-sm-0">
+                <select name="deduction" class="form-control" required>
+                  <option value=""><?php echo $row['deduction'];?></option>
+                  <option value="<?php echo $phil; ?>">PhilHealth</option>
+                  <option value="<?php echo $bir; ?>">BIR</option>
+                  <option value="<?php echo $gsis; ?>">GSIS</option>
+                  <option value="<?php echo $love; ?>">PAG-IBIG</option>
+                  <option value="<?php echo $loans; ?>">Loans</option>
+                </select>
+              </div>
+              </div>
+              <div class="">
+                <label class="col-sm-0 control-label">Overtime  :</label>
+                <div class="col-sm-0">
+                  <input type="text" name="overtime" class="form-control" value="<?php echo $row['overtime'];?>" required="required">
+                </div>
+              </div>
+              <br><br>
+
+              <div class="">
+                <label class="col-sm-0 control-label">Netpay  :</label>
+                <div class="col-sm-0">
+                  <?php echo $netpay;?>.00
+                </div>
+              </div><br><br>
+              <div style="text-align: right;">
+                <label class="col-sm-5 control-label"></label>
+                <div class="col-sm-0">
+                  <input type="submit" name="submit" value="Update" class="btn btn-danger">
+                  <a href="managePayroll.php" class="btn btn-primary">Cancel</a>
+                </div>
+              </div>
+          </form>
+        <?php
+      }
+    ?>
 </div>
 </div>
 

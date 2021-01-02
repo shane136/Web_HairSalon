@@ -50,7 +50,7 @@ $user_id = $_SESSION['user_id'];
 
                 <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Add New</button>
 
-                <p align="center"><big><b>List of Employees</b></big></p>
+                <p align="center"><big><b>List of Employed Employees</b></big></p>
                 <div class="table-responsive">
 
                   <form method="post" action="" >
@@ -86,7 +86,6 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                           <td align="center"><h5><?php echo $row['deduction'] ?></h5></td>
                           <td align="center">
                             <a class="btn btn-primary" href="view_account.php?employee_id=<?php echo $row["employee_id"]; ?>">Account</a>
-                            <a class="btn btn-danger" href="delete.php?employee_id=<?php echo $row["employee_id"]; ?>">Delete</a>
                           </td>
                         </tr>
 
