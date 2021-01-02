@@ -43,7 +43,7 @@ $products[]= $products_row;
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <small>Offered Services</small></button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            
+
             <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_color.php" style="width: 100%;" class=" btn btn-outline-dark rounded-1 pt-0"><small>Color</small></p></a>
             <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_styling.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Styling</small></p></a>
             <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_waxing.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Waxing</small></p></a>
@@ -71,7 +71,7 @@ $products[]= $products_row;
         </div>
       </div> -->
 
-      <div class="container mh-100 p-3" style="background: #0F222D;height:30vh;">
+      <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
         <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
         <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
         </div>

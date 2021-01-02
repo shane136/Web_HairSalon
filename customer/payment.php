@@ -83,13 +83,13 @@ while($rows = mysqli_fetch_assoc($result)){
          </div>
        </div> -->
 
-       <div class="container mh-100 p-3" style="background: #0F222D;height:30vh;">
+       <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
          <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
          <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
          </div>
        </div>
 
-       <div class="container h-100 p-3" style="background: #0F222D;">
+       <div class="container  p-3" style="background: #0F222D;height: 105%;">
             <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
 
               <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

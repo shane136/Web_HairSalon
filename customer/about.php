@@ -74,7 +74,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
         </div>
       </div> -->
 
-      <div class="container mh-100 p-3" style="background: #0F222D;height:30vh;">
+      <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
         <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
         <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
         </div>

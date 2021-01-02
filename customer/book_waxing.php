@@ -69,7 +69,7 @@ $products[]= $products_row;
         <a href="\Website\conn\logout.php" class="col btn btn-outline-light border-top-0 border-bottom-0 rounded-0 pt-0" style="color:black"><p class="m-0"><small>Logout</small></p></a>
         </div>
       </div> -->
-      <div class="container mh-100 p-3" style="background: #0F222D;height:30vh;">
+      <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
         <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
         <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
         </div>

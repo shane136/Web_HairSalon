@@ -37,13 +37,53 @@ $counter = 1;
       }
 
       $get_count = "SELECT * FROM bookings";
-
       $result = mysqli_query($con,$get_count);
       while($rows = mysqli_fetch_assoc($result)){
-        $counter = $counter + 1;
+      $counter = $counter + 1;
       }
 
       foreach ($output as $key => $value) {
+
+        // //get the employee who's job description same to the specific service_type;
+        //  $get_service = "SELECT * FROM service WHERE service_id = '$key'";
+        //  $service_result = mysqli_query($con,$get_service);
+        //  $type_service = "";
+        //  while ($row = mysqli_fetch_assoc($service_result)) {
+        //   $service = $row['type_id'];
+        //
+        //    if($service == 1){
+        //      $type_service = "Color";
+        //    }
+        //    elseif ($service == 2) {
+        //      $type_service = "Styling";
+        //   }
+        //   elseif ($service == 3) {
+        //      $type_service = "Waxing";
+        //    }
+        //
+        //    elseif ($service == 4) {
+        //     $type_service = "Extensions";
+        //    }
+        //
+        //   elseif ($service == 5) {
+        //      $type_service = "Design";
+        //   }
+        //
+        //    else{
+        //      $type_service = "Grooming";
+        //    }
+        //
+        //  }
+        //
+        //  $get_employee = "SELECT * FROM employee where job_description LIKE '$type_service'";
+        //  $result_employee = mysqli_query($con,$get_employee);
+        //  $emp_id = 0;
+        //  while ($row = mysqli_fetch_assoc($result_employee)) {
+        // $emp_id = $row['employee_id'];
+        // }
+
+
+
         $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid')";
         mysqli_query($con,$query);
       }
@@ -76,7 +116,7 @@ $counter = 1;
    </head>
 
    <body class = "d-flex flex-row h-100">
-    <div class="col-2 border border-danger flex-column d-flex"style=" height:130%; background: #ffe6e6 !important;">
+    <div class="col-2 border border-danger flex-column d-flex"style=" height:135%; background: #ffe6e6 !important;">
        <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
 
        <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
@@ -121,7 +161,7 @@ $counter = 1;
          </div>
        </div>
 
-       <div class="container h-100 p-3" style="background: #0F222D;">
+       <div class="container p-3" style="background: #0F222D; height: 105%;">
              <div class="h-auto rounded p-3" style="background: #ffe6e6;">
                  <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOKING DETAILS</p>
 
