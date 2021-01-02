@@ -165,7 +165,7 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
         <tbody>
           <?php
 
-$query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employee';");
+$query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employee' AND status='0';");
 
           if(mysqli_num_rows($query)>0)
           {
@@ -178,11 +178,12 @@ $query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employe
             <td align="center"><h5><?php echo $row['user_id'] ?></h5></td>
             <td align="center"><h5><?php echo $row['user_name'] ?></h5></td>
             <td align="center"><h5><?php echo $row['user_password'] ?></h5></td>
-            <td align="center"><h5><?php
-
-            ?></h5></td>
+            <td align="center"><h5><?php if($row['status'] == 0){ echo "Unallocated"; }
+              else{
+                echo "Error";
+              }?></h5></td>
             <td align="center">
-              <a class="btn btn-danger" href="delete.php?user_id = <?php echo $row["user_id"];?>">Delete</a>
+              <a class="btn btn-danger" href="userdel.php?user_id=<?php echo $row["user_id"]; ?>">Delete</a>
             </td>
           </tr>
 

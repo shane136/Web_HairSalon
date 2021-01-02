@@ -6,14 +6,14 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
     $username       = $_POST['username'];
     $password       = $_POST['password'];
 
-    $sqluser = mysqli_query($con, "INSERT INTO user_account VALUES(NULL,'$username', '$password', 'Employee', CURRENT_TIMESTAMP());");
+    $sqluser = mysqli_query($con, "INSERT INTO user_account VALUES(NULL,'$username', '$password', 'Employee', CURRENT_TIMESTAMP(), 0);");
 
     if($sqluser)
     {
       ?>
         <script>
             alert('Employee had been successfully added.');
-            window.location.href='managePayroll.php?page=1';
+            window.location.href='managePayroll.php?';
         </script>
       <?php 
     }
