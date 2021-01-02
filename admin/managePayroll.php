@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
-//$user_id = $_SESSION['user_id'];
 include("add_employee.php");
+$user_id = $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -165,12 +165,13 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
         <tbody>
           <?php
 
-$query = mysqli_query($con, "SELECT * from user_account;");
+$query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employee';");
 
-          while($row=mysqli_fetch_assoc($query))
+          if(mysqli_num_rows($query)>0)
           {
-              switch ($row['user_type']) {
-                case 'Employee':
+            while($row=mysqli_fetch_assoc($query))
+            {
+            
           ?>
 
           <tr>
@@ -178,8 +179,6 @@ $query = mysqli_query($con, "SELECT * from user_account;");
             <td align="center"><h5><?php echo $row['user_name'] ?></h5></td>
             <td align="center"><h5><?php echo $row['user_password'] ?></h5></td>
             <td align="center"><h5><?php
-              $query = mysqli_query($con, "SELECT * from user_account, employee WHERE user_account.user_id = employee.user_id;");
-              $avail=mysqli_fetch_assoc($query)
 
             ?></h5></td>
             <td align="center">
@@ -187,7 +186,7 @@ $query = mysqli_query($con, "SELECT * from user_account;");
             </td>
           </tr>
 
-          <?php break; } } ?>
+          <?php } } ?>
         </tbody>
 
       </table>
