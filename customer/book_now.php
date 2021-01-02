@@ -45,42 +45,42 @@ $counter = 1;
       foreach ($output as $key => $value) {
 
         // //get the employee who's job description same to the specific service_type;
-        //  $get_service = "SELECT * FROM service WHERE service_id = '$key'";
-        //  $service_result = mysqli_query($con,$get_service);
-        //  $type_service = "";
-        //  while ($row = mysqli_fetch_assoc($service_result)) {
-        //   $service = $row['type_id'];
-        //
-        //    if($service == 1){
-        //      $type_service = "Color";
-        //    }
-        //    elseif ($service == 2) {
-        //      $type_service = "Styling";
-        //   }
-        //   elseif ($service == 3) {
-        //      $type_service = "Waxing";
-        //    }
-        //
-        //    elseif ($service == 4) {
-        //     $type_service = "Extensions";
-        //    }
-        //
-        //   elseif ($service == 5) {
-        //      $type_service = "Design";
-        //   }
-        //
-        //    else{
-        //      $type_service = "Grooming";
-        //    }
-        //
-        //  }
-        //
-        //  $get_employee = "SELECT * FROM employee where job_description LIKE '$type_service'";
-        //  $result_employee = mysqli_query($con,$get_employee);
-        //  $emp_id = 0;
-        //  while ($row = mysqli_fetch_assoc($result_employee)) {
-        // $emp_id = $row['employee_id'];
-        // }
+         $get_service = "SELECT * FROM services WHERE service_id = '$key'";
+         $service_result = mysqli_query($con,$get_service);
+         $type_service = "";
+         while ($row = mysqli_fetch_assoc($service_result)) {
+          $service = $row['type_id'];
+
+           if($service == 1){
+             $type_service = "Color";
+           }
+           elseif ($service == 2) {
+             $type_service = "Styling";
+          }
+          elseif ($service == 3) {
+             $type_service = "Waxing";
+           }
+
+           elseif ($service == 4) {
+            $type_service = "Extensions";
+           }
+
+          elseif ($service == 5) {
+             $type_service = "Design";
+          }
+
+           else{
+             $type_service = "Grooming";
+           }
+
+         }
+
+         $get_employee = "SELECT * FROM employee where job_description LIKE '$type_service'";
+         $result_employee = mysqli_query($con,$get_employee);
+         $emp_id = 0;
+         while ($row = mysqli_fetch_assoc($result_employee)) {
+        $emp_id = $row['employee_id'];
+        }
 
 
 
