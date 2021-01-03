@@ -8,12 +8,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $address = $_POST['address'];
     $email = $_POST['email'];
     $phone = $_POST['p_number'];
-    $user_type = "";
+    $user_type = "Customer";
 
     $user_id = 0;
-    if($_POST['user_type'] == ""){
+    if($user_type == "Customer"){
       $user_type = "Customer";
-      $query = "INSERT INTO user_account VALUES (NULL,'$username', '$password', '$user_type',CURRENT_TIMESTAMP())";
+      $query = "INSERT INTO user_account VALUES (NULL,'$username', '$password', '$user_type',CURRENT_TIMESTAMP(),'0')";
       mysqli_query($con,$query);
 
       $query_user = "SELECT * FROM user_account where user_name LIKE '$username' AND user_password LIKE '$password'";

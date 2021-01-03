@@ -23,15 +23,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $sql = "INSERT INTO payment_details VALUES(NULL,'$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP())";
       mysqli_query($con,$sql);
 
-      // //getting the payment_id using $date_sched
-       $payment= "SELECT * FROM payment_details where booking_sched = '$date_sched'";
-       $get_payment = mysqli_query($con,$payment);
 
+      $get_update = substr_replace($date_sched," ",10,1);
+      $final_date = $get_update.":00";
+
+
+      // //getting the payment_id using $date_sched
+       $payment= "SELECT * FROM payment_details where booking_sched LIKE '$final_date'";
+       $get_payment = mysqli_query($con,$payment);
+       $payment_id = 0;
        while ($row = mysqli_fetch_assoc($get_payment)) {
+
         $payment_id = $row['payment_id'];
       }
-       $update_booking = "SELECT * FROM bookings where date_sched LIKE 'date_sched'";
-       $get_result = mysqli_query($con,$get_result);
+       $update_booking = "SELECT * FROM bookings where date_sched LIKE '$final_date'";
+       $get_result = mysqli_query($con,$update_booking);
 
 
        while ($row = mysqli_fetch_assoc($get_result)) {
@@ -51,6 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          $query_salary = "SELECT * FROM salary where employee_id = '$employee_id'";
          $salary_result = mysqli_query($con,$query_salary);
 
+         $test = 1;
          if($salary_result && mysqli_num_rows($salary_result) > 0){
              $user_data = mysqli_fetch_assoc($salary_result);
 
@@ -59,25 +66,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              mysqli_query($con,$salary);
          }
          else {
-             $salary = "INSERT INTO salary VALUES(NULL,1,'$rate','$commission_rate','$employee_id', $payment_id)";
+             $salary = "INSERT INTO salary VALUES(NULL,'$test','$rate','$commission_rate','$employee_id', $payment_id)";
              mysqli_query($con,$salary);
          }
 
       }
 
+
       if(isset($_SESSION['date_sched'])){
         $date_sched =  $_SESSION['date_sched'];
         unset($_SESSION['date_sched']);
       }
-      header("Location: \\Web_HairSalon\\customer\\book_now.php");
-      //globalization of var
+      // header("Location: \\Web_HairSalon\\customer\\book_now.php");
+
       if(isset($_SESSION['counter'])){
               unset($_SESSION['counter']);
             }
-      if(isset($_SESSION['count'])){
-
-            unset($_SESSION['count']);
-      }
             $_SESSION['Paid Successfully'] = 1;
             header("Location: \\Web_HairSalon\\customer\\payment.php");
       die;

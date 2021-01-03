@@ -6,8 +6,8 @@ $counter = "";
 $book_2 = "";
 $book_3 = "";
 
-if(isset($_SESSION['count'])){
-  $counter = $_SESSION['count'];
+if(isset($_SESSION['counter'])){
+  $counter = $_SESSION['counter'];
 }
 
 if(isset($_SESSION['date_sched'])){
