@@ -1,6 +1,5 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
-include("add_employee.php");
 $user_id = $_SESSION['user_id'];
 ?>
 
@@ -43,12 +42,10 @@ $user_id = $_SESSION['user_id'];
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
-
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+<br><hr>
+<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #fff; border-radius: 10px;">
 <form class="form-horizontal">
               <fieldset>
-
-                <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Add New</button>
 
                 <p align="center"><big><b>List of Employed Employees</b></big></p>
                 <div class="table-responsive">
@@ -98,105 +95,8 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
               </fieldset>
             </form>
 
-
-      <!-- this modal is for ADDING an EMPLOYEE -->
-      <div class="modal fade" id="addEmployee" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header" style="padding:20px 50px;">
-              <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-              <h3 align="center"><b>Add Employee</b></h3>
-            </div>
-
-            <div class="modal-body" style="padding:40px 50px;">
-
-              <form class="form-horizontal" action="#" name="form" method="post">
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Username</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="username" class="form-control" placeholder="Username" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Password</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="password" class="form-control" placeholder="Password" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label"></label>
-                  <div class="col-sm-8">
-                    <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                    <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
-                  </div>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
 </div>
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
-<form class="form-horizontal">
-<fieldset>
-
-  <p align="center"><big><b>List of User Account</b></big></p>
-  <div class="table-responsive">
-
-    <form method="" action="" >
-      <table class="table table-bordered table-hover table-condensed" id="">
-
-        <thead>
-          <tr class="info">
-            <th><p align="center">ID</p></th>
-            <th><p align="center">User Name</p></th>
-            <th><p align="center">Password</p></th>
-            <th><p align="center">Status</p></th>
-            <th><p align="center">Action</p></th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-
-$query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employee' AND status='0';");
-
-          if(mysqli_num_rows($query)>0)
-          {
-            while($row=mysqli_fetch_assoc($query))
-            {
-            
-          ?>
-
-          <tr>
-            <td align="center"><h5><?php echo $row['user_id'] ?></h5></td>
-            <td align="center"><h5><?php echo $row['user_name'] ?></h5></td>
-            <td align="center"><h5><?php echo $row['user_password'] ?></h5></td>
-            <td align="center"><h5><?php if($row['status'] == 0){ echo "Unallocated"; }
-              else{
-                echo "Error";
-              }?></h5></td>
-            <td align="center">
-              <a class="btn btn-danger" href="userdel.php?user_id=<?php echo $row["user_id"]; ?>">Delete</a>
-            </td>
-          </tr>
-
-          <?php } } ?>
-        </tbody>
-
-      </table>
-    </form>
-  </div>
-</fieldset>
-</form>
-</div>
-</div>
-
+<hr>
 <!-- FOR DataTable -->
     <script>
       {

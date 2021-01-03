@@ -12,6 +12,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+<link rel="stylesheet" type="text/css" href="../css/evo-calendar.css"/>
+<link rel="stylesheet" type="text/css" href="../css/evo-calendar.royal-navy.css"/>
+
+
 </head>
 
 <body class = "d-flex flex-row h-100">
@@ -36,13 +41,28 @@
 
 <div class="col border border-danger h-100">
 
-<div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
+<div class="container mh-100 p-3" style="background: #0F222D;height:20vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
-
+<div class="mt-4 d-flex justify-content-center" style="background:  #fff;">
+	<div id="calendar"></div>
 </div>
 </div>
+</div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../js/evo-calendar.js"></script>
+
+
+<script>
+    // initialize your calendar, once the page's DOM is ready
+    $(document).ready(function() {
+        $('#calendar').evoCalendar({
+        	'titleFormat': 'MM'            
+        })
+    })
+</script>
 </body>
 </html>
