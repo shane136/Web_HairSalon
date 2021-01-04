@@ -1,6 +1,5 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
-include("add_employee.php");
 $user_id = $_SESSION['user_id'];
 ?>
 
@@ -43,12 +42,10 @@ $user_id = $_SESSION['user_id'];
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
-
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+<br><hr>
+<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #fff; border-radius: 10px;">
 <form class="form-horizontal">
               <fieldset>
-
-                <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Add New</button>
 
                 <p align="center"><big><b>List of Employed Employees</b></big></p>
                 <div class="table-responsive">
@@ -98,50 +95,8 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
               </fieldset>
             </form>
 
-
-      <!-- this modal is for ADDING an EMPLOYEE -->
-      <div class="modal fade" id="addEmployee" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header" style="padding:20px 50px;">
-              <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-              <h3 align="center"><b>Add Employee</b></h3>
-            </div>
-
-            <div class="modal-body" style="padding:40px 50px;">
-
-              <form class="form-horizontal" action="#" name="form" method="post">
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Username</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="username" class="form-control" placeholder="Username" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Password</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="password" class="form-control" placeholder="Password" required="required">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label"></label>
-                  <div class="col-sm-8">
-                    <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                    <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
-                  </div>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
 </div>
+<<<<<<< HEAD
 <div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 <form class="form-horizontal">
 <fieldset>
@@ -197,6 +152,9 @@ $query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employe
 </div>
 </div>
 
+=======
+<hr>
+>>>>>>> 51ec48045834d59d5b6af1678d058ad72a2cd9c8
 <!-- FOR DataTable -->
     <script>
       {

@@ -13,7 +13,7 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
       ?>
         <script>
             alert('Employee had been successfully added.');
-            window.location.href='managePayroll.php?';
+            window.location.href='manageEmployee.php';
         </script>
       <?php 
     }
@@ -23,7 +23,7 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
       ?>
         <script>
             alert('Invalid.');
-            window.location.href='managePayroll.php';
+            window.location.href='manageEmployee.php';
         </script>
       <?php 
     }

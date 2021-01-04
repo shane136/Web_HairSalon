@@ -3,5 +3,5 @@
 	$id=$_GET['user_id'];
 	$query = "DELETE FROM user_account WHERE user_id=$id"; 
 	$result = mysqli_query($con,$query) or die ( mysqli_error());
-	header("Location: managePayroll.php"); 
+	header("Location: manageEmployee.php"); 
 ?>
