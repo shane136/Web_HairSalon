@@ -1,4 +1,18 @@
+<?php
+require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
+$user_id = $_SESSION['user_id'];
 
+$emp = "SELECT * FROM employee WHERE user_id = '$user_id'";
+$get_result = mysqli_query($con, $emp);
+while($row = mysqli_fetch_assoc($get_result)){
+  $emp_id = $row['employee_id'];
+}
+$payroll = "SELECT * FROM payroll_record WHERE employee_id = '$emp_id'";
+$payroll_result = mysqli_query($con, $payroll);
+while($rows = mysqli_fetch_assoc($payroll_result)){
+  $payroll_date = $rows['payroll_date'];
+}
+ ?>
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
 <head>
@@ -28,8 +42,6 @@
 
 <a href="" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>
 
-
-
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
 
 </div>
@@ -40,9 +52,95 @@
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
+</div>
 
+
+<div class="container  p-3" style="background: #0F222D;height: 75%;">
+     <!-- <form class="" action="\Web_HairSalon\conn\payroll.php" method="post"> -->
+
+       <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+       <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+<div class="row">
+ <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+     <div class="row">
+         <div class="col-xs-6 col-sm-6 col-md-6">
+             <address>
+                 <strong>J.HairSalon</strong>
+                 <br>
+                 <!-- Employee Name:
+                 <br> -->
+                 <!-- Philippines
+                 <br>
+                 <abbr title="Phone">P.:</abbr> (213) 484-6829
+             </address> -->
+         </div>
+
+         <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+              <p class="" style="color:black">Payroll Date: <?php echo "$payroll_date"; ?></p>
+         </div>
+
+     </div>
+
+     <div class="row">
+         <div class="text-center">
+             <h1>Payroll Record</h1>
+         </div>
+         </span>
+         <table class="table table-hover">
+             <thead>
+                 <tr>
+                     <th class="text-center">Employee Name</th>
+                     <th class="text-center">Total Salary</th>
+
+                 </tr>
+             </thead>
+             <tbody>
+               <?php
+
+
+                $emp = "SELECT * FROM employee WHERE user_id = '$user_id'";
+                $get_result = mysqli_query($con, $emp);
+                while($row = mysqli_fetch_assoc($get_result)){
+                  $emp_id = $row['employee_id'];
+                  $fname = $row['f_name'];
+                  $lname = $row['l_name'];
+                }
+                $fullname = $fname." ".$lname;
+                $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$emp_id'";
+                $payroll_result = mysqli_query($con, $payroll);
+                while($rows = mysqli_fetch_assoc($payroll_result)){
+                  $total_salary = $rows['total_salary'];
+                  
+
+
+                ?>
+                 <tr>
+
+                     <td class="text-center"><?php echo "$fullname"; ?></td>
+                     <td class="text-center"><?php echo "$total_salary"; ?></td>
+
+                 </tr>
+                  <?php
+                   }
+
+                 ?>
+                 <tr>
+                     <td>   </td>
+                     <td>   </td>
+                     <!-- <td class="text-center"><h4><strong>Total: PHP  </strong></h4></td> -->
+                 </tr>
+
+             </tbody>
+         </table>
+     </div>
+   </div>
+ </div>
 </div>
-</div>
+
+
 
 </body>
 </html>

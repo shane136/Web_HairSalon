@@ -2,6 +2,7 @@
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
 $counter = 1;
+$service_empty = 1;
   if(isset($_GET['pid'])){
       $user_id = $_SESSION['user_id'];
       $product_id = $_GET['pid'];
@@ -28,6 +29,7 @@ $counter = 1;
       for($i = 0; $i < count($prod_id); $i++){
           $output = array_count_values($cart_items);
       }
+      $_SESSION['output'] = $output;
 
       $sql = "SELECT * FROM customer where user_id = '$user_id'";
       $result = mysqli_query($con,$sql);
@@ -104,6 +106,15 @@ $counter = 1;
       $email = $rows['email'];
       $address = $rows['address'];
       // $address
+  }
+  if(isset($_SESSION['final_output'])){
+    $output = $_SESSION['final_output'];
+    unset($_SESSION['final_output']);
+    $product_id = 1;
+  }
+  if(isset($_SESSION['transaction'])){
+    $counter = $_SESSION['transaction'];
+    unset($_SESSION['transaction']);
   }
 ?>
 
@@ -210,6 +221,9 @@ $counter = 1;
                    <?php
                   }
                   }
+                  else{
+                      $service_empty = 0;
+                  }
                     ?>
                  </div>
 
@@ -222,6 +236,8 @@ $counter = 1;
                    <p class="col m-2">Total Amount:</p>
                    <p class="col m-2"><?php echo $total;?></p>
 
+
+                   <input type="hidden" name="service" value="<?php echo"$service_empty"; ?>">
                    <input type="hidden" name="counter" value="<?php echo"$counter";?>">
                    <input type="hidden" name="total_amount" value="<?php echo "$total";?>">
 
@@ -290,7 +306,6 @@ $counter = 1;
              $temp = substr($date_sched,0,11);
              $check_time = substr($date_sched,14,2);
              $time_get = $temp. " ".$time. ":".$check_time. " AM ";
-
            }
            elseif($time == 12) {
              $temp = substr($date_sched,0,16);
@@ -328,8 +343,9 @@ $counter = 1;
 
   <?php if(isset($_SESSION['book'])){
         if ($_SESSION['book'] == 2) {
-          ?>alert('Book Not Successful');<?php
+          ?>alert('Schedule is not Available');<?php
         }
+
     ?>
       console.log(<?php echo $_SESSION['book']; ?>);
     <?php

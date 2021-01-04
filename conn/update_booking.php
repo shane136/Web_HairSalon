@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   $counter = $_POST['counter'];
   $date_sched = $_POST['date_sched'];
+  $service_empty = $_POST['service'];
   // echo "<br>";
   // echo "date_sched";
 
@@ -66,7 +67,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
 
   }
-
+  if($service_empty == 0){
+    header("Location: \\Web_HairSalon\\customer\\book_now.php");
+    die;
+  }
   if ($tester == 0) {
     $sql = "UPDATE bookings set date_sched = '$date_sched' WHERE counter = '$counter'";
     mysqli_query($con,$sql);
@@ -81,10 +85,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   else {
     // $_SESSION['Book Successfully'] = 2;
+    $output= array();
 
+    $output = $_SESSION['output'];
+    $_SESSION['final_output'] = $output;
+    unset($_SESSION['output']);
     $_SESSION['book'] = 2;
+    $_SESSION['transaction'] = $counter;
     header("Location: \\Web_HairSalon\\customer\\book_now.php");
     die;
+
   }
 
 }

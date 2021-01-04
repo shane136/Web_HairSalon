@@ -171,10 +171,14 @@ while($rows = mysqli_fetch_assoc($result)){
                           $check_time = substr($date,14,2);
                           $time_get = $temp. " ".$time. ":".$check_time. " AM";
                         }
+                        elseif($time == 12) {
+                          $temp = substr($date_sched,0,16);
+                          $time_get = $temp." ". " NN";
+                        }
                         else {
                           $temp = substr($date,0,11);
                           $time = substr($date,11,5);
-                          $time_get = $temp." ".$time ." NN ";
+                          $time_get = $temp." ".$time ." AM ";
                         }
                        ?>
                         <tr>
