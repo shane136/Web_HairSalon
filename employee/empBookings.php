@@ -21,7 +21,7 @@
 
 <body class = "d-flex flex-row h-100">
 
-<div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+<div class="col-2 border border-danger flex-column d-flex"style="height:126%;background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
 
@@ -39,12 +39,13 @@
 
 </div>
 
-<div class="col border border-danger h-100">
+<div class="col border border-danger" style= "height: 126%;">
 
 <div class="container mh-100 p-3" style="background: #0F222D;height:20vh;">
-<div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
+<div class="h-100 rounded d-flex justify-content-center" style="background:#ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
+
 <div class="mt-4 d-flex justify-content-center" style="background:  #fff;">
 	<div id="calendar"></div>
 </div>
@@ -60,7 +61,7 @@
     // initialize your calendar, once the page's DOM is ready
     $(document).ready(function() {
         $('#calendar').evoCalendar({
-        	'titleFormat': 'MM'            
+        	'titleFormat': 'MM'
         })
     })
 </script>

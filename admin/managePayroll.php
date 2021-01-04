@@ -20,7 +20,7 @@ $user_id = $_SESSION['user_id'];
 
 <body class = "d-flex flex-row h-100">
 
-<div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+<div class="col-2 border border-danger flex-column d-flex"style="height:120%;background: #ffe6e6 !important;">
 
 <a href="\Web_HairSalon\admin\index.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Home</small></p></a>
 
@@ -96,7 +96,7 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
             </form>
 
 </div>
-<<<<<<< HEAD
+
 <div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
 <form class="form-horizontal">
 <fieldset>
@@ -152,9 +152,9 @@ $query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employe
 </div>
 </div>
 
-=======
+
 <hr>
->>>>>>> 51ec48045834d59d5b6af1678d058ad72a2cd9c8
+
 <!-- FOR DataTable -->
     <script>
       {
