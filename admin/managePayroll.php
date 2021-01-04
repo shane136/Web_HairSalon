@@ -170,7 +170,7 @@ $query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employe
           {
             while($row=mysqli_fetch_assoc($query))
             {
-            
+
           ?>
 
           <tr>
