@@ -1,6 +1,16 @@
 <?php 
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 	$id=$_GET['employee_id'];
+
+  $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id'";
+  $payroll_result = mysqli_query($con, $payroll);
+  $rawr = mysqli_fetch_assoc($payroll_result);
+$checker=mysqli_num_rows($payroll_result);
+  if ($checker>0) {    
+    $rawl=$rawr['payroll_date'];
+  }else{
+    $rawl='New Employee';
+  }
 ?>
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
@@ -33,16 +43,33 @@
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div style="width:450px;height:100%; text-align:left; margin: auto; padding: 10px;">
+<div class="mt-5" style="width:550px;height:100%; text-align:left; margin: auto; padding: 10px;">
 <?php
     $id=$_REQUEST['employee_id'];
     $query = "SELECT * from employee where employee_id='".$id."'";
     $result = mysqli_query($con, $query) or die ( mysql_error());
 ?>
-          <form style="margin: auto; padding: 10px;" action="update_account.php" method="post" name="form">
+<form class="" style="" action="update_account.php" method="post" name="form">
+<div style="border: 1px solid #000; border-radius: 20px; padding: 50px; height: 500px;">
+     <div class="row">
+         <div class="col-sm-6">
+             <address>
+                 <strong>J.HairSalon</strong>
+                 <br>
+                 <!-- Employee Name:
+                 <br> -->
+                 <!-- Philippines
+                 <br>
+                 <abbr title="Phone">P.:</abbr> (213) 484-6829
+             </address> -->
+         </div>
+         <div class="col-sm-6 text-right">
+              <p class="" style="color:black">Payroll Date: <?php echo $rawl; ?></p>
+         </div>
+</div>
 <div class="row">
  <div class="text-center">
-     <h1>Payroll Record</h1>
+     <h1>Payroll</h1>
  </div>
          </span>
   <table class="table table-hover">
@@ -54,28 +81,28 @@
          </tr>
      </thead>
      <tbody>
-       <?php
-        $emp = "SELECT * FROM employee WHERE employee_id = '$id'";
-        $get_result = mysqli_query($con, $emp);
-        while($row = mysqli_fetch_assoc($get_result)){
-          $emp_id = $row['employee_id'];
-          $fname = $row['f_name'];
-          $lname = $row['l_name'];
-        }
-        $fullname = $fname." ".$lname;
+<?php
+  $emp = "SELECT * FROM employee WHERE employee_id = '$id'";
+  $get_result = mysqli_query($con, $emp);
+  while($row = mysqli_fetch_assoc($get_result)){
+  $emp_id = $row['employee_id'];
+  $fname = $row['f_name'];
+  $lname = $row['l_name'];
+  }
+  
+  $fullname = $fname." ".$lname;
         $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id'";
         $payroll_result = mysqli_query($con, $payroll);
         while($rows = mysqli_fetch_assoc($payroll_result)){
           $total_salary = $rows['total_salary'];                  
-        ?>
+?>
          <tr>
 
              <td class="text-center"><?php echo "$fullname"; ?></td>
              <td class="text-center"><?php echo "$total_salary"; ?></td>
-
          </tr>
 <?php
- }
+}
 ?>
      </tbody>
   </table>

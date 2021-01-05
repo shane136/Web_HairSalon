@@ -70,6 +70,8 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                             $lname  =$row['l_name'];
                             $fname  =$row['f_name'];
                             $type   =$row['job_type'];
+
+      if ($row['status']==1) {
                         ?>
 
                         <tr>
@@ -80,7 +82,7 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                           </td>
                         </tr>
 
-                        <?php } ?>
+                        <?php } } ?>
                       </tbody>
 
                     </table>
