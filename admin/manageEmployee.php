@@ -65,7 +65,6 @@ $resultCount = mysqli_num_rows($all_products);
                                 <th>Address</th>
                                 <th>Contact No.</th>
                                 <th>User Name</th>
-                                <th>Password</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -74,6 +73,7 @@ $resultCount = mysqli_num_rows($all_products);
                         		if($resultCount>0){
 
                         			while ($products = mysqli_fetch_assoc($all_products)) {
+                                if ($products['status']==1) {                                
                         				echo '<tr>';
                         				echo '<td>'.$products['employee_id'].'</td>';
 	                            		echo '<td>'.$products['f_name']." ".$products['l_name'].'</td>';
@@ -81,12 +81,11 @@ $resultCount = mysqli_num_rows($all_products);
 	                            		echo '<td>'.$products['address'].'</td>';
 	                            		echo '<td>'.$products['phone_number'].'</td>';
 	                            		echo '<td>'.$products['user_name'].'</td>';
-	                            		echo '<td class="hidetext" style="-webkit-text-security: disc;">'.$products['user_password'].'</td>';
 ?>
-    <td align="center"><a class="btn btn-primary" href=".php?employee_id=<?php echo $products["employee_id"]; ?>">Account</a>
-    <a class="btn btn-danger" href="delete.php?employee_id=<?php echo $products["employee_id"]; ?>">Delete</a></td>
+    <td align="center"><a class="btn btn-danger" href="delete.php?employee_id=<?php echo $products["employee_id"]; ?>">Delete</a></td>
 <?php
 	                            		echo '</tr>';
+                                  }
                         			}
                         		}
                         	?>

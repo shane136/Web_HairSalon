@@ -1,18 +1,7 @@
 <?php 
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 	$id=$_GET['employee_id'];
-
-$sql = mysqli_query($con, "SELECT * from deductions WHERE deduction_id='1'");
-  while($row = mysqli_fetch_array($sql))
-  {
-    $phil = $row['philhealth'];
-    $bir = $row['bir'];
-    $gsis = $row['gsis'];
-    $love = $row['pag_ibig'];
-    $loans = $row['loans'];
-  }
 ?>
-
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
 <head>
@@ -49,64 +38,48 @@ $sql = mysqli_query($con, "SELECT * from deductions WHERE deduction_id='1'");
     $id=$_REQUEST['employee_id'];
     $query = "SELECT * from employee where employee_id='".$id."'";
     $result = mysqli_query($con, $query) or die ( mysql_error());
-
-    $query  = mysqli_query($con, "SELECT * from overtime");
-    while($row=mysqli_fetch_array($query))
-    {
-      $rate   = $row['rate'];
-    }
-
-    $query  = mysqli_query($con, "SELECT * from salary");
-    while($row=mysqli_fetch_array($query))
-    {
-      $salary   = $row['commission_rate'];
-    }
-
-    while ($row = mysqli_fetch_assoc($result))
-    {
-        $overtime     = $row['overtime'] * $rate;
-        $deduction  = $row['deduction'];
-        $income   = $overtime  + $salary;
-        $netpay   = $income - $deduction;
-      ?>
-
+?>
           <form style="margin: auto; padding: 10px;" action="update_account.php" method="post" name="form">
-            <input type="hidden" name="new" value="1" />
-            <input name="id" type="hidden" value="<?php echo $row['employee_id'];?>" />
-              <div class="">
-                <label class="col-sm-1 control-label"></label>
-                <div class="col-sm-0">
-                  <h2><?php 
-                  echo $row['l_name']; ?>, <?php echo $row['f_name']; ?></h2>
-                </div>
-              </div>
-              <div class="">
-                <label class="col-sm-0 control-label">Deduction/s  :</label>
-                <div class="col-sm-0">
-                <select name="deduction" class="form-control" required>
-                  <option value=""><?php echo $row['deduction'];?></option>
-                  <option value="<?php echo $phil; ?>">PhilHealth</option>
-                  <option value="<?php echo $bir; ?>">BIR</option>
-                  <option value="<?php echo $gsis; ?>">GSIS</option>
-                  <option value="<?php echo $love; ?>">PAG-IBIG</option>
-                  <option value="<?php echo $loans; ?>">Loans</option>
-                </select>
-              </div>
-              </div>
-              <div class="">
-                <label class="col-sm-0 control-label">Overtime  :</label>
-                <div class="col-sm-0">
-                  <input type="text" name="overtime" class="form-control" value="<?php echo $row['overtime'];?>" required="required">
-                </div>
-              </div>
-              <br><br>
+<div class="row">
+ <div class="text-center">
+     <h1>Payroll Record</h1>
+ </div>
+         </span>
+  <table class="table table-hover">
+     <thead>
+         <tr>
+             <th class="text-center">Employee Name</th>
+             <th class="text-center">Total Salary</th>
 
-              <div class="">
-                <label class="col-sm-0 control-label">Netpay  :</label>
-                <div class="col-sm-0">
-                  <?php echo $netpay;?>.00
-                </div>
-              </div><br><br>
+         </tr>
+     </thead>
+     <tbody>
+       <?php
+        $emp = "SELECT * FROM employee WHERE employee_id = '$id'";
+        $get_result = mysqli_query($con, $emp);
+        while($row = mysqli_fetch_assoc($get_result)){
+          $emp_id = $row['employee_id'];
+          $fname = $row['f_name'];
+          $lname = $row['l_name'];
+        }
+        $fullname = $fname." ".$lname;
+        $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id'";
+        $payroll_result = mysqli_query($con, $payroll);
+        while($rows = mysqli_fetch_assoc($payroll_result)){
+          $total_salary = $rows['total_salary'];                  
+        ?>
+         <tr>
+
+             <td class="text-center"><?php echo "$fullname"; ?></td>
+             <td class="text-center"><?php echo "$total_salary"; ?></td>
+
+         </tr>
+<?php
+ }
+?>
+     </tbody>
+  </table>
+</div>
               <div style="text-align: right;">
                 <label class="col-sm-5 control-label"></label>
                 <div class="col-sm-0">
@@ -115,9 +88,9 @@ $sql = mysqli_query($con, "SELECT * from deductions WHERE deduction_id='1'");
                 </div>
               </div>
           </form>
-        <?php
-      }
-    ?>
+<?php
+
+?>
 </div>
 </div>
 

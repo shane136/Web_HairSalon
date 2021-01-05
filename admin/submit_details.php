@@ -8,9 +8,9 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
   $address = $_POST['address'];
   $phone_number	 = $_POST['p_number'];
   $job_type			 = $_POST['job_type'];
-  $employee_type = $_POST['emp_type'];
 
-  $sql = mysqli_query($con, "INSERT INTO employee(employee_id, f_name, l_name, email, address, phone_number, user_id, job_type, deduction, employee_type, overtime) VALUES(NULL, '$f_name', '$l_name', '$email', '$address', '$phone_number', '$user_id', '$job_type', 0, '$employee_type', 0);");
+
+  $sql = mysqli_query($con, "INSERT INTO employee(employee_id, f_name, l_name, email, address, phone_number, user_id, job_type) VALUES(NULL, '$f_name', '$l_name', '$email', '$address', '$phone_number', '$user_id', '$job_type');");
 
   mysqli_query($con, "UPDATE user_account SET status=1 WHERE user_id='$user_id';");
 

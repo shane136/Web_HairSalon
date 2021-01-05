@@ -4,7 +4,6 @@
 $query = "SELECT * FROM user_account WHERE user_id='$user_id';";
 $sql = mysqli_query($con, $query);
 $row = mysqli_fetch_assoc($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -72,19 +71,6 @@ $row = mysqli_fetch_assoc($sql);
             <label for="phone_number">Email:</label>
             <input type="text" name="email" id="p_number"  required/>
         </div>
-
-        <div class="form-group">
-          <label class="control-label">Employee Type:</label>
-          <div class="col-sm-8">
-            <select name="emp_type" class="form-control-sm" placeholder="Employee Type" required>
-              <option value="">Employee Type</option>
-              <option value="Job Order">Job Order</option>
-              <option value="Regular">Regular</option>
-              <option value="Casual">Casual</option>
-            </select>
-          </div>
-        </div>
-
 
         <div class="form-group">
           <label class="control-label">Job Type:</label>

@@ -57,14 +57,11 @@ $user_id = $_SESSION['user_id'];
                         <tr class="info">
                           <th><p align="center">Name</p></th>
                           <th><p align="center">Job Type</p></th>
-                          <th><p align="center">Employee</p></th>
-                          <th><p align="center">Deduction</p></th>
                           <th><p align="center">Action</p></th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php
-
 $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee.user_id = user_account.user_id;");
 
                         while($row=mysqli_fetch_assoc($query))
@@ -73,14 +70,11 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                             $lname  =$row['l_name'];
                             $fname  =$row['f_name'];
                             $type   =$row['job_type'];
-                            $deduction   =$row['deduction'];
                         ?>
 
                         <tr>
                           <td align="center"><h5><?php echo $row['l_name'] ?>,  <?php echo $row['f_name'] ?></h5></td>
                           <td align="center"><h5><?php echo $row['job_type'] ?></h5></td>
-                          <td align="center"><h5><?php echo $row['employee_type'] ?></h5></td>
-                          <td align="center"><h5><?php echo $row['deduction'] ?></h5></td>
                           <td align="center">
                             <a class="btn btn-primary" href="view_account.php?employee_id=<?php echo $row["employee_id"]; ?>">Account</a>
                           </td>
@@ -97,59 +91,6 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
 
 </div>
 
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
-<form class="form-horizontal">
-<fieldset>
-
-  <p align="center"><big><b>List of User Account</b></big></p>
-  <div class="table-responsive">
-
-    <form method="" action="" >
-      <table class="table table-bordered table-hover table-condensed" id="">
-
-        <thead>
-          <tr class="info">
-            <th><p align="center">ID</p></th>
-            <th><p align="center">User Name</p></th>
-            <th><p align="center">Password</p></th>
-            <th><p align="center">Status</p></th>
-            <th><p align="center">Action</p></th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-
-$query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employee' AND status='0';");
-
-          if(mysqli_num_rows($query)>0)
-          {
-            while($row=mysqli_fetch_assoc($query))
-            {
-
-          ?>
-
-          <tr>
-            <td align="center"><h5><?php echo $row['user_id'] ?></h5></td>
-            <td align="center"><h5><?php echo $row['user_name'] ?></h5></td>
-            <td align="center"><h5><?php echo $row['user_password'] ?></h5></td>
-            <td align="center"><h5><?php if($row['status'] == 0){ echo "Unallocated"; }
-              else{
-                echo "Error";
-              }?></h5></td>
-            <td align="center">
-              <a class="btn btn-danger" href="userdel.php?user_id=<?php echo $row["user_id"]; ?>">Delete</a>
-            </td>
-          </tr>
-
-          <?php } } ?>
-        </tbody>
-
-      </table>
-    </form>
-  </div>
-</fieldset>
-</form>
-</div>
 </div>
 
 
