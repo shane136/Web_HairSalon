@@ -16,7 +16,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else {
       $payment_type = "Mobile Cash";
     }
-    if($cash >= $total_amount){
+    $restriction = 99999; //of input cash_amount
+    if(($cash >= $total_amount) && ($restriction >= $cash)) {
       $paid = "Paid";
       $update_bookings = "UPDATE bookings set status = '$paid' where counter = '$counter'";
       mysqli_query($con,$update_bookings);

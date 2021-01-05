@@ -7,6 +7,7 @@ $get_result = mysqli_query($con, $emp);
 while($row = mysqli_fetch_assoc($get_result)){
   $emp_id = $row['employee_id'];
 }
+$payroll_date = "";
 $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$emp_id'";
 $payroll_result = mysqli_query($con, $payroll);
 while($rows = mysqli_fetch_assoc($payroll_result)){
@@ -113,7 +114,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                 $payroll_result = mysqli_query($con, $payroll);
                 while($rows = mysqli_fetch_assoc($payroll_result)){
                   $total_salary = $rows['total_salary'];
-                  
+
 
 
                 ?>

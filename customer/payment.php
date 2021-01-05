@@ -3,8 +3,8 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $date_sched = "";
 $user_id = $_SESSION['user_id'];
 $counter = "";
-$book_2 = "";
-$book_3 = "";
+$book_2 = "";//book_date
+$book_3 = ""; //Receipt_date
 
 if(isset($_SESSION['counter'])){
   $counter = $_SESSION['counter'];
@@ -244,7 +244,7 @@ while($rows = mysqli_fetch_assoc($result)){
         ?>alert('Paid Successfully');<?php
       }
       else {
-        ?> alert('Paid Not Successful');<?php
+        ?> alert('Input Valid Amount of Cash');<?php
       }
   ?>
     console.log(<?php echo $_SESSION['Paid Successfully']; ?>);
