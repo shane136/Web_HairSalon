@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $restriction = 99999; //of input cash_amount
     if(($cash >= $total_amount) && ($restriction >= $cash)) {
       $paid = "Paid";
-      $update_bookings = "UPDATE bookings set status = '$paid' where counter = '$counter'";
+      $update_bookings = "UPDATE bookings set status = '$paid' where transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
       mysqli_query($con,$update_bookings);
       $sql = "INSERT INTO payment_details VALUES(NULL,'$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP())";
       mysqli_query($con,$sql);
