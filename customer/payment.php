@@ -134,7 +134,7 @@ while($rows = mysqli_fetch_assoc($result)){
                     <tbody>
                       <?php
 
-                        $book = "SELECT * from bookings WHERE counter = '$counter'";
+                        $book = "SELECT * from bookings WHERE transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
                         $get_result = mysqli_query($con, $book);
                         $total_price = 0;
 

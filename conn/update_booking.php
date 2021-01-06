@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     die;
   }
   if ($tester == 0) {
-    $sql = "UPDATE bookings set date_sched = '$date_sched' WHERE counter = '$counter'";
+    $sql = "UPDATE bookings set date_sched = '$date_sched' WHERE transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
     mysqli_query($con,$sql);
 
     $_SESSION['date_sched'] = $date_sched;
