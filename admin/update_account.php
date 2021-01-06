@@ -1,17 +1,11 @@
 <?php 
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
-
-  $id           = $_POST['id'];
-  $deduction    = $_POST['deduction'];
-  $overtime     = $_POST['overtime'];
-
-  $sql = mysqli_query($con, "UPDATE employee SET deduction='$deduction', overtime='$overtime' WHERE employee_id='$id'");
-
-  if ($sql)
+/*
+  if ()
   {
     ?>
     <script>
-      alert('Account successfully updated.');
+      alert('Payroll successfully updated.');
       window.location.href='managePayroll.php';
     </script>
     <?php 
@@ -19,5 +13,5 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
   else
   {
     echo "Invalid";
-  }
+  }*/
 ?>
