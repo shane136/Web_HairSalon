@@ -70,13 +70,32 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                             $lname  =$row['l_name'];
                             $fname  =$row['f_name'];
                             $type   =$row['job_type'];
+                            //manipulation
+                            if($type == 1){
+                              $job_type = "Hair Color"; //tentative hahhahha
+                            }
+                            elseif($type == 2){
+                              $job_type = "Hair Stylist"; //tentative
+                            }
+                            elseif($type == 3){
+                              $job_type = "Waxiest"; //tentative
+                            }
+                            elseif($type == 4){
+                              $job_type = "Extensionist"; //tentative
+                            }
+                            elseif($type == 5){
+                              $job_type = "Designer"; //tentative
+                            }
+                            else{
+                              $job_type = "Groomer"; //tentative //paki change sa naming sa mga job_type
+                            }
 
       if ($row['status']==1) {
                         ?>
 
                         <tr>
                           <td align="center"><h5><?php echo $row['l_name'] ?>,  <?php echo $row['f_name'] ?></h5></td>
-                          <td align="center"><h5><?php echo $row['job_type'] ?></h5></td>
+                          <td align="center"><h5><?php echo "$job_type"; ?></h5></td>
                           <td align="center">
                             <a class="btn btn-primary" href="view_account.php?employee_id=<?php echo $row["employee_id"]; ?>">Account</a>
                           </td>

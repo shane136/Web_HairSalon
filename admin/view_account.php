@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
   include("update_account.php");
   $id=$_GET['employee_id'];
@@ -7,7 +7,7 @@
   $payroll_result = mysqli_query($con, $payroll);
   $rawr = mysqli_fetch_assoc($payroll_result);
 $checker=mysqli_num_rows($payroll_result);
-  if ($checker>0) {    
+  if ($checker>0) {
     $rawl=$rawr['payroll_date'];
   }else{
     $rawl='New Employee';
@@ -57,12 +57,6 @@ $checker=mysqli_num_rows($payroll_result);
              <address>
                  <strong>J.HairSalon</strong>
                  <br>
-                 <!-- Employee Name:
-                 <br> -->
-                 <!-- Philippines
-                 <br>
-                 <abbr title="Phone">P.:</abbr> (213) 484-6829
-             </address> -->
          </div>
 </div>
 <div class="row">
@@ -87,12 +81,12 @@ $checker=mysqli_num_rows($payroll_result);
   $fname = $row['f_name'];
   $lname = $row['l_name'];
   }
-  
+
   $fullname = $fname." ".$lname;
         $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id' ORDER BY payroll_date DESC";
         $payroll_result = mysqli_query($con, $payroll);
         while($rows = mysqli_fetch_assoc($payroll_result)){
-          $total_salary = $rows['total_salary'];                  
+        $total_salary = $rows['total_salary'];
 ?>
          <tr>
 
@@ -116,7 +110,7 @@ $checker=mysqli_num_rows($payroll_result);
           </form>
 <?php
 $checker=mysqli_num_rows($payroll_result);
-  if ($checker>0) {    
+  if ($checker>0) {
     $rawli=$rawr['total_salary'];
   }else{
     $rawli='No Salary';
@@ -135,7 +129,7 @@ $checker=mysqli_num_rows($payroll_result);
 
           <div class="modal-body" style="padding:20px 30px;">
             <form class="form-horizontal" action="#" name="form" method="post">
-              
+
               <div class="form-group">
                 <label class="col-sm-12 control-label">Payroll</label>
                 <div class="col-sm-12">

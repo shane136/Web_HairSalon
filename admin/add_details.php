@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 	$user_id=$_GET['user_id'];
 $query = "SELECT * FROM user_account WHERE user_id='$user_id';";
@@ -56,7 +56,7 @@ $row = mysqli_fetch_assoc($sql);
             <label for="name">Last Name:</label>
             <input type="text" name="l_name" id="name" required/>
         </div>
-            
+
         <div class="form-textbox">
             <label for="name">Address:</label>
             <input type="text" name="address" id="name" required />
@@ -77,12 +77,12 @@ $row = mysqli_fetch_assoc($sql);
           <div class="col-sm-8">
             <select name="job_type" class="form-control-sm" placeholder="Employee Type" required>
               <option value="">Job Type</option>
-              <option value="Color">Color</option>
-              <option value="Waxing">Waxing</option>
-              <option value="Grooming">Grooming</option>
-              <option value="Extensions">Extensions</option>
-              <option value="Styling">Styling</option>
-              <option value="Design">Design</option>
+              <option value="1">Color</option>
+              <option value="2">Waxing</option>
+              <option value="3">Grooming</option>
+              <option value="4">Extensions</option>
+              <option value="5">Styling</option>
+              <option value="6">Design</option>
             </select>
           </div>
         </div>
