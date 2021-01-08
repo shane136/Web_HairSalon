@@ -2,9 +2,6 @@
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
 
-$product_query = "SELECT * from services, service_type WHERE services.type_id = service_type.type_id;";
-$all_products = mysqli_query($con, $product_query);
-$resultCount = mysqli_num_rows($all_products);
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +46,7 @@ $resultCount = mysqli_num_rows($all_products);
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+<div class="col-sm-8 p-1 mt-4" style ="background: #ffe6e6; border-radius: 10px;">
 <div class="card shadow mb-0">
 <div class="card-header py-4">
                 <h9 class="m-0 font-weight-bold text-primary">Services</h9>
@@ -67,6 +64,10 @@ $resultCount = mysqli_num_rows($all_products);
                         </thead>
                         <tbody>
                         	<?php
+$product_query = "SELECT * from services, service_type WHERE services.type_id = service_type.type_id;";
+$all_products = mysqli_query($con, $product_query);
+$resultCount = mysqli_num_rows($all_products);
+
                         		if($resultCount>0){
 
                         			while ($products = mysqli_fetch_assoc($all_products)) {

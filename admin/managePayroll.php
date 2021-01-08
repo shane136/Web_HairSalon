@@ -48,9 +48,9 @@ $user_id = $_SESSION['user_id'];
               <fieldset>
 
                 <p align="center"><big><b>List of Employed Employees</b></big></p>
-                <div class="table-responsive">
+                <div class="table-responsive-sm">
 
-                  <form method="post" action="" >
+                  <form method="post" action="" >                  
                     <table class="table table-bordered table-hover table-condensed" id="myTable">
 
                       <thead>
@@ -105,11 +105,11 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                       </tbody>
 
                     </table>
+                  </div>
                   </form>
                 </div>
               </fieldset>
             </form>
-
 </div>
 
 </div>

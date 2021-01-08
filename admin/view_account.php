@@ -45,11 +45,7 @@ $checker=mysqli_num_rows($payroll_result);
 </div>
 
 <div class="mt-5" style="width:550px;height:100%; text-align:left; margin: auto; padding: 10px;">
-<?php
-    $id=$_REQUEST['employee_id'];
-    $query = "SELECT * from employee where employee_id='".$id."'";
-    $result = mysqli_query($con, $query) or die ( mysql_error());
-?>
+
 <form class="" style="" action="update_account.php" method="post" name="form">
 <div style="border: 1px solid #000; border-radius: 20px; padding: 35px; height: 500px;">
      <div class="row">
@@ -117,23 +113,25 @@ $checker=mysqli_num_rows($payroll_result);
   }
 ?>
 </div>
-<!-- this modal is for ADDING an EMPLOYEE -->
+<!-- this modal is for ADDING an Payroll -->
 <div class="modal fade" id="addPay" role="dialog">
   <div class="modal-dialog">
 <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header" style="padding:15px 30px;">
             <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-            <h3 style="padding: 0px 30% 0px 0px"><b>Add Payroll</b></h3>
+            <h3 style="padding: 10px 30% 0px 0px"><b>Add Payroll</b></h3>
           </div>
 
           <div class="modal-body" style="padding:20px 30px;">
-            <form class="form-horizontal" action="#" name="form" method="post">
+            <form class="form-horizontal" action="#" name="form" method="POST">
+
+<input name="empl_id" type="hidden" value="<?php echo $emp_id;?>" />
 
               <div class="form-group">
                 <label class="col-sm-12 control-label">Payroll</label>
                 <div class="col-sm-12">
-                  <input type="text" name="total_salary" style="text-align: right;" class="form-control" placeholder="Amount" required="required">
+                  <input type="text" name="totalsalary" style="text-align: right;" class="form-control" placeholder="Amount" required="required">
                 </div>
               </div>
 
