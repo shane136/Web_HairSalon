@@ -20,6 +20,21 @@ $user_id = $_SESSION['user_id'];
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+div.form-textbox{
+  margin: 10px;
+  font-size: 20px;
+  padding: 10px 30px 0px 30px;
+}
+input#box{
+  width: 100%;
+  text-align: right;
+}
+input.btn{
+  width: 20%;
+  margin: 10px 40px 0px 0px;
+}
+</style>
 </head>
 
 <body class = "d-flex flex-row h-100">
@@ -115,15 +130,15 @@ $resultCount = mysqli_num_rows($all_products);
       <div class="col-md-12" style="padding: 0px;">
         <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
-          <form method="POST" action="#">
-            <input type="hidden" name="service_id" value="1">
+          <form method="POST" action="addService.php">
+            <input type="hidden" name="type_id" value="1">
             <div class="form-textbox">
               <label for="name">Name:</label>
-              <input type="text" name="service_name" required/>
+              <input type="text" name="service_name" id="box" required/>
             </div>
             <div class="form-textbox">
               <label for="name">Price:</label>
-              <input type="text" name="service_price" required/>
+              <input type="text" name="service_price" id="box" required/>
             </div>
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
@@ -141,15 +156,15 @@ $resultCount = mysqli_num_rows($all_products);
       <div class="col-md-12" style="padding: 0px;">
         <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
-          <form method="POST" action="#">
-            <input type="hidden" name="service_id" value="1">
+          <form method="POST" action="addService.php">
+            <input type="hidden" name="type_id" value="2">
             <div class="form-textbox">
               <label for="name">Name:</label>
-              <input type="text" name="service_name" required/>
+              <input type="text" name="service_name" id="box" required/>
             </div>
             <div class="form-textbox">
               <label for="name">Price:</label>
-              <input type="text" name="service_price" required/>
+              <input type="text" name="service_price" id="box" required/>
             </div>
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
@@ -167,15 +182,15 @@ $resultCount = mysqli_num_rows($all_products);
       <div class="col-md-12" style="padding: 0px;">
         <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
-          <form method="POST" action="#">
-            <input type="hidden" name="service_id" value="1">
+          <form method="POST" action="addService.php">
+            <input type="hidden" name="type_id" value="3">
             <div class="form-textbox">
               <label for="name">Name:</label>
-              <input type="text" name="service_name" required/>
+              <input type="text" name="service_name" id="box" required/>
             </div>
             <div class="form-textbox">
               <label for="name">Price:</label>
-              <input type="text" name="service_price" required/>
+              <input type="text" name="service_price" id="box" required/>
             </div>
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
@@ -193,15 +208,15 @@ $resultCount = mysqli_num_rows($all_products);
       <div class="col-md-12" style="padding: 0px;">
         <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
-          <form method="POST" action="#">
-            <input type="hidden" name="service_id" value="1">
+          <form method="POST" action="addService.php">
+            <input type="hidden" name="type_id" value="4">
             <div class="form-textbox">
               <label for="name">Name:</label>
-              <input type="text" name="service_name" required/>
+              <input type="text" name="service_name" id="box" required/>
             </div>
             <div class="form-textbox">
               <label for="name">Price:</label>
-              <input type="text" name="service_price" required/>
+              <input type="text" name="service_price" id="box" required/>
             </div>
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
@@ -219,15 +234,15 @@ $resultCount = mysqli_num_rows($all_products);
       <div class="col-md-12" style="padding: 0px;">
         <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
-          <form method="POST" action="#">
-            <input type="hidden" name="service_id" value="1">
+          <form method="POST" action="addService.php">
+            <input type="hidden" name="type_id" value="5">
             <div class="form-textbox">
               <label for="name">Name:</label>
-              <input type="text" name="service_name" required/>
+              <input type="text" name="service_name" id="box" required/>
             </div>
             <div class="form-textbox">
               <label for="name">Price:</label>
-              <input type="text" name="service_price" required/>
+              <input type="text" name="service_price" id="box" required/>
             </div>
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
@@ -245,15 +260,15 @@ $resultCount = mysqli_num_rows($all_products);
       <div class="col-md-12" style="padding: 0px;">
         <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
-          <form method="POST" action="#">
-            <input type="hidden" name="service_id" value="1">
+          <form method="POST" action="addService.php">
+            <input type="hidden" name="type_id" value="6">
             <div class="form-textbox">
               <label for="name">Name:</label>
-              <input type="text" name="service_name" required/>
+              <input type="text" name="service_name" id="box" required/>
             </div>
             <div class="form-textbox">
               <label for="name">Price:</label>
-              <input type="text" name="service_price" required/>
+              <input type="text" name="service_price" id="box" required/>
             </div>
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
