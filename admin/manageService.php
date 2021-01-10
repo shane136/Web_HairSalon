@@ -63,6 +63,7 @@ $user_id = $_SESSION['user_id'];
                                 <th>Service Name</th>
                                 <th>Service Price</th>
                                 <th>Type of Service</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,6 +83,9 @@ $resultCount = mysqli_num_rows($all_products);
                                     echo '<td>'.$products['service_name'].'</td>';
                                     echo '<td>'.$products['service_price'].'</td>';
                                     echo '<td>'.$products['type_name'].'</td>';
+?>
+<td><a class="btn btn-danger" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a></td>
+<?php
                                     echo '</tr>'; //dli butngan ug update/add/delete button sa services?
                                     }
                                 }
