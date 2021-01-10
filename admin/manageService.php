@@ -85,7 +85,7 @@ $resultCount = mysqli_num_rows($all_products);
                                     echo '<td>'.$products['service_name'].'</td>';
                                     echo '<td>'.$products['service_price'].'</td>';
                                     echo '<td>'.$products['type_name'].'</td>';
-                                    echo '</tr>';
+                                    echo '</tr>'; //dli butngan ug update/add/delete button sa services?
                                     }
                                 }
                             ?>
@@ -132,6 +132,7 @@ $resultCount = mysqli_num_rows($all_products);
     <div id="menu5" class="tab-pane fade">
       <h3>Menu 5</h3>
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
     </div>
   </div>
         </div>
@@ -149,5 +150,3 @@ $resultCount = mysqli_num_rows($all_products);
 
 </body>
 </html>
-
-//dili butngan ug add/update/delete sa mga services? -> REPLY: 

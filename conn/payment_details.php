@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else {
       $payment_type = "Mobile Cash";
     }
-    $restriction = 99999; //of input cash_amount
+    $restriction = 99999; //of input cash_amount 
     if(($cash >= $total_amount) && ($restriction >= $cash)) {
       $paid = "Paid";
       $update_bookings = "UPDATE bookings set status = '$paid' where transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
