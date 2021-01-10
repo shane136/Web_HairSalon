@@ -113,30 +113,154 @@ $resultCount = mysqli_num_rows($all_products);
         <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
           <form method="POST" action="#">
             <input type="hidden" name="service_id" value="1">
+            <div class="form-textbox">
+              <label for="name">Name:</label>
+              <input type="text" name="service_name" required/>
+            </div>
+            <div class="form-textbox">
+              <label for="name">Price:</label>
+              <input type="text" name="service_price" required/>
+            </div>
+<div style="text-align: right;">
+  <label class="col-sm-5 control-label"></label>
+  <div class="col-sm-0">
+    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
+    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+  </div>
+</div>
           </form>
         </div>
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3>Styling</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="col-md-12" style="padding: 0px;">
+        <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
+        <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
+          <form method="POST" action="#">
+            <input type="hidden" name="service_id" value="1">
+            <div class="form-textbox">
+              <label for="name">Name:</label>
+              <input type="text" name="service_name" required/>
+            </div>
+            <div class="form-textbox">
+              <label for="name">Price:</label>
+              <input type="text" name="service_price" required/>
+            </div>
+<div style="text-align: right;">
+  <label class="col-sm-5 control-label"></label>
+  <div class="col-sm-0">
+    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
+    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+  </div>
+</div>
+          </form>
+        </div>
+      </div>
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3>Waxing</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <div class="col-md-12" style="padding: 0px;">
+        <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
+        <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
+          <form method="POST" action="#">
+            <input type="hidden" name="service_id" value="1">
+            <div class="form-textbox">
+              <label for="name">Name:</label>
+              <input type="text" name="service_name" required/>
+            </div>
+            <div class="form-textbox">
+              <label for="name">Price:</label>
+              <input type="text" name="service_price" required/>
+            </div>
+<div style="text-align: right;">
+  <label class="col-sm-5 control-label"></label>
+  <div class="col-sm-0">
+    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
+    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+  </div>
+</div>
+          </form>
+        </div>
+      </div>
     </div>
     <div id="menu3" class="tab-pane fade">
       <h3>Extensions</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <div class="col-md-12" style="padding: 0px;">
+        <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
+        <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
+          <form method="POST" action="#">
+            <input type="hidden" name="service_id" value="1">
+            <div class="form-textbox">
+              <label for="name">Name:</label>
+              <input type="text" name="service_name" required/>
+            </div>
+            <div class="form-textbox">
+              <label for="name">Price:</label>
+              <input type="text" name="service_price" required/>
+            </div>
+<div style="text-align: right;">
+  <label class="col-sm-5 control-label"></label>
+  <div class="col-sm-0">
+    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
+    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+  </div>
+</div>
+          </form>
+        </div>
+      </div>
     </div>
     <div id="menu4" class="tab-pane fade">
       <h3>Design</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <div class="col-md-12" style="padding: 0px;">
+        <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
+        <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
+          <form method="POST" action="#">
+            <input type="hidden" name="service_id" value="1">
+            <div class="form-textbox">
+              <label for="name">Name:</label>
+              <input type="text" name="service_name" required/>
+            </div>
+            <div class="form-textbox">
+              <label for="name">Price:</label>
+              <input type="text" name="service_price" required/>
+            </div>
+<div style="text-align: right;">
+  <label class="col-sm-5 control-label"></label>
+  <div class="col-sm-0">
+    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
+    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+  </div>
+</div>            
+          </form>
+        </div>
+      </div>
     </div>
     <div id="menu5" class="tab-pane fade">
       <h3>Grooming</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-
+      <div class="col-md-12" style="padding: 0px;">
+        <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
+        <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
+          <form method="POST" action="#">
+            <input type="hidden" name="service_id" value="1">
+            <div class="form-textbox">
+              <label for="name">Name:</label>
+              <input type="text" name="service_name" required/>
+            </div>
+            <div class="form-textbox">
+              <label for="name">Price:</label>
+              <input type="text" name="service_price" required/>
+            </div>
+<div style="text-align: right;">
+  <label class="col-sm-5 control-label"></label>
+  <div class="col-sm-0">
+    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
+    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+  </div>
+</div>            
+          </form>
+        </div>
+      </div>
     </div>
   </div>
         </div>
