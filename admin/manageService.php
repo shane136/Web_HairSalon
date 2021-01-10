@@ -135,7 +135,7 @@ $resultCount = mysqli_num_rows($all_products);
     </div>
   </div>
         </div>
-    </div>    
+    </div>
 </div>
 </div>
 </div>
@@ -149,3 +149,5 @@ $resultCount = mysqli_num_rows($all_products);
 
 </body>
 </html>
+
+//dili butngan ug add/update/delete sa mga services? -> REPLY: 
