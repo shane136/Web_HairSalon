@@ -39,12 +39,9 @@ $user_id = $_SESSION['user_id'];
 <a href="../admin/reports.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Sales Reports</small></p></a>
 
 <a href="" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>
-
 </div>
 
-
-
-<div class="container mh-100 p-3" style="background: #0F222D;height:20vh;">
+<div class="container-fluid mh-100 p-3" style="background:#0F222D;height:20vh;">
 
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
@@ -98,9 +95,9 @@ $resultCount = mysqli_num_rows($all_products);
 <div class="col-lg-6 p-1">
     <div class="col-sm-12 d-flex" style="border: 1px solid #fff; border-radius: 10px; background-color: #fff; height: 100%;">
         <div class="p-4">
-<h2>Menu Services</h2>
+<h2>Service Menus</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Color</a></li>
+    <li class="active"><a data-toggle="tab" href="#menu">Color</a></li>
     <li><a data-toggle="tab" href="#menu1">Styling</a></li>
     <li><a data-toggle="tab" href="#menu2">Waxing</a></li>
     <li><a data-toggle="tab" href="#menu3">Extensions</a></li>
@@ -109,28 +106,35 @@ $resultCount = mysqli_num_rows($all_products);
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+    <div id="menu" class="tab-pane fade in active">
       <h3>Color</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="col-md-12" style="padding: 0px;">
+        <center><h4  style="margin-top:0px; margin-bottom:5px;"><b><i>Service Details</i></b></h4></center>
+        <div style="border: 1px solid #000; border-radius: 10px; height: 350px;">
+          <form method="POST" action="#">
+            <input type="hidden" name="service_id" value="1">
+          </form>
+        </div>
+      </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
+      <h3>Styling</h3>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
+      <h3>Waxing</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
     </div>
     <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
+      <h3>Extensions</h3>
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
     <div id="menu4" class="tab-pane fade">
-      <h3>Menu 4</h3>
+      <h3>Design</h3>
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
     <div id="menu5" class="tab-pane fade">
-      <h3>Menu 5</h3>
+      <h3>Grooming</h3>
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 
     </div>

@@ -90,7 +90,7 @@ $row = mysqli_fetch_assoc($sql);
 <div style="text-align: right;">
 	<label class="col-sm-5 control-label"></label>
 	<div class="col-sm-0">
-	  <input type="submit" name="submit" value="Add Details" class="btn btn-outline-primary">
+	  <input type="submit" name="submit" value="Confirm" class="btn btn-outline-primary">
 	  <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
 	</div>
 </div>
