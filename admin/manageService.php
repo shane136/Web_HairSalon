@@ -84,7 +84,7 @@ $resultCount = mysqli_num_rows($all_products);
                                     echo '<td>'.$products['service_price'].'</td>';
                                     echo '<td>'.$products['type_name'].'</td>';
 ?>
-<td><a class="btn btn-danger" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a></td>
+<td><a class="btn btn-warning" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a></td>
 <?php
                                     echo '</tr>'; //dli butngan ug update/add/delete button sa services?
                                     }
@@ -128,8 +128,8 @@ $resultCount = mysqli_num_rows($all_products);
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
   <div class="col-sm-0">
-    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
-    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+    <input type="submit" name="submit" value="Add" class="btn btn-primary">
+    
   </div>
 </div>
           </form>
@@ -154,8 +154,8 @@ $resultCount = mysqli_num_rows($all_products);
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
   <div class="col-sm-0">
-    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
-    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+    <input type="submit" name="submit" value="Add" class="btn btn-primary">
+    
   </div>
 </div>
           </form>
@@ -180,8 +180,8 @@ $resultCount = mysqli_num_rows($all_products);
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
   <div class="col-sm-0">
-    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
-    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+    <input type="submit" name="submit" value="Add" class="btn btn-primary">
+    
   </div>
 </div>
           </form>
@@ -206,8 +206,8 @@ $resultCount = mysqli_num_rows($all_products);
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
   <div class="col-sm-0">
-    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
-    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+    <input type="submit" name="submit" value="Add" class="btn btn-primary">
+    
   </div>
 </div>
           </form>
@@ -232,8 +232,8 @@ $resultCount = mysqli_num_rows($all_products);
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
   <div class="col-sm-0">
-    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
-    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+    <input type="submit" name="submit" value="Add" class="btn btn-primary">
+    
   </div>
 </div>            
           </form>
@@ -258,8 +258,8 @@ $resultCount = mysqli_num_rows($all_products);
 <div style="text-align: right;">
   <label class="col-sm-5 control-label"></label>
   <div class="col-sm-0">
-    <input type="submit" name="submit" value="Add" class="btn btn-outline-primary">
-    <a href="manageEmployee.php" class="btn btn-danger">Cancel</a>
+    <input type="submit" name="submit" value="Add" class="btn btn-primary">
+    
   </div>
 </div>            
           </form>
