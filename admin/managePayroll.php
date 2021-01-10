@@ -50,7 +50,7 @@ $user_id = $_SESSION['user_id'];
                 <p align="center"><big><b>List of Employed Employees</b></big></p>
                 <div class="table-responsive-sm">
 
-                  <form method="post" action="" >                  
+                  <form method="post" action="" >
                     <table class="table table-bordered table-hover table-condensed" id="myTable">
 
                       <thead>
@@ -72,22 +72,22 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                             $type   =$row['job_type'];
                             //manipulation
                             if($type == 1){
-                              $job_type = "Hair Color"; //tentative hahhahha
+                              $job_type = "Colourist";
                             }
                             elseif($type == 2){
-                              $job_type = "Hair Stylist"; //tentative
+                              $job_type = "Waxing Specialist";
                             }
                             elseif($type == 3){
-                              $job_type = "Waxiest"; //tentative
+                              $job_type = "Barber Stylist";
                             }
                             elseif($type == 4){
-                              $job_type = "Extensionist"; //tentative
+                              $job_type = "Hair Extenstion Stylist";
                             }
                             elseif($type == 5){
-                              $job_type = "Designer"; //tentative
+                              $job_type = "Senior Stylist";
                             }
                             else{
-                              $job_type = "Groomer"; //tentative //paki change sa naming sa mga job_type
+                              $job_type = "Hairdresser";
                             }
 
       if ($row['status']==1) {
