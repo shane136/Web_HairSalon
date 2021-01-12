@@ -2,7 +2,7 @@
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
 include("upDet.php");
-$sql = mysqli_query($con, "SELECT * from employee, user_account WHERE employee.user_id = user_account.user_id;");
+$sql = mysqli_query($con, "SELECT * from employee WHERE employee.user_id = $user_id;");
 $conResult = mysqli_fetch_assoc($sql);
 
 	if($conResult['job_type'] == 1){
@@ -23,6 +23,9 @@ $conResult = mysqli_fetch_assoc($sql);
 	else{
 	  $type = "Hairdresser";
 	}
+
+$sqli = mysqli_query($con, "SELECT * FROM user_account WHERE user_id='$user_id';");
+$usResult = mysqli_fetch_assoc($sqli);
 ?>
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
@@ -83,7 +86,7 @@ $conResult = mysqli_fetch_assoc($sql);
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo $conResult['user_name']; ?>">
+                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo $usResult['user_name']; ?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -158,8 +161,8 @@ $conResult = mysqli_fetch_assoc($sql);
         <div class="modal-body" style="padding:20px 40px;">
 
       <form class="form-horizontal" action="#" name="form" method="post">
-
         <div class="form-group">
+        	<?php echo $user_id;?>
           <label class="col-sm-4 control-label">Full Name</label>
           <div class="row col-12">
           	<div class="col-6">
@@ -201,14 +204,14 @@ $conResult = mysqli_fetch_assoc($sql);
         <div class="form-group">
           <label class="col-sm-4 control-label">Username</label>
           <div class="col-sm-8">
-            <input type="text" name="username" class="form-control" placeholder="<?php echo $conResult['user_name']; ?>" required="required">
+            <input type="text" name="username" class="form-control" placeholder="<?php echo $usResult['user_name']; ?>" required="required">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Password</label>
           <div class="col-sm-8">
-            <input type="text" name="password" class="form-control" placeholder="<?php echo $conResult['user_password']; ?>" required="required">
+            <input type="text" name="password" class="form-control" placeholder="<?php echo $usResult['user_password']; ?>" required="required">
           </div>
         </div>
 
@@ -219,6 +222,7 @@ $conResult = mysqli_fetch_assoc($sql);
             <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
           </div>
         </div>
+        <input name="user_id" type="hidden" value="<?php echo $user_id;?>" />
       </form>
 
     </div>
