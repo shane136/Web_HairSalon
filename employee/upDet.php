@@ -13,9 +13,10 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
     $password   = $_POST['password'];
     $id         = $_POST['user_id'];
 
-    $sqluser = mysqli_query($con, ";");
+    $sqlue = mysqli_query($con, "UPDATE `employee` SET f_name='$fname', l_name='$lname', email='$email', address='$address', phone_number='$pnumber', job_type='$jobtype' WHERE user_id='$id';");
+    $sqluser = mysqli_query($con, "UPDATE user_account SET user_name='$username', user_password='$password' WHERE user_id='$id';");
 
-    if($sqluser)
+    if($sqluser&&$sqlue)
     {
       ?>
         <script>

@@ -18,36 +18,33 @@
 
 
 </head>
-
+<style type="text/css">
+*{
+	font-family: var(--bs-font-sans-serif);
+}
+</style>
 <body class = "d-flex flex-row h-100">
 
-<div class="col-2 border border-danger flex-column d-flex"style="height:126%;background: #ffe6e6 !important;">
+<div class="col-2 border border-danger h-100 flex-column d-flex">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
-
 <a href="empProfile.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Profile</small></p></a>
-
 <a href="empBookings.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Bookings</small></p></a>
-
 <a href="payroll.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>View Payroll</small></p></a>
-
 <a href="" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>About</small></p></a>
-
-
-
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
 
 </div>
 
-<div class="col border border-danger" style= "height: 126%;">
-
-<div class="container mh-100 p-3" style="background: #0F222D;height:20vh;">
-<div class="h-100 rounded d-flex justify-content-center" style="background:#ffe6e6;">
-<img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
+<div class="container-fluid" style="background:#0F222D;">
+<div class="col-lg-12 mt-2" style="width:100%;height:17vh;">
+	<div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
+	<img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
+	</div>
 </div>
 
-<div class="mt-4 d-flex justify-content-center" style="background:  #fff;">
-	<div id="calendar"></div>
+<div class="col-lg-12 mt-2">
+	<div class="wew" id="calendar"></div>
 </div>
 </div>
 </div>

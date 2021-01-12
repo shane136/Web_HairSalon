@@ -42,7 +42,7 @@ $usResult = mysqli_fetch_assoc($sqli);
 
 </head>
 
-<body class = "d-flex flex-row h-100">
+<body class = "d-flex h-100">
 
 <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
 
@@ -86,13 +86,13 @@ $usResult = mysqli_fetch_assoc($sqli);
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo $usResult['user_name']; ?>">
+                        <input type="text" class="form-control form-control-alternative" placeholder="Username" value="<?php echo $usResult['user_name']; ?>" disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
-                      <div class="form-group">
+                      <div class="form-group focused">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="<?php echo $conResult['email']; ?>">
+                        <input type="text" class="form-control form-control-alternative" placeholder="Email" value="<?php echo $conResult['email']; ?> " disabled>
                       </div>
                     </div>
                   </div>
@@ -100,13 +100,13 @@ $usResult = mysqli_fetch_assoc($sqli);
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<?php echo $conResult['f_name']; ?>">
+                        <input type="text" class="form-control form-control-alternative" placeholder="First name" value="<?php echo $conResult['f_name']; ?>" disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo $conResult['l_name']; ?>">
+                        <input type="text" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo $conResult['l_name']; ?>" disabled>
                       </div>
                     </div>
                   </div>
@@ -119,13 +119,13 @@ $usResult = mysqli_fetch_assoc($sqli);
                     <div class="col-md-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="<?php echo $conResult['address']; ?>" type="text">
+                        <input type="text" class="form-control form-control-alternative" placeholder="Home Address" value="<?php echo $conResult['address']; ?>" type="text" disabled>
                       </div>
                   </div>
                   <div class="col-md-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-contact-name">Phone number</label>
-                        <input type="text" id="input-contact-name" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo $conResult['phone_number']; ?>">
+                        <input type="text" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo $conResult['phone_number']; ?>" disabled>
                       </div>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ $usResult = mysqli_fetch_assoc($sqli);
                     <div class="col-md-12">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-job">Job</label>
-                        <input id="input-job" class="form-control form-control-alternative" placeholder="Home Address" value="<?php echo $type; ?>" type="text">
+                        <input type="text" class="form-control form-control-alternative" placeholder="Home Address" value="<?php echo $type; ?>" type="text" disabled>
                       </div>
                     </div>
                   </div>
