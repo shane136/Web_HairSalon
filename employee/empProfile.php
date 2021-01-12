@@ -1,6 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
+include("upDet.php");
 $sql = mysqli_query($con, "SELECT * from employee, user_account WHERE employee.user_id = user_account.user_id;");
 $conResult = mysqli_fetch_assoc($sql);
 
@@ -70,10 +71,10 @@ $conResult = mysqli_fetch_assoc($sql);
             <div class="card-body bg-white">
               <form>
                 <div class="row col-12">
-                <div class="col-6">
+                <div class="col-sm-6">
                   <h6 class="heading-small text-muted mb-4">User information</h6>
                 </div>
-                <div class="col-1">                  
+                <div class="col-sm-6">                  
                   <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-primary" style="float: right;">Settings</button>
                 </div>
                 </div>
@@ -154,7 +155,7 @@ $conResult = mysqli_fetch_assoc($sql);
       <h3 style="padding: 10px 30% 0px 0px"><b>Settings</b></h3>
     </div>
 
-        <div class="modal-body" style="padding:40px 50px;">
+        <div class="modal-body" style="padding:20px 40px;">
 
       <form class="form-horizontal" action="#" name="form" method="post">
 
@@ -171,25 +172,31 @@ $conResult = mysqli_fetch_assoc($sql);
         </div>
         <hr class="my-4">
         <div class="form-group">
-        	<label class="col-sm-4 control-label">Email</label>
+<label class="col-sm-4 control-label">Email</label>
         	<div class="row col-12">
         		<div class="col-12">
         			<input type="text" name="email" class="form-control" placeholder="<?php echo $conResult['email']; ?>" required="required">
         		</div>
-        	</div>
-        	<label class="col-sm-4 control-label">Address</label>
-        	<div class="row col-12">
+<label class="col-sm-4 control-label">Address</label>
         		<div class="col-12">
         			<input type="text" name="address" class="form-control" placeholder="<?php echo $conResult['address']; ?>" required="required">
-        		</div>
-        	</div>
-        	<label class="col-sm-4 control-label">Phone#</label>
-        	<div class="row col-12">
+        		</div>        	
+<label class="col-sm-4 control-label">Phone#</label>
         		<div class="col-12">
         			<input type="text" name="pnumber" class="form-control" placeholder="<?php echo $conResult['phone_number']; ?>" required="required">
         		</div>
-        	</div>
-        </div>
+<label class="col-sm-12 control-label">Job type</label>        		
+<div class="col-12">
+	<select class="form-control text-muted" name="jobtype">
+		<option value="<?php echo $conResult['job_type'];?>" disabled selected><?php echo $type;?></option>
+		<option value="1">Colourist</option>
+		<option value="2">Waxing Specialist</option>
+		<option value="3">Barber Stylist</option>
+		<option value="4">Hair Extenstion Stylist</option>
+		<option value="5">Senior Stylist</option>
+		<option value="6">Hairdresser</option>
+	</select>        		
+</div>
 <hr class="my-4">
         <div class="form-group">
           <label class="col-sm-4 control-label">Username</label>
