@@ -44,14 +44,14 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
 
 <div class="col border border-danger h-100">
 
-<div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
+<div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 </div>
 
 
-<div class="container  p-3" style="background: #0F222D;height: 75%;">
+<div class="container-fluid p-3" style="background: #0F222D;height: 75%;">
      <!-- <form class="" action="\Web_HairSalon\conn\payroll.php" method="post"> -->
 
        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
