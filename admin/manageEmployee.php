@@ -65,6 +65,7 @@ $resultCount = mysqli_num_rows($all_products);
                                 <th>Address</th>
                                 <th>Contact No.</th>
                                 <th>User Name</th>
+                                <th>Job Type</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -81,7 +82,26 @@ $resultCount = mysqli_num_rows($all_products);
 	                            		echo '<td>'.$products['address'].'</td>';
 	                            		echo '<td>'.$products['phone_number'].'</td>';
 	                            		echo '<td>'.$products['user_name'].'</td>';
+if ($products['job_type']==0) {
+	$types='Error';
+}elseif ($products['job_type']==1) {
+	$types='Colourist';
+}elseif($products['job_type']==2){
+	$types='Senior Stylist';
+}elseif($products['job_type']==3){
+	$types='Waxing Specialist';
+}elseif ($products['job_type']==4) {
+	$types='Hair Extenstion Stylist';
+}elseif ($products['job_type']==5) {
+	$types='Hairdresser';
+}else{
+	$types='Barber Stylist';
+}
+
+	                            		echo '<td>'.$types.'</td>';
+
 ?>
+
     <td align="center"><a class="btn btn-danger" href="delete.php?employee_id=<?php echo $products["employee_id"]; ?>">Delete</a></td>
 <?php
 	                            		echo '</tr>';
