@@ -34,9 +34,9 @@ while ($rows = mysqli_fetch_assoc($result)) {
 
   <body class = "d-flex flex-row h-100"style="background: #0F222D;">
     <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
-      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
+      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
-      <a href="\Web_HairSalon\login.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Logout</small></p></a>
+      <a href="\Web_HairSalon\login.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i> <small> Logout</small></p></a>
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
       <!-- <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
@@ -100,21 +100,21 @@ while ($rows = mysqli_fetch_assoc($result)) {
 
                       <div class="input-group mb-3 w-50">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroup-sizing-default">Phone Number:</span>
+                          <span class="input-group-text" id="inputGroup-sizing-default">Phone Number</span>
                         </div>
                         <input type="text" value = "<?php echo "$contact_number"; ?>"name="contact_number" placeholder="<?php echo "$contact_number"; ?>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                       </div>
 
                       <div class="input-group mb-3 w-50">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroup-sizing-default">Email:</span>
+                          <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
                         </div>
                         <input type="text" value = "<?php echo "$email"; ?>"name="email" placeholder="<?php echo "$email"; ?>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                       </div>
 
                       <div class="input-group mb-3 w-50">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroup-sizing-default">Address:</span>
+                          <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
                         </div>
                         <input type="text" value = "<?php echo "$address"; ?>"name="address" placeholder="<?php echo "$address"; ?>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                       </div>

@@ -91,7 +91,8 @@ while ($rows = mysqli_fetch_assoc($result)) {
                     <p class="h5"style="font-size:130%;font-family:Cambria;">Email: <?php echo $email; ?></p> <br>
                     <p class="h5"style="font-size:130%;font-family:Cambria;">Address: <?php echo $address; ?></p> <br>
 
-                   <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:130%; font-family:tahoma;">EDIT</p></a>
+                   <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-outline-light rounded-0 pt-0" style=""> <p class="m-0"  style="color:black; font-size:130%; font-family:tahoma;">EDIT</p></a>
+
                   </div>
 
                 </div>
