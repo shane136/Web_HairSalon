@@ -167,7 +167,6 @@ $usResult = mysqli_fetch_assoc($sqli);
 
       <form class="form-horizontal" action="#" name="form" method="post">
         <div class="form-group">
-        	<?php echo $user_id;?>
           <label class="col-sm-4 control-label">Full Name</label>
           <div class="row col-12">
           	<div class="col-6">
@@ -198,11 +197,11 @@ $usResult = mysqli_fetch_assoc($sqli);
 	<select class="form-control text-muted" name="jobtype">
 		<option value="<?php echo $conResult['job_type'];?>" disabled selected><?php echo $type;?></option>
 		<option value="1">Colourist</option>
-		<option value="2">Waxing Specialist</option>
-		<option value="3">Barber Stylist</option>
+		<option value="2">Senior Stylist</option>
+		<option value="3">Waxing Specialist</option>
 		<option value="4">Hair Extenstion Stylist</option>
-		<option value="5">Senior Stylist</option>
-		<option value="6">Hairdresser</option>
+		<option value="5">Hairdresser</option>
+		<option value="6">Barber Stylist</option>
 	</select>
 </div>
 <hr class="my-4">
