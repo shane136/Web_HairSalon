@@ -9,19 +9,19 @@ $conResult = mysqli_fetch_assoc($sql);
 	  $type = "Colourist";
 	}
 	elseif($conResult['job_type'] == 2){
-	  $type = "Waxing Specialist";
+	  $type = "Senior Stylist";
 	}
 	elseif($conResult['job_type'] == 3){
-	  $type = "Barber Stylist";
+	  $type = "Waxing Specialist";
 	}
 	elseif($conResult['job_type'] == 4){
 	  $type = "Hair Extenstion Stylist";
 	}
 	elseif($conResult['job_type'] == 5){
-	  $type = "Senior Stylist";
+	  $type = "Hairdresser";
 	}
 	else{
-	  $type = "Hairdresser";
+	  $type = "Barber Stylist";
 	}
 
 $sqli = mysqli_query($con, "SELECT * FROM user_account WHERE user_id='$user_id';");
@@ -61,7 +61,7 @@ $usResult = mysqli_fetch_assoc($sqli);
 </div>
 
 <div class="container-fluid col-lg-12 p-1 mt-4" style ="background: #ffe6e6; border-radius: 10px;">
-	
+
 <div class="col-lg-12 p-3">
           <div class="card bg-secondary shadow">
             <div class="card-header border-0">
@@ -77,7 +77,7 @@ $usResult = mysqli_fetch_assoc($sqli);
                 <div class="col-sm-6">
                   <h6 class="heading-small text-muted mb-4">User information</h6>
                 </div>
-                <div class="col-sm-6">                  
+                <div class="col-sm-6">
                   <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-primary" style="float: right;">Settings</button>
                 </div>
                 </div>
@@ -142,7 +142,7 @@ $usResult = mysqli_fetch_assoc($sqli);
                     </div>
                   </div>
                 </div>
-                
+
               </form>
             </div>
           </div>
@@ -183,12 +183,12 @@ $usResult = mysqli_fetch_assoc($sqli);
 <label class="col-sm-4 control-label">Address</label>
         		<div class="col-12">
         			<input type="text" name="address" class="form-control" placeholder="<?php echo $conResult['address']; ?>" required="required">
-        		</div>        	
+        		</div>
 <label class="col-sm-4 control-label">Phone#</label>
         		<div class="col-12">
         			<input type="text" name="pnumber" class="form-control" placeholder="<?php echo $conResult['phone_number']; ?>" required="required">
         		</div>
-<label class="col-sm-12 control-label">Job type</label>        		
+<label class="col-sm-12 control-label">Job type</label>
 <div class="col-12">
 	<select class="form-control text-muted" name="jobtype">
 		<option value="<?php echo $conResult['job_type'];?>" disabled selected><?php echo $type;?></option>
@@ -198,7 +198,7 @@ $usResult = mysqli_fetch_assoc($sqli);
 		<option value="4">Hair Extenstion Stylist</option>
 		<option value="5">Senior Stylist</option>
 		<option value="6">Hairdresser</option>
-	</select>        		
+	</select>
 </div>
 <hr class="my-4">
         <div class="form-group">

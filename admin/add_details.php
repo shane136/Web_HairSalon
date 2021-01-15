@@ -78,11 +78,11 @@ $row = mysqli_fetch_assoc($sql);
             <select name="job_type" class="form-control-sm" placeholder="Employee Type" required>
               <option value="">Job Type</option>
               <option value="1">Colourist</option>
-              <option value="2">Waxing Specialist</option>
-              <option value="3">Barber Stylist</option>
+              <option value="2">Senior Stylist</option>
+              <option value="3">Waxing Specialist</option>
               <option value="4">Hair Extenstion Stylist</option>
-              <option value="5">Senior Stylist</option>
-              <option value="6">Hairdresser</option>
+              <option value="5">Hairdresser</option>
+              <option value="6">Barber Stylist</option>
             </select>
           </div>
         </div>
