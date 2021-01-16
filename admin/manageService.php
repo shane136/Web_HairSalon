@@ -101,8 +101,8 @@ $resultCount = mysqli_num_rows($all_products);
                                     echo '<td>'.$products['service_price'].'</td>';
                                     echo '<td>'.$products['type_name'].'</td>';
 ?>
-<td><a class="btn btn-warning" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
-<a class="btn btn-warning" href="">Edit</a></td>
+<td><a class="btn btn-danger" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
+<a class="btn btn-primary" href="">Update</a></td>
 <?php
                                     echo '</tr>'; //dli butngan ug update/add/delete button sa services?
                                     }

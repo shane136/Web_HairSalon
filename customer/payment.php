@@ -76,20 +76,20 @@ while($rows = mysqli_fetch_assoc($result)){
        <a href="\Website\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Payment</small></p></a> -->
      </div>
 
-   <div class="col border border-danger h-100">
+   <div class="w-100 border border-danger h-100">
        <!-- <div class="container-fluid border border-danger d-flex flex-row" style="height:50px;background: #ffe6e6 !important;">
          <div class="col-5 d-flex flex-row pt-2 pb-2 justify-content-end">
          <a href="\Website\conn\logout.php" class="col btn btn-outline-light border-top-0 border-bottom-0 rounded-0 pt-0" style="color:black"><p class="m-0"><small>Logout</small></p></a>
          </div>
        </div> -->
 
-       <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
+       <div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
          <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
          <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
          </div>
        </div>
 
-       <div class="container h-auto p-3" style="background: #0F222D;">
+       <div class="container-fluid h-auto p-3" style="background: #0F222D;">
             <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
 
               <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

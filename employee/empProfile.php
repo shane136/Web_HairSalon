@@ -170,10 +170,10 @@ $usResult = mysqli_fetch_assoc($sqli);
           <label class="col-sm-4 control-label">Full Name</label>
           <div class="row col-12">
           	<div class="col-6">
-            	<input type="text" name="fname" class="form-control" placeholder="<?php echo $conResult['f_name']; ?>" required="required">
+            	<input type="text" name="fname" class="form-control" placeholder="<?php echo $conResult['f_name']; ?>" value="<?php echo $conResult['f_name']; ?>">
             </div>
             <div class="col-6">
-            	<input type="text" name="lname" class="form-control" placeholder="<?php echo $conResult['l_name']; ?>" required="required">
+            	<input type="text" name="lname" class="form-control" placeholder="<?php echo $conResult['l_name']; ?>" value="<?php echo $conResult['l_name']; ?>">
             </div>
           </div>
         </div>
@@ -182,20 +182,20 @@ $usResult = mysqli_fetch_assoc($sqli);
 <label class="col-sm-4 control-label">Email</label>
         	<div class="row col-12">
         		<div class="col-12">
-        			<input type="text" name="email" class="form-control" placeholder="<?php echo $conResult['email']; ?>" required="required">
+        			<input type="text" name="email" class="form-control" placeholder="<?php echo $conResult['email']; ?>" value="<?php echo $conResult['email']; ?>">
         		</div>
 <label class="col-sm-4 control-label">Address</label>
         		<div class="col-12">
-        			<input type="text" name="address" class="form-control" placeholder="<?php echo $conResult['address']; ?>" required="required">
+        			<input type="text" name="address" class="form-control" placeholder="<?php echo $conResult['address']; ?>" value="<?php echo $conResult['address']; ?>">
         		</div>
 <label class="col-sm-4 control-label">Phone#</label>
         		<div class="col-12">
-        			<input type="text" name="pnumber" class="form-control" placeholder="<?php echo $conResult['phone_number']; ?>" required="required">
+        			<input type="text" name="pnumber" class="form-control" placeholder="<?php echo $conResult['phone_number']; ?>" value="<?php echo $conResult['phone_number']; ?>">
         		</div>
 <label class="col-sm-12 control-label">Job type</label>
 <div class="col-12">
-	<select class="form-control text-muted" name="jobtype">
-		<option value="<?php echo $conResult['job_type'];?>" disabled selected><?php echo $type;?></option>
+	<select class="form-control text-muted" name="jobtype" >
+		<option value="<?php echo $conResult['job_type'];?>"><?php echo $type;?></option>
 		<option value="1">Colourist</option>
 		<option value="2">Senior Stylist</option>
 		<option value="3">Waxing Specialist</option>
@@ -208,14 +208,14 @@ $usResult = mysqli_fetch_assoc($sqli);
         <div class="form-group">
           <label class="col-sm-4 control-label">Username</label>
           <div class="col-sm-8">
-            <input type="text" name="username" class="form-control" placeholder="<?php echo $usResult['user_name']; ?>" required="required">
+            <input type="text" name="username" class="form-control" placeholder="<?php echo $usResult['user_name']; ?>" value="<?php echo $usResult['user_name']; ?>">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-4 control-label">Password</label>
           <div class="col-sm-8">
-            <input type="text" name="password" class="form-control" placeholder="<?php echo $usResult['user_password']; ?>" required="required">
+            <input type="text" name="password" class="form-control" placeholder="<?php echo $usResult['user_password']; ?>" value="<?php echo $usResult['user_password']; ?>">
           </div>
         </div>
 
