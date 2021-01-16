@@ -43,7 +43,7 @@ while($rows = mysqli_fetch_assoc($result)){
    </head>
 
    <body class = "d-flex flex-row h-100">
-     <div class="col-2 border border-danger flex-column d-flex"style="height:130%;background: #ffe6e6 !important;">
+     <div class="col-2 border border-danger flex-column d-flex h-auto"style="height:130%;background: #ffe6e6 !important;">
        <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home </small></p></a>
 
        <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
@@ -89,7 +89,7 @@ while($rows = mysqli_fetch_assoc($result)){
          </div>
        </div>
 
-       <div class="container  p-3" style="background: #0F222D;height: 105%;">
+       <div class="container h-auto p-3" style="background: #0F222D;">
             <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
 
               <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

@@ -66,7 +66,7 @@ input.btn{
 
 <div class="container-fluid col-sm-12 p-1 mt-4" style ="background: #ffe6e6; border-radius: 10px;">
 <div class="row p-5" >
-<div class="col-lg-6 p-1">
+<div class="col-lg-8 p-1">
     <div class="card shadow mb-0">
     <div class="card-header py-4">
                 <h9 class="m-0 font-weight-bold text-primary">Services</h9>
@@ -101,7 +101,8 @@ $resultCount = mysqli_num_rows($all_products);
                                     echo '<td>'.$products['service_price'].'</td>';
                                     echo '<td>'.$products['type_name'].'</td>';
 ?>
-<td><a class="btn btn-warning" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a></td>
+<td><a class="btn btn-warning" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
+<a class="btn btn-warning" href="">Edit</a></td>
 <?php
                                     echo '</tr>'; //dli butngan ug update/add/delete button sa services?
                                     }
@@ -113,7 +114,7 @@ $resultCount = mysqli_num_rows($all_products);
             </div>
     </div>
 </div>
-<div class="col-lg-6 p-1">
+<div class="col-lg-4 p-1">
     <div class="col-sm-12 d-flex" style="border: 1px solid #fff; border-radius: 10px; background-color: #fff; height: 100%;">
         <div class="p-4">
 <h2>Service Menus</h2>

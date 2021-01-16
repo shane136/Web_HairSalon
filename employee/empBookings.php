@@ -1,5 +1,6 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
+include("passUsid.php");
 $user_id = $_SESSION['user_id'];
 $empl=mysqli_query($con, "SELECT * from employee WHERE employee.user_id = $user_id;");
 $empl = mysqli_fetch_assoc($empl);
@@ -86,6 +87,7 @@ $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDE
                   $sqli=mysqli_query($con,"SELECT * FROM services WHERE service_id=$service;");
                   $reSer = mysqli_fetch_assoc($sqli);
   ?>
+  <form method="post">
             <li class="right">
 <!--                    <span class="chat-img pull-left">
                         <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar"
@@ -109,14 +111,16 @@ $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDE
                             <i class="fa fa-clock-o fa-fw"></i>Booked Date:
                             <?php echo date_format($boDe, "F/d/Y, g:i A");?>
                         </div>
+<input type="hidden" name="user_id" value="<?php echo $reCus['user_id']?>">                      
                         <div style="float: right;margin-left: 50px;">
                           <br>
-                          <button type="button" class="btn btn-info">Accept</button>
+                          <button type="submit" name="submit" class="btn btn-info">Accept</button>
                           <button type="button" class="btn btn-warning">Cancel</button>
                         </div>
                     </div>
                 </div>
             </li>
+</form>            
 <?php }
 ?>
         </ul>
@@ -137,7 +141,7 @@ $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDE
     </div>
     <div class="card-body">
       <section class="heading-small text-muted">Customer Details</section>
-      <label>Name:</label><br>
+      <label>Name:</label><?php echo $username?><br>
       <section class="heading-small text-muted">Book Details</section>
       <label>Book Date:</label><br>
       <label>Date Scheduled:</label><br>
