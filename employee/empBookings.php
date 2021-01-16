@@ -1,6 +1,9 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 include("passUsid.php");
+include("completeService.php");
+include("removeService.php");
+include("canUsid.php");
 $user_id = $_SESSION['user_id'];
 $empl=mysqli_query($con, "SELECT * from employee WHERE employee.user_id = $user_id;");
 $empl = mysqli_fetch_assoc($empl);
@@ -62,8 +65,8 @@ span{
 <?php
 $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDER BY date_sched ASC;");
 ?>
-<div class="row p-5">
-  <div class="col-md-6">
+<div class="row p-2">
+  <div class="col-md-6 mt-4">
 <div class="card shadow">
 <div class="card-header">
   <b style="float: left; font-size: 25px;">Booked Customer -</b>
@@ -86,42 +89,59 @@ $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDE
                   $reCus = mysqli_fetch_assoc($sqli);
                   $sqli=mysqli_query($con,"SELECT * FROM services WHERE service_id=$service;");
                   $reSer = mysqli_fetch_assoc($sqli);
-  ?>
-  <form method="post">
+if ($wow['status']!='complete'&&$wow['status']!='remove') {
+?>
+<form method="post">
             <li class="right">
 <!--                    <span class="chat-img pull-left">
                         <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar"
                              class="img-circle"/>
                     </span>-->
                 <div class="chat-body clearfix">
-                    <div class="header col-12">
-                        <div class="col-6" style="color: #42C;font-size:18px;">
+<div class="header col-12">                      
+<?php if($wow['notify_status']!=0){ ?>
+<div class="col-2" style="float:right;font-size:16px;margin-left: 30px;">
+    <i class="fa fa-bell fa-fw"></i>
+</div>
+<?php }else{ ?>
+<div hidden class="col-2" style="float:right;font-size:16px;margin-left: 30px;">
+    <i class="fa fa-bell fa-fw"></i>:
+    <?php echo $wow['notify_status'];?>
+</div>
+<?php } ?>
+                        <div class="col-8" style="color: #42C;font-size:18px;">
                           <i class="fa fa-user fa-fw"></i>
                           <b><?php echo $reCus['f_name'].' '.$reCus['l_name'];?></b>
                         </div>
-                        <div style="float:left;clear:both;font-size:16px;margin-left: 30px;">
+                        <div class="col-8" style="float:left;clear:both;font-size:16px;margin-left: 30px;">
                           <i class="fa fa-cut fa-fw"></i>
                           Service:  <?php echo $reSer['service_name'];?>
                         </div>
-                        <div style="float:left;clear:both;font-size:16px;margin-left: 30px;">
+                        <div class="col-8" style="float:left;clear:both;font-size:16px;margin-left: 30px;">
                             <i class="fa fa-calendar-check-o fa-fw"></i>Date Scheduled:
                             <?php echo date_format($date, "F/d/Y, g:i A");?>
                         </div>
-                        <div style="float:left;clear:both;font-size:16px;margin-left: 30px;">
+                        <div class="col-8" style="float:left;clear:both;font-size:16px;margin-left: 30px;">
                             <i class="fa fa-clock-o fa-fw"></i>Booked Date:
                             <?php echo date_format($boDe, "F/d/Y, g:i A");?>
                         </div>
-<input type="hidden" name="user_id" value="<?php echo $reCus['user_id']?>">                      
+
+<input type="hidden" name="id" value="<?php echo $wow['booking_id']?>">
+<input type="hidden" name="user_id" value="<?php echo $reCus['user_id'];?>">
+<input type="hidden" name="book" value="<?php echo date_format($boDe, "F/d/Y, g:i A");?>">
+<input type="hidden" name="sched" value="<?php echo date_format($date, "F/d/Y, g:i A");?>">
+<input type="hidden" name="service" value="<?php echo $reSer['service_name'];?>">
+<input type="hidden" name="status" value="<?php echo $wow['status'];?>">                      
                         <div style="float: right;margin-left: 50px;">
                           <br>
                           <button type="submit" name="submit" class="btn btn-info">Accept</button>
-                          <button type="button" class="btn btn-warning">Cancel</button>
+                          <button type="submit" name="cancel" class="btn btn-warning">Cancel</button>
                         </div>
-                    </div>
+</div>
                 </div>
             </li>
 </form>            
-<?php }
+<?php } }
 ?>
         </ul>
     </div>
@@ -134,27 +154,51 @@ $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDE
   </div>
 </div>
 <!--Customer Service Booked Details-->
-<div class="col-md-6">
+<div class="col-md-6 mt-4">
   <div class="card shadow h-100">
     <div class="card-header">
       <h2>Customer Service</h2>
     </div>
-    <div class="card-body">
-      <section class="heading-small text-muted">Customer Details</section>
-      <label>Name:</label><?php echo $username?><br>
-      <section class="heading-small text-muted">Book Details</section>
-      <label>Book Date:</label><br>
-      <label>Date Scheduled:</label><br>
-      <label>Service Name:</label><br>
-      <section class="heading-small text-muted">Payment Status</section>
-      <label>Payment Status:</label><br>
+    <div class="card-body col-md-12">
+      <div class="col-md-12 p-2">
+        <section class="h3 p-0 m-0 text-muted">Customer Details:</section>
+         <div class="col-md-12">
+          <span style="margin-right: 5px;"><b>Name:</b></span>
+          <input type="text" value="<?php echo $username?>" class="text-right col-12" disabled></input>
+         </div>
+      </div>  
 
-      <br>
-      <div style="float: right;">
-      <br>
-        <button type="button" class="btn btn-success">Finish</button>
-        <button type="button" class="btn btn-danger">Canceled</button>
+      <div class="col-md-12 p-2">
+       <section class="h3 p-0 m-0 text-muted">Book Details:</section>
+        <div class="col-md-12">
+        <span style="margin-right: 5px;"><b>Date Scheduled:</b></span>
+        <input type="text" value="<?php echo $sched?>" class="text-right col-12" disabled></input>        
+        <span style="margin-right: 5px;color: #008c00;"><b>Book Date:</b></span>
+        <input type="text" value="<?php echo $book?>" class="text-right col-12" disabled></input>
+        <span style="margin-right: 5px;color: #4000ff;"><b>Service Name:</b></span>
+        <input type="text" value="<?php echo $sername?>" class="text-right col-12" disabled></input>
+        </div>
       </div>
+
+      <div class="col-md-12 p-2">
+       <section class="h3 p-0 m-0 text-muted">Payment Status:</section>
+        <div class="col-md-12">
+         <span style="margin-right: 5px;"><b>Payment Status:</b></span>
+         <input type="text" value="<?php echo $status?>" class="text-right col-12" disabled></input>         
+        </div>
+      </div>
+<div class="col-md-12 p-2">
+      <div class="col-md-12">
+      <br>
+<form method="post">
+<input type="hidden" name="id" value="<?php echo $id?>">
+        <div style="float: right;">
+          <button type="submit" name="complete" class="btn btn-success">Complete</button>
+          <button type="submit" name="remove" class="btn btn-danger">Remove</button>
+        </div>
+</form>        
+      </div>
+</div>      
     </div>
   </div>
 </div>
@@ -178,3 +222,4 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 </script>
 </body>
 </html>
+  
