@@ -29,7 +29,7 @@ $products[]= $products_row;
 
   <body class = "d-flex flex-row h-100">
     <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
-      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Home</small></p></a>
+      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left">  <i class="fas fa-home"></i><small> Home</small></p></a>
 
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
@@ -53,11 +53,11 @@ $products[]= $products_row;
 
           </div>
 
-          <button id="book_now" class="btn btn-outline-light rounded-0 pt-0" style="color:black; font-size:100%;">
+          <button id="book_now" class="btn btn-outline-light rounded-0 pt-0" style="color:black; font-size:100%; text-align: left;">
             <p class="m-0">
               <i class="fas fa-shopping-cart"></i>
               <!-- <small id="num_of_items"> (0)</small> -->
-              <small class="">Book Now</small>
+              <small class=""> Book Now</small>
             </p>
           </button>
 
