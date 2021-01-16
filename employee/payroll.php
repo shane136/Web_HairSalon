@@ -83,7 +83,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
           Date:
               <span id="date"></span>
          </div>
-     <div class="row">
+     <div class="col-12">
          <div class="text-center">
              <h1>Payroll Record</h1>
          </div>
@@ -117,7 +117,6 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
 
                 ?>
                  <tr>
-
                      <td class="text-center"><?php echo "$fullname"; ?></td>
                      <td class="text-center"><?php echo "$total_salary"; ?></td>
                      <td class="text-center"><?php echo $rows['payroll_date']; ?></td>
@@ -126,12 +125,12 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                    }
 
                  ?>
-                 <tr>
+                 <!-- <tr>
                      <td>   </td>
                      <td>   </td>
-                     <!-- <td class="text-center"><h4><strong>Total: PHP  </strong></h4></td> -->
+                     <td class="text-center"><h4><strong>Total: PHP  </strong></h4></td> 
                  </tr>
-
+-->
              </tbody>
          </table>
      </div>
