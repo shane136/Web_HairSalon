@@ -14,11 +14,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     $user_data = mysqli_fetch_assoc($result);
     $_SESSION['user_id'] = $user_data['user_id'];
-
+    $id = $user_data['user_id'];
 
     switch ($user_data['user_type']) {
       case 'Employee':
+        $sql = mysqli_query($con, "SELECT * FROM user_account WHERE user_id = '$id';");
+        $check = mysqli_fetch_assoc($sql);
+        if($check['status']==1){
           header("Location: \\Web_HairSalon\\employee\\employee.php");
+        }else{
+          header("Location: \\Web_HairSalon\\employee\\confirmation.php");
+        }
         break;
       case 'Customer':
           header("Location: \\Web_HairSalon\\customer\\index.php");

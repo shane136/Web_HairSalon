@@ -69,9 +69,8 @@ input.btn{
 </div>
 
 
-
-<div class="container-fluid mh-100 p-3" style="background:#0F222D;height:20vh;">
-
+<div class="container-fluid" style="background:#0F222D;height:123%;">
+<div class="mh-100 p-3" style="height:20vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
@@ -96,7 +95,7 @@ input.btn{
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
+<?php
 $product_query = "SELECT * from services, service_type WHERE services.type_id = service_type.type_id;";
 $all_products = mysqli_query($con, $product_query);
 $resultCount = mysqli_num_rows($all_products);
@@ -112,9 +111,12 @@ $resultCount = mysqli_num_rows($all_products);
                                     echo '<td>'.$products['service_name'].'</td>';
                                     echo '<td>'.$products['service_price'].'</td>';
                                     echo '<td>'.$products['type_name'].'</td>';
+
 ?>
-<td><a class="btn btn-danger" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
-<a class="btn btn-primary" href="">Update</a></td>
+<td>
+<a class="btn btn-danger" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
+<a class="btn btn-primary" href="editService.php?service_id=<?php echo $products["service_id"]; ?>">Update</a>
+</td>
 <?php
                                     echo '</tr>'; //dli butngan ug update/add/delete button sa services?
                                     }
@@ -304,8 +306,8 @@ $resultCount = mysqli_num_rows($all_products);
 </div>
 
 </div>
-
 </div>
+
 <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="../js/demo/datatables-demo.js"></script>

@@ -50,13 +50,14 @@ StartScrolling();
 
 </div>
 
-<div class="container mh-100 p-3" style="background: #0F222D;height:30vh;">
+<div class="container-fluid p-0" style="background: #0F222D;">
+<div class="mh-100 p-3" style="height:30vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
-<br><hr>
-<div class="row p-1 w-auto mt-4 d-flex justify-content-center" style ="background: #fff; border-radius: 10px;">
-<form class="form-horizontal">
+<div class="mh-100 pt-2">
+<div class="p-3 w-100 mt-4 d-flex justify-content-center" style ="background: #fff; border-radius: 10px;">
+<form class="form-horizontal w-100">
               <fieldset>
 
                 <p align="center"><big><b>List of Employed Employees</b></big></p>
@@ -122,8 +123,10 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                 </div>
               </fieldset>
             </form>
-</div>
+          </div>
+        </div>
 
+</div>
 </div>
 
 
