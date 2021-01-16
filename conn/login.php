@@ -24,8 +24,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
           header("Location: \\Web_HairSalon\\customer\\index.php");
         break;
       case 'Admin':
+        $user_id = $user_data['user_id'];
+        $description = "Logged In";
+        $sys_log = "INSERT INTO sys_log VALUES(NULL, '$user_id', '$description', NOW())";
+        mysqli_query($con, $sys_log);
+
           header("Location: \\Web_HairSalon\\admin\\index.php");
         break;
+
     }
 
   }
