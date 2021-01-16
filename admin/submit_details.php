@@ -9,6 +9,13 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
   $phone_number	 = $_POST['p_number'];
   $job_type			 = $_POST['job_type'];
 
+  if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+  }
+  
+  $description = "Adding Employee Details of User Account ID:".$user_id;
+  $sys_log = mysqli_query($con,"INSERT INTO sys_log VALUES(NULL, '$user_id', '$description', NOW())");
+
 
   $sql = mysqli_query($con, "INSERT INTO employee(employee_id, f_name, l_name, email, address, phone_number, user_id, job_type) VALUES(NULL, '$f_name', '$l_name', '$email', '$address', '$phone_number', '$user_id', '$job_type');");
 
