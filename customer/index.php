@@ -5,7 +5,7 @@
     <title></title>
     <script>
 
-    var ScrollMsg= "J.HairSalon|Customer - "
+    var ScrollMsg= "J.HairSalon | Manifesto. Declare your style. - "
     var CharacterPosition=0;
     function StartScrolling() {
     document.title=ScrollMsg.substring(CharacterPosition,ScrollMsg.length)+
