@@ -44,7 +44,7 @@ $usResult = mysqli_fetch_assoc($sqli);
 
 <body class = "d-flex h-100">
 
-<div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+<div class="col-2 border  h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 

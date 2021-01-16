@@ -38,7 +38,7 @@ span{
 }
 </style>
 <body class = "d-flex flex-row w-100 h-100">
-<div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+<div class="col-2 border  h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
@@ -98,7 +98,7 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
                              class="img-circle"/>
                     </span>-->
                 <div class="chat-body clearfix">
-<div class="header col-12">                      
+<div class="header col-12">
 <?php if($wow['notify_status']!=0){ ?>
 <div class="col-2" style="float:right;font-size:16px;margin-left: 30px;">
     <i class="fa fa-bell fa-fw"></i>
@@ -131,7 +131,7 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
 <input type="hidden" name="book" value="<?php echo date_format($boDe, "F/d/Y, g:i A");?>">
 <input type="hidden" name="sched" value="<?php echo date_format($date, "F/d/Y, g:i A");?>">
 <input type="hidden" name="service" value="<?php echo $reSer['service_name'];?>">
-<input type="hidden" name="status" value="<?php echo $wow['status'];?>">                      
+<input type="hidden" name="status" value="<?php echo $wow['status'];?>">
                         <div style="float: right;margin-left: 50px;">
                           <br>
                           <button type="submit" name="submit" class="btn btn-info">Accept</button>
@@ -140,7 +140,7 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
 </div>
                 </div>
             </li>
-</form>            
+</form>
 <?php } }
 ?>
         </ul>
@@ -166,13 +166,13 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
           <span style="margin-right: 5px;"><b>Name:</b></span>
           <input type="text" value="<?php echo $username?>" class="text-right col-12" disabled></input>
          </div>
-      </div>  
+      </div>
 
       <div class="col-md-12 p-2">
        <section class="h3 p-0 m-0 text-muted">Book Details:</section>
         <div class="col-md-12">
         <span style="margin-right: 5px;"><b>Date Scheduled:</b></span>
-        <input type="text" value="<?php echo $sched?>" class="text-right col-12" disabled></input>        
+        <input type="text" value="<?php echo $sched?>" class="text-right col-12" disabled></input>
         <span style="margin-right: 5px;color: #008c00;"><b>Book Date:</b></span>
         <input type="text" value="<?php echo $book?>" class="text-right col-12" disabled></input>
         <span style="margin-right: 5px;color: #4000ff;"><b>Service Name:</b></span>
@@ -184,7 +184,7 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
        <section class="h3 p-0 m-0 text-muted">Payment Status:</section>
         <div class="col-md-12">
          <span style="margin-right: 5px;"><b>Payment Status:</b></span>
-         <input type="text" value="<?php echo $status?>" class="text-right col-12" disabled></input>         
+         <input type="text" value="<?php echo $status?>" class="text-right col-12" disabled></input>
         </div>
       </div>
 <div class="col-md-12 p-2">
@@ -196,9 +196,9 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
           <button type="submit" name="complete" class="btn btn-success">Complete</button>
           <button type="submit" name="remove" class="btn btn-danger">Remove</button>
         </div>
-</form>        
+</form>
       </div>
-</div>      
+</div>
     </div>
   </div>
 </div>
@@ -222,4 +222,3 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 </script>
 </body>
 </html>
-  

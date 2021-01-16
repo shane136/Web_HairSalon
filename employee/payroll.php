@@ -31,7 +31,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
 
 <body class = "d-flex flex-row h-100">
 
-<div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+<div class="col-2 border  h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
@@ -47,7 +47,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
 
 </div>
 
-<div class="col border border-danger h-100">
+<div class="col border  h-100">
 
 <div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
@@ -77,7 +77,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                  <br>
                  <abbr title="Phone">P.:</abbr> (213) 484-6829
              </address> -->
-         
+
      </div>
         <div class="col-xs-6 col-sm-6 col-md-6 text-right" style="color:black">
           Date:
@@ -128,7 +128,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                  <!-- <tr>
                      <td>   </td>
                      <td>   </td>
-                     <td class="text-center"><h4><strong>Total: PHP  </strong></h4></td> 
+                     <td class="text-center"><h4><strong>Total: PHP  </strong></h4></td>
                  </tr>
 -->
              </tbody>
