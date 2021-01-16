@@ -77,14 +77,12 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                  <br>
                  <abbr title="Phone">P.:</abbr> (213) 484-6829
              </address> -->
-         </div>
-
-         <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-              <p class="" style="color:black">Payroll Date: <?php echo "$payroll_date"; ?></p>
-         </div>
-
+         
      </div>
-
+        <div class="col-xs-6 col-sm-6 col-md-6 text-right" style="color:black">
+          Date:
+              <span id="date"></span>
+         </div>
      <div class="row">
          <div class="text-center">
              <h1>Payroll Record</h1>
@@ -95,7 +93,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                  <tr>
                      <th class="text-center">Employee Name</th>
                      <th class="text-center">Total Salary</th>
-
+                     <th class="text-center">Payroll Date</th>
                  </tr>
              </thead>
              <tbody>
@@ -110,7 +108,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
                   $lname = $row['l_name'];
                 }
                 $fullname = $fname." ".$lname;
-                $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$emp_id'";
+                $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$emp_id' ORDER BY payroll_date DESC;";
                 $payroll_result = mysqli_query($con, $payroll);
                 while($rows = mysqli_fetch_assoc($payroll_result)){
                   $total_salary = $rows['total_salary'];
@@ -122,7 +120,7 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
 
                      <td class="text-center"><?php echo "$fullname"; ?></td>
                      <td class="text-center"><?php echo "$total_salary"; ?></td>
-
+                     <td class="text-center"><?php echo $rows['payroll_date']; ?></td>
                  </tr>
                   <?php
                    }
@@ -141,7 +139,13 @@ while($rows = mysqli_fetch_assoc($payroll_result)){
  </div>
 </div>
 
-
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
 
 </body>
 </html>
