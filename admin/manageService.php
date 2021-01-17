@@ -84,7 +84,7 @@ input.btn{
     </div>
             <div class="card-body">
                 <div class="table-responsive-sm">
-                    <table class="table table-bordered p-3" id="dataTable" width="100%">
+                    <table class="table table-bordered p-3" id="dataTable" width="105%">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -114,11 +114,11 @@ $resultCount = mysqli_num_rows($all_products);
 
 ?>
 <td>
-<a class="btn btn-danger" onclick="return confirm('Confirm Deletion?');" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
+<a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
 <a class="btn btn-primary" href="editService.php?service_id=<?php echo $products["service_id"]; ?>">Update</a>
 </td>
 <?php
-                                    echo '</tr>'; 
+                                    echo '</tr>';
                                     }
                                 }
                             ?>

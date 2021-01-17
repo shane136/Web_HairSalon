@@ -51,8 +51,37 @@
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div style="text-align:right; padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila" width="175%" height="140" frameborder="0" seamless></iframe>
+<!-- <div style="text-align:right; padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila" width="175%" height="140" frameborder="0" seamless></iframe>
+</div> -->
+
+<div style="text-align: left; padding: 1em 0; font-size: 200%;"> <h2> </h2>
+
+  <body>
+      <label id="lblGreetings"></label>
+  </body>
+
+  <script>
+      var myDate = new Date();
+      var hrs = myDate.getHours();
+
+      var greet;
+
+      if (hrs < 12)
+          greet = 'Good Morning';
+      else if (hrs >= 12 && hrs <= 17)
+          greet = 'Good Afternoon';
+      else if (hrs >= 17 && hrs <= 24)
+          greet = 'Good Evening';
+
+      document.getElementById('lblGreetings').innerHTML =
+          '<b>' + greet + '</b> and welcome to Mobile Legends char!';
+  </script>
+
+
 </div>
+
+
+
 
 </div>
 
