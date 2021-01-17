@@ -158,8 +158,9 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
         </ul>
     </div>
     <!-- /.panel-body -->
-<!-- /.chat panel enddahdahdah -->
+
     </div>
+    <!-- /.chat panel enddahdahdah -->
 </div>
 <hr>
 </div>
