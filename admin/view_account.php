@@ -2,17 +2,27 @@
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
   include("update_account.php");
   $id=$_GET['employee_id'];
+	$salary = 0;
+
+	$get_salary = "SELECT * FROM salary WHERE employee_id = '$id'";
+	$salary_result = mysqli_query($con, $get_salary);
+	while($row = mysqli_fetch_assoc($salary_result)){
+
+		$salary = $row['total_salary'];
+	}
+
 
   $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id'";
   $payroll_result = mysqli_query($con, $payroll);
   $rawr = mysqli_fetch_assoc($payroll_result);
-$checker=mysqli_num_rows($payroll_result);
+  $checker=mysqli_num_rows($payroll_result);
   if ($checker>0) {
     $rawl=$rawr['payroll_date'];
   }else{
     $rawl='New Employee';
   }
 ?>
+
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
 <head>
@@ -124,14 +134,15 @@ $checker=mysqli_num_rows($payroll_result);
           </div>
 
           <div class="modal-body" style="padding:20px 30px;">
-            <form class="form-horizontal" action="#" name="form" method="POST">
+            <form class="form-horizontal" action="" name="form" method="POST">
 
-<input name="empl_id" type="hidden" value="<?php echo $emp_id;?>" />
+							<input name="empl_id" type="hidden" value="<?php echo $emp_id;?>" />
 
               <div class="form-group">
                 <label class="col-sm-12 control-label">Payroll</label>
                 <div class="col-sm-12">
-                  <input type="text" name="totalsalary" style="text-align: right;" class="form-control" placeholder="Amount" required="required">
+									<input type="hidden" name="totalsalary" value="<?php echo $salary ?>">
+                  <p class="form-control" style="text-align: right;"><?php echo $salary ?></p>
                 </div>
               </div>
 
@@ -149,6 +160,7 @@ $checker=mysqli_num_rows($payroll_result);
                   <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
                 </div>
               </div>
+
             </form>
           </div>
 

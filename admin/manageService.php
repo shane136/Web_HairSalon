@@ -114,11 +114,11 @@ $resultCount = mysqli_num_rows($all_products);
 
 ?>
 <td>
-<a class="btn btn-danger" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
+<a class="btn btn-danger" onclick="return confirm('Confirm Deletion?');" href="serDel.php?service_id=<?php echo $products["service_id"]; ?>">Delete</a>
 <a class="btn btn-primary" href="editService.php?service_id=<?php echo $products["service_id"]; ?>">Update</a>
 </td>
 <?php
-                                    echo '</tr>'; //dli butngan ug update/add/delete button sa services?
+                                    echo '</tr>'; 
                                     }
                                 }
                             ?>
