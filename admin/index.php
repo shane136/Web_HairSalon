@@ -77,6 +77,12 @@
           '<b>' + greet + '</b> and welcome to Mobile Legends char!';
   </script>
 
+<!-- <section>
+  <div style="text-align:right; padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila" width="175%" height="140" frameborder="0" seamless></iframe>
+  </div>
+</section> -->
+
+
 
 </div>
 

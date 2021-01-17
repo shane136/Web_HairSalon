@@ -1,3 +1,15 @@
+<?php
+require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
+
+$user_id = $_SESSION['user_id'];
+
+$user_emp = "SELECT * from employee WHERE user_id LIKE '$user_id'";
+$result = mysqli_query($con, $user_emp);
+$name = "test";
+while($row = mysqli_fetch_assoc($result)){
+	$name = $row['f_name'];
+}
+?>
 
 <!DOCTYPE html>
 <html class = "h-100"lang="en" dir="ltr">
@@ -48,6 +60,28 @@ StartScrolling();
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
+
+<div style="text-align: left; padding: 1em 0; font-size: 200%;"> <h2> </h2>
+
+  <body>
+      <label id="lblGreetings"></label>
+  </body>
+
+  <script>
+      var myDate = new Date();
+      var hrs = myDate.getHours();
+      var greet;
+
+      if (hrs < 12)
+          greet = 'Good Morning,';
+      else if (hrs >= 12 && hrs <= 17)
+          greet = 'Good Afternoon,';
+      else if (hrs >= 17 && hrs <= 24)
+          greet = 'Good Evening,';
+
+      document.getElementById('lblGreetings').innerHTML =
+          '<b>' + greet + '</b> '+"<?php echo $name."!" ?>";
+  </script>
 
 </div>
 </div>
