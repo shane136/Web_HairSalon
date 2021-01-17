@@ -47,7 +47,7 @@ $service_empty = 1;
 
       foreach ($output as $key => $value) {
 
-        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid')";
+        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', NULL, '0')";
 
 
         // //get the employee who's job description same to the specific service_type;
@@ -88,7 +88,7 @@ $service_empty = 1;
         $emp_id = $row['employee_id'];
         }
 
-        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', '$emp_id')";
+        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', '$emp_id', '0')";
 
         mysqli_query($con,$query);
       }
