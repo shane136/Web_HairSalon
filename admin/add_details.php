@@ -1,9 +1,9 @@
 <?php
 	require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
-	$user_id=$_GET['user_id'];
-$query = "SELECT * FROM user_account WHERE user_id='$user_id';";
-$sql = mysqli_query($con, $query);
-$row = mysqli_fetch_assoc($sql);
+	$emp_id = $_GET['emp_id'];
+	$query = "SELECT * FROM user_account WHERE user_id='$emp_id'";
+	$sql = mysqli_query($con, $query);
+	$row = mysqli_fetch_assoc($sql);
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ $row = mysqli_fetch_assoc($sql);
       <h2><?php echo $row['user_name']; ?></h2>
     </div>
 
-<input name="user_id" type="hidden" value="<?php echo $row['user_id'];?>" />
+<input name="user_id" type="hidden" value="<?php echo $emp_id; ?>" />
 
         <div class="form-textbox">
             <label for="name">First Name:</label>

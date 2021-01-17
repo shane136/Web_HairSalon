@@ -167,8 +167,11 @@ $query = mysqli_query($con, "SELECT * from user_account WHERE user_type='Employe
               else{
                 echo "Error";
               }?></h5></td>
+
+
             <td align="center">
-              <a class="btn btn-outline-primary" href="add_details.php?user_id=<?php echo $row["user_id"]; ?>">Add Details</a>
+
+              <a class="btn btn-outline-primary" href="add_details.php?emp_id=<?php echo $row["user_id"]; ?>">Add Details</a>
               <a class="btn btn-danger" href="userdel.php?user_id=<?php echo $row["user_id"]; ?>">Delete</a>
             </td>
           </tr>

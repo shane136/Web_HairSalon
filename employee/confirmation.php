@@ -23,7 +23,7 @@ $user_id = $_SESSION['user_id'];
         <h1>J.HairSalon</h1>
         <div class="container">
             <div class="sign-up-content">
-                <form method="POST" class="signup-form">                
+                <form method="POST" class="signup-form">
 
                     <div class="form-textbox">
                             <label for="name">Confirmation Key:</label>
@@ -63,7 +63,7 @@ $user_id = $_SESSION['user_id'];
         {
             ?>
             <script>
-                alert('Encorrect Key! Request key to owner if you are an employee here.')
+                alert('Incorrect Key! Request key to owner if you are an employee here.')
                 window.location.href = '/Web_HairSalon/login.php';
             </script>
             <?php

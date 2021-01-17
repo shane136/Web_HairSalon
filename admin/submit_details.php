@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 
-  $user_id = $_POST['user_id'];
+  $emp_id = $_POST['user_id'];
   $f_name	 = $_POST['f_name'];
   $l_name	 = $_POST['l_name'];
   $email	 = $_POST['email'];
@@ -12,14 +12,14 @@ require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
   if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
   }
-  
+
   $description = "Adding Employee Details of User Account ID:".$user_id;
   $sys_log = mysqli_query($con,"INSERT INTO sys_log VALUES(NULL, '$user_id', '$description', NOW())");
 
 
-  $sql = mysqli_query($con, "INSERT INTO employee(employee_id, f_name, l_name, email, address, phone_number, user_id, job_type) VALUES(NULL, '$f_name', '$l_name', '$email', '$address', '$phone_number', '$user_id', '$job_type');");
+  $sql = mysqli_query($con, "INSERT INTO employee(employee_id, f_name, l_name, email, address, phone_number, user_id, job_type) VALUES(NULL, '$f_name', '$l_name', '$email', '$address', '$phone_number', '$emp_id', '$job_type');");
 
-  mysqli_query($con, "UPDATE user_account SET status=1 WHERE user_id='$user_id';");
+  mysqli_query($con, "UPDATE user_account SET status=1 WHERE user_id='$emp_id';");
 
   if ($sql)
   {
