@@ -220,7 +220,7 @@ while($rows = mysqli_fetch_assoc($result)){
     <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
         <!-- <div class="row"> -->
 
-          <form class="" action="Web_HairSalon\conn\payment_details.php" method="post">
+          <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
 
             <div class="">
                 <p class="h3" style="text-align:center;">PAYMENT TYPE</p>

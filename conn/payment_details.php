@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else {
       $payment_type = "Mobile Cash";
     }
+    
     $restriction = 99999; //of input cash_amount 
     if(($cash >= $total_amount) && ($restriction >= $cash)) {
       $paid = "Paid";
@@ -59,15 +60,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          $salary_result = mysqli_query($con,$query_salary);
 
          $test = 1;
-         if($salary_result && mysqli_num_rows($salary_result) > 0){
-             $user_data = mysqli_fetch_assoc($salary_result);
 
+$getDate = substr($date_sched,0,10);
+$queue = mysqli_query($con, "SELECT * FROM salary WHERE day = '$getDate';");
+
+         if($salary_result && mysqli_num_rows($queue) > 0){
              $salary = "UPDATE salary set total_salary = total_salary + '$commission_rate',
              num_service_rendered = num_service_rendered + 1 WHERE employee_id = '$employee_id'";
              mysqli_query($con,$salary);
          }
          else {
-             $salary = "INSERT INTO salary VALUES(NULL,'$test','$rate','$commission_rate','$employee_id', $payment_id)";
+             $salary = "INSERT INTO salary VALUES(NULL,'$test','$rate','$commission_rate','$employee_id', '$payment_id', '$getDate')";
              mysqli_query($con,$salary);
          }
 

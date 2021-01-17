@@ -4,6 +4,9 @@
   $id=$_GET['employee_id'];
 	$salary = 0;
 
+$paytime = mysqli_query($con, "SELECT * FROM bookings WHERE employee_id='$id';");
+$array = mysqli_fetch_assoc($paytime);
+
 	$get_salary = "SELECT * FROM salary WHERE employee_id = '$id'";
 	$salary_result = mysqli_query($con, $get_salary);
 	while($row = mysqli_fetch_assoc($salary_result)){
@@ -12,7 +15,7 @@
 	}
 
 
-  $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id'";
+  $payroll = "SELECT * FROM payroll_record WHERE employee_id = '$id';";
   $payroll_result = mysqli_query($con, $payroll);
   $rawr = mysqli_fetch_assoc($payroll_result);
   $checker=mysqli_num_rows($payroll_result);
@@ -21,6 +24,7 @@
   }else{
     $rawl='New Employee';
   }
+
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +39,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -49,27 +54,30 @@
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout</small></p></a>
 </div>
 
-<div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
+<div class="container-fluid p-0" style="background: #0F222D;height: 100%;">
+<div class="mh-100 p-3" style="height:25vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div class="mt-5" style="width:550px;height:100%; text-align:left; margin: auto; padding: 10px;">
+<div class="col-md-12 mt-4" style="margin:1px;background:#ffe6e6;border-radius:5px;">
+<div class="row container-fluid p-0 m-0">
+<div class="col-md-6 mt-4 mb-4">
+  <div class="col-md-12 p-4" style="background:#fff;border: 1px solid #000; border-radius: 20px; height: 500px;">
 
-<form class="" style="" action="update_account.php" method="post" name="form">
-<div style="border: 1px solid #000; border-radius: 20px; padding: 35px; height: 500px;">
-     <div class="row">
-         <div class="col-sm-6">
-             <address>
-                 <strong>J.HairSalon</strong>
-                 <br>
-         </div>
-</div>
-<div class="row">
+<form action="update_account.php" method="post" name="form">
+  <div class="col-sm-6">
+    <address>
+      <strong>J.HairSalon</strong>
+      <br>
+    </address>
+  </div>
+
+<div class="container">
  <div class="text-center">
      <h1><b>Payroll</b></h1>
  </div>
-         </span>
+
   <table class="table table-hover">
      <thead>
          <tr>
@@ -113,7 +121,54 @@
                   <a href="managePayroll.php" class="btn btn-warning">Cancel</a>
                 </div>
               </div>
+
           </form>
+    </div>
+</div>
+<div class="col-md-6 mt-4 mb-4">
+    <div class="col-md-12 p-4" style="background:#fff;border: 1px solid #000; border-radius: 20px; height: 500px;">
+<div class="card-header py-4">
+      <h5 class="m-0 font-weight-bold text-muted">Service Record</h5>
+</div>        
+<div class="card-body">
+          <div class="table-responsive-sm">
+            <form method="">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr class="info">
+                  <th><p align="center">ID</p></th>
+                  <th><p align="center"># Service Rendered</p></th>
+                  <th><p align="center">Rate</p></th>
+                  <th><p align="center">Total Salary</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+<?php 
+  $sql = mysqli_query($con, "SELECT * FROM salary WHERE employee_id = '$id';");
+  $i=0;
+  while ($check = mysqli_fetch_assoc($sql)) {
+    $i=$i+1;
+?>                  
+                  <td><p align="center"><?php echo $i;?></p></td>
+                  <td><p align="center"><?php echo $check['num_service_rendered'];?></p></td>
+                  <td><p align="center"><?php echo $check['commission_rate'];?></p></td>
+                  <td><p align="center"><?php echo $check['total_salary'];?></p></td>
+<?php } ?>                  
+                </tr>
+              </tbody>
+              </table>
+            </form>
+          </div>
+</div>    
+    </div>
+</div>
+</div>
+    </div>
+</div>
+</div>
+
+
 <?php
 $checker=mysqli_num_rows($payroll_result);
   if ($checker>0) {
@@ -169,6 +224,8 @@ $checker=mysqli_num_rows($payroll_result);
 </div>
 
 </div>
-
+<script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="../js/demo/datatables-demo.js"></script>
 </body>
 </html>
