@@ -213,18 +213,37 @@ $sqli = mysqli_query($con, "SELECT * FROM customer WHERE user_id=$user_id;");
 $cusid = mysqli_fetch_assoc($sqli);
 
 $custids = $cusid['customer_id'];
-$sql = mysqli_query($con, "SELECT * FROM bookings WHERE customer_id='$custids' ORDER BY date_sched ASC;");
 
-while($view = mysqli_fetch_assoc($sql)){
+$sql = mysqli_query($con, "SELECT * FROM bookings WHERE customer_id='$custids' ORDER BY date_sched ASC;");
+while($view = mysqli_fetch_assoc($sql)) {
+  $emid=$view['employee_id'];
+  
+  $sqlw = mysqli_query($con, "SELECT * FROM employee WHERE employee_id='$emid';");
+  $fetchdata = mysqli_fetch_assoc($sqlw);
+
+  $comp = $view['notify_status'];
 ?>
   <li class="right">
-    <div class="chat-body clearfix">
+    <div class="chat-body clearfix w-100">
 
-      <?php echo $view['notify_status'];?>
+<?php if ($comp == '1' && $view['status']) { ?>
 
+  <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
+  <p><i class="fa fa-bell fa-fw" style="color:blue;"></i> Message: <span style="color:blue;"> Book Comfirm </span><span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
+  <p>Book Date: <?php echo $view['book_date'];?></p>
+  <p>Date Scheduled: <?php echo $view['date_sched'];?></p>
+  </div>
+
+<?php } elseif($comp == '0' && $view['status']) { ?>
+  <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
+  <p><i class="fa fa-bell fa-fw"></i> Message: Book Pending <span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
+
+  </div>
+<?php } ?>
+      
     </div>
   </li>
-<?php }?>
+<?php } ?>
         </ul>
     </div>
 <!-- /.panel-body -->
