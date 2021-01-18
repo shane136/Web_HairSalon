@@ -88,7 +88,7 @@ $service_empty = 1;
           while ($row = mysqli_fetch_assoc($result_employee)) {
             $emp  = $row['employee_id'];
             $count = mysqli_query($con, "SELECT COUNT(*) AS cnt FROM bookings WHERE employee_id='$emp' ;");
-            $countemp = mysqli_query($con, "SELECT COUNT(*) AS dcnt FROM employee WHERE job_type='$type_service' ;");            
+            $countemp = mysqli_query($con, "SELECT COUNT(*) AS dcnt FROM employee WHERE job_type='$type_service' ;");
             $fetol = mysqli_fetch_assoc($count);
             $fechl = mysqli_fetch_assoc($countemp);
 

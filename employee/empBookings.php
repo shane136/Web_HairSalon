@@ -50,7 +50,7 @@ span{
 }
 </style>
 <body class = "d-flex flex-row w-100 h-100">
-<div class="col-2 border  h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
+<div class="col-2 border flex-column d-flex"style="height:115%; background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
@@ -73,7 +73,7 @@ span{
 
 </div>
 
-<div class="container-fluid" style="background: #0F222D;">
+<div class="container-fluid" style="background: #0F222D; height: 90%;">
 <?php
 $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDER BY date_sched ASC;");
 ?>

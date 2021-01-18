@@ -51,7 +51,7 @@ input.btn{
 
 <body class = "d-flex flex-row h-100">
 
-<div class="col-2 border flex-column d-flex"style="height:123%;background: #ffe6e6 !important;">
+<div class="col-2 border flex-column d-flex"style="height:205%;background: #ffe6e6 !important;">
 
 <a href="\Web_HairSalon\admin\index.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
@@ -69,7 +69,7 @@ input.btn{
 </div>
 
 
-<div class="container-fluid" style="background:#0F222D;height:123%;">
+<div class="container-fluid" style="background:#0F222D;height:205%;">
 <div class="mh-100 p-3" style="height:20vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
