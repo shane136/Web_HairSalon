@@ -40,7 +40,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <!-- Content -->
-<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px;">
 
   <div class="w3-panel">
     <h1><b>JEREHARIS HAIR SALON</b></h1>
@@ -123,7 +123,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
   </div>
 
-  <!-- Contact --> 
+  <!-- Contact -->
   <div class="w3-center w3-padding-64" id="contact">
     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
   </div>

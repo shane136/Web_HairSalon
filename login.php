@@ -20,7 +20,7 @@ session_start();
         window.setTimeout("StartScrolling()",150); }
         StartScrolling();
       // Sorry wala rani char2 T.T-->
-    
+
     </script>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -39,7 +39,7 @@ session_start();
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <link rel="stylesheet" href="css/login_page.css">
-  	
+
 </head>
 <style>
 div.modal-content{
@@ -60,7 +60,7 @@ div.sign-up-content{
     -webkit-transform: translateY(-50%);
     font-weight: 600;
     color: #888;
-    font-size: 18px; 
+    font-size: 18px;
 }
 input.name {
     border: solid 2px #ebebeb;
@@ -78,14 +78,14 @@ input.name {
   color: #1da0f2;
   text-decoration: none; }
   .term-service:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 :-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset; 
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }
 @media screen and (max-width: 400px) {
   .form-textbox label {
-    left: 15px; 
+    left: 15px;
 }
 
 </style>
@@ -112,9 +112,9 @@ input.name {
 							</div>
 							<input type="password" name="password" id="myInput" required class="form-control input_pass" value="" placeholder="Password">
 						</div>
-			<hr>		
+			<hr>
               <input type="checkbox" onclick="myFunction()"> Show Password
-          
+
               <script>
               function myFunction() {
                 var x = document.getElementById("myInput");
@@ -177,14 +177,14 @@ input.name {
 
     <div class="form-textboxx">
         <label for="name">Username:</label>
-        <input type="text" name="username" class="name" required />                  
+        <input type="text" name="username" class="name" required />
     </div>
 
     <div class="form-textboxx">
         <label for="name">Password:</label>
-        <input type="password" name="password" class="name" required />     
+        <input type="password" name="password" class="name" required />
     </div>
-        
+
     <div class="form-textboxx">
         <label for="name">Address:</label>
         <input type="text" name="address" class="name" required />
@@ -208,7 +208,7 @@ input.name {
     <div class="form-textboxx">
         <input type="submit" name="submit" id="submit" class="btn login_btn" value="Create account" style="" />
     </div>
-</form>      	  	
+</form>
 </div>
 </div>
       	  </div>

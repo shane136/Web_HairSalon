@@ -119,9 +119,9 @@ while($rows = mysqli_fetch_assoc($result)){
                     <address>
                         <strong>J.HairSalon</strong>
                         <br>
-                        Roxas Street, Iligan City
+                        Andres Bonifacio, Tibanga
                         <br>
-                        Philippines
+                        Iligan City
                         <br>
                         <abbr title="Phone">P.:</abbr> (213) 484-6829
                     </address>

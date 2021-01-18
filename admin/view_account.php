@@ -227,8 +227,8 @@ $checker=mysqli_num_rows($payroll_result);
               <div class="form-group">
                 <label class="col-sm-12 control-label">Payroll</label>
                 <div class="col-sm-12">
-									<input type="hidden" name="totalsalary" value="<?php echo $salary ?>">
-                  <p class="form-control" style="text-align: right;"><?php echo $salary ?></p>
+									<input type="hidden" name="totalsalary" value="<?php echo $total; ?>">
+                  <p class="form-control" style="text-align: right;"><?php echo $total ?></p>
                 </div>
               </div>
 
