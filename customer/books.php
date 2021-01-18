@@ -214,10 +214,15 @@ $cusid = mysqli_fetch_assoc($sqli);
 
 $custids = $cusid['customer_id'];
 
-$sql = mysqli_query($con, "SELECT * FROM bookings WHERE customer_id='$custids' ORDER BY date_sched ASC;");
+$sql = mysqli_query($con, "SELECT * FROM bookings WHERE customer_id='$custids' ORDER BY date_sched, notify_status ASC;");
 while($view = mysqli_fetch_assoc($sql)) {
   $emid=$view['employee_id'];
   
+  $serid = $view['service_id'];
+
+  $sqlo = mysqli_query($con, "SELECT * FROM services WHERE service_id='$serid';");
+  $fetchser = mysqli_fetch_assoc($sqlo);
+
   $sqlw = mysqli_query($con, "SELECT * FROM employee WHERE employee_id='$emid';");
   $fetchdata = mysqli_fetch_assoc($sqlw);
 
@@ -226,18 +231,28 @@ while($view = mysqli_fetch_assoc($sql)) {
   <li class="right">
     <div class="chat-body clearfix w-100">
 
-<?php if ($comp == '1' && $view['status']) { ?>
+<?php if ($comp == '1') { ?>
 
   <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
+
   <p><i class="fa fa-bell fa-fw" style="color:blue;"></i> Message: <span style="color:blue;"> Book Comfirm </span><span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
   <p>Book Date: <?php echo $view['book_date'];?></p>
   <p>Date Scheduled: <?php echo $view['date_sched'];?></p>
-  </div>
+  <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
+  <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
-<?php } elseif($comp == '0' && $view['status']) { ?>
+  </div>
+<?php } elseif($comp == '0') { ?>
   <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
+
   <p><i class="fa fa-bell fa-fw"></i> Message: Book Pending <span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
 
+  <p>Book Date: <?php echo $view['book_date'];?></p>
+  <p>Date Scheduled: <?php echo $view['date_sched'];?></p>
+  <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
+  <p>Service Name: <?php echo $fetchser['service_name'];?></p>
+
+    <button type="button" class="btn btn-danger position-right">Delete</button>
   </div>
 <?php } ?>
       
