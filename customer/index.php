@@ -59,7 +59,7 @@
 
       <a href="\Web_HairSalon\customer\about.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-info-circle"></i><small> About </small></p></a>
 
-      <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class="btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i></i><small> Logout </small></p></a>
+      <a href="\Web_HairSalon\index.php" onclick="return confirm('Are you sure you want to log out?');" class="btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i></i><small> Logout </small></p></a>
 
     </div>
 

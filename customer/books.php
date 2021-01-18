@@ -150,7 +150,7 @@ $service_empty = 1;
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="../css/startmin.css" rel="stylesheet">
-<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">   
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
    </head>
 
@@ -158,7 +158,7 @@ $service_empty = 1;
     <div class="col-2 border  flex-column d-flex"style=" height:130%; background: #ffe6e6 !important;">
        <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;text-align: left"> <i class="fas fa-home"></i><small> Home </small></p></a>
 
-       <a href="\Web_HairSalon\conn\logout.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
+       <a href="\Web_HairSalon\index.php" class=" btn btn-outline-light pt-0" onclick="return confirm('Are you sure you want to log out?');"  style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
        <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
        <!-- <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
@@ -207,8 +207,8 @@ $service_empty = 1;
     <!-- /.panel-heading -->
     <div class="panel-body">
         <ul class="chat">
-          
-<?php 
+
+<?php
 $sqli = mysqli_query($con, "SELECT * FROM customer WHERE user_id=$user_id;");
 $cusid = mysqli_fetch_assoc($sqli);
 
@@ -217,7 +217,7 @@ $custids = $cusid['customer_id'];
 $sql = mysqli_query($con, "SELECT * FROM bookings WHERE customer_id='$custids' ORDER BY date_sched, notify_status ASC;");
 while($view = mysqli_fetch_assoc($sql)) {
   $emid=$view['employee_id'];
-  
+
   $serid = $view['service_id'];
 
   $sqlo = mysqli_query($con, "SELECT * FROM services WHERE service_id='$serid';");
@@ -234,7 +234,7 @@ while($view = mysqli_fetch_assoc($sql)) {
 <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
 <?php if ($comp == '1') { ?>
 
-  
+
 
   <p><i class="fa fa-bell fa-fw" style="color:blue;"></i> Message: <span style="color:blue;"> Book Confirmed </span><span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
   <p>Book Date: <?php echo $view['book_date'];?></p>
@@ -242,9 +242,9 @@ while($view = mysqli_fetch_assoc($sql)) {
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
-  
+
 <?php } elseif($comp == '0') { ?>
-  
+
 
   <p><i class="fa fa-bell fa-fw"></i> Message: Book Pending <span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
 
@@ -253,7 +253,7 @@ while($view = mysqli_fetch_assoc($sql)) {
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
-  
+
 
 <?php } ?>
   <div class="d-flex flex-row-reverse">
@@ -261,7 +261,7 @@ while($view = mysqli_fetch_assoc($sql)) {
 
     <a type="button" class="btn btn-danger m-1 mt-0" onclick="return confirm('Are you sure you want to delete?');" href="bookDel.php?book_id=<?php echo $view['booking_id'];?>">Delete</a>
   </div>
-</div>      
+</div>
 
     </div>
   </li>
@@ -285,5 +285,3 @@ while($view = mysqli_fetch_assoc($sql)) {
 <script src="../js/startmin.js"></script>
 <!-- jQuery -->
 <script src="../js/jquery.min.js"></script>
-
-
