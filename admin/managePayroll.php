@@ -88,19 +88,19 @@ $query = mysqli_query($con, "SELECT * from employee, user_account WHERE employee
                               $job_type = "Colourist";
                             }
                             elseif($type == 2){
-                              $job_type = "Waxing Specialist";
+                              $job_type = "Senior Stylist";
                             }
                             elseif($type == 3){
-                              $job_type = "Barber Stylist";
+                              $job_type = "Waxing Specialist";
                             }
                             elseif($type == 4){
                               $job_type = "Hair Extenstion Stylist";
                             }
                             elseif($type == 5){
-                              $job_type = "Senior Stylist";
+                              $job_type = "Hairdresser";
                             }
                             else{
-                              $job_type = "Hairdresser";
+                              $job_type = "Barber Stylist";
                             }
 
       if ($row['status']==1) {

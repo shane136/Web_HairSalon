@@ -91,7 +91,7 @@ if ($numrows >= 15) {
         <strong>Sum of 15 days work: <p class="bg-warning" style="text-align: center;"><?php echo $total; ?></p></strong>
       </div>
       <br>
-    
+
   </div>
 
 <div class="container">
@@ -149,18 +149,18 @@ if ($numrows >= 15) {
 <div class="col-md-6 mt-4 mb-4">
     <div class="col-md-12 p-4" style="background:#fff;border: 1px solid #000; border-radius: 20px; height: 500px;">
 <div class="card-header d-flex justify-content-between">
-  
+
   <div class="d-flex flex-row p-2">
       <h5 class="m-0 font-weight-bold text-muted">Service Record</h5>
   </div>
   <div class="d-flex flex-row-reverse">
-    <p class="">Total of Days 
+    <p class="">Total of Days
       <span class="p-2 bg-info"><?php echo $inct['cnt']; ?></span>
       before 15.
     </p>
   </div>
 
-</div>        
+</div>
 <div class="card-body">
           <div class="table-responsive-sm">
             <form method="">
@@ -168,30 +168,30 @@ if ($numrows >= 15) {
               <thead>
                 <tr class="info">
                   <th><p align="center">ID</p></th>
-                  <th><p align="center"># Service Rendered</p></th>
+                  <th><p align="center">No. of Service Rendered</p></th>
                   <th><p align="center">Rate</p></th>
                   <th><p align="center">Total Salary</p></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-<?php 
+<?php
   $sql = mysqli_query($con, "SELECT * FROM salary WHERE employee_id = '$id';");
   $i=0;
   while ($check = mysqli_fetch_assoc($sql)) {
     $i=$i+1;
-?>                  
+?>
                   <td><p align="center"><?php echo $i;?></p></td>
                   <td><p align="center"><?php echo $check['num_service_rendered'];?></p></td>
                   <td><p align="center"><?php echo $check['commission_rate'];?></p></td>
                   <td><p align="center"><?php echo $check['total_salary'];?></p></td>
-<?php } ?>                  
+<?php } ?>
                 </tr>
               </tbody>
               </table>
             </form>
           </div>
-</div>    
+</div>
     </div>
 </div>
 </div>
