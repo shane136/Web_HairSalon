@@ -9,6 +9,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $type = $_POST['payment_type'];
     $date_sched = $_POST['date_sched'];
 
+    $getDate = substr($date_sched,0,10);
+
     $payment_type = "";
     if($type == 1){
       $payment_type = "Cash";
@@ -21,9 +23,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(($cash >= $total_amount) && ($restriction >= $cash)) {
       $paid = "Paid";
       $update_bookings = "UPDATE bookings set status = '$paid' where transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
-      mysqli_query($con,$update_bookings);
-      $sql = "INSERT INTO payment_details VALUES(NULL,'$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP())";
-      mysqli_query($con,$sql);
+      mysqli_query($con, $update_bookings);
+
+      $sql = "INSERT INTO payment_details(payment_id, total_amount, cash, payment_type, user_id, booking_sched, payment_date) VALUES (NULL, '$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP());";
+      mysqli_query($con, $sql) or mysqli_error($con);
 
 
       $get_update = substr_replace($date_sched," ",10,1);
@@ -32,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       // //getting the payment_id using $date_sched
        $payment= "SELECT * FROM payment_details where booking_sched LIKE '$final_date'";
-       $get_payment = mysqli_query($con,$payment);
+       $get_payment = mysqli_query($con, $payment);
        $payment_id = 0;
        while ($row = mysqli_fetch_assoc($get_payment)) {
 
@@ -61,21 +64,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
          $test = 1;
 
-$getDate = substr($date_sched,0,10);
 $queue = mysqli_query($con, "SELECT * FROM salary WHERE day = '$getDate';");
 
          if($salary_result && mysqli_num_rows($queue) > 0){
              $salary = "UPDATE salary set total_salary = total_salary + '$commission_rate',
              num_service_rendered = num_service_rendered + 1 WHERE employee_id = '$employee_id'";
-             mysqli_query($con,$salary);
+             mysqli_query($con, $salary);
          }
          else {
-             $salary = "INSERT INTO salary VALUES(NULL,'$test','$rate','$commission_rate','$employee_id', '$payment_id', '$getDate')";
-             mysqli_query($con,$salary);
+             $salary = "INSERT INTO salary(salary_id, num_service_rendered, commission_rate, total_salary, employee_id, payment_id, day) VALUES (NULL,'$test','$rate','$commission_rate','$employee_id', '$payment_id', '$getDate');";
+             mysqli_query($con, $salary);
          }
 
       }
-
+//INSERT INTO `salary`(`salary_id`, `num_service_rendered`, `commission_rate`, `total_salary`, `employee_id`, `payment_id`, `day`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7]);
 
       if(isset($_SESSION['date_sched'])){
         $date_sched =  $_SESSION['date_sched'];

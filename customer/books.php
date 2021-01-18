@@ -231,19 +231,20 @@ while($view = mysqli_fetch_assoc($sql)) {
   <li class="right">
     <div class="chat-body clearfix w-100">
 
+<div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
 <?php if ($comp == '1') { ?>
 
-  <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
+  
 
-  <p><i class="fa fa-bell fa-fw" style="color:blue;"></i> Message: <span style="color:blue;"> Book Comfirm </span><span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
+  <p><i class="fa fa-bell fa-fw" style="color:blue;"></i> Message: <span style="color:blue;"> Book Confirmed </span><span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
   <p>Book Date: <?php echo $view['book_date'];?></p>
   <p>Date Scheduled: <?php echo $view['date_sched'];?></p>
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
-  </div>
+  
 <?php } elseif($comp == '0') { ?>
-  <div class="m-2 p-3" style="border:1px solid #000;border-radius: 5px;">
+  
 
   <p><i class="fa fa-bell fa-fw"></i> Message: Book Pending <span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
 
@@ -252,10 +253,16 @@ while($view = mysqli_fetch_assoc($sql)) {
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
-    <button type="button" class="btn btn-danger position-right">Delete</button>
-  </div>
+  
+
 <?php } ?>
-      
+  <div class="d-flex flex-row-reverse">
+    <a type="button" class="btn btn-primary m-1 mt-0">Update</a>
+
+    <a type="button" class="btn btn-danger m-1 mt-0" onclick="return confirm('Are you sure you want to delete?');" href="bookDel.php?book_id=<?php echo $view['booking_id'];?>">Delete</a>
+  </div>
+</div>      
+
     </div>
   </li>
 <?php } ?>

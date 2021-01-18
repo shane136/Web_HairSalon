@@ -88,13 +88,13 @@ while ($rows = mysqli_fetch_assoc($result)) {
         </div>
       </div> -->
 
-      <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
+      <div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
         <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
         <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
         </div>
       </div>
 
-      <div class="container p-3" style="background: #0F222D;height: 75%;">
+      <div class="container-fluid p-3" style="background: #0F222D;height: 75%;">
             <div class="h-auto rounded p-3" style="background: #ffe6e6;">
                 <p class="h3" style="text-align:center; font-family: 'Courier New', Courier, monospace; font-size: 300%;">CUSTOMER PROFILE</p>
 
