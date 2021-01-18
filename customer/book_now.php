@@ -84,9 +84,12 @@ $service_empty = 1;
          $get_employee = "SELECT * FROM employee where job_type LIKE '$type_service'";
          $result_employee = mysqli_query($con,$get_employee);
          $emp_id = 0;
-         while ($row = mysqli_fetch_assoc($result_employee)) {
-        $emp_id = $row['employee_id'];
-        }
+          while ($row = mysqli_fetch_assoc($result_employee)) {
+            
+            if () {              
+              $emp_id = $row['employee_id'];
+            }
+          }
 
         $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', '$emp_id', '0')";
 

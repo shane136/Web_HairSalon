@@ -77,14 +77,14 @@ input.btn{
 
 <div class="container-fluid col-sm-12 p-1 mt-4" style ="background: #ffe6e6; border-radius: 10px;">
 <div class="row p-5" >
-<div class="col-lg-8 p-1">
+<div class="col-lg-8 p-2">
     <div class="card shadow mb-0">
     <div class="card-header py-4">
                 <h9 class="m-0 font-weight-bold text-primary">Services</h9>
     </div>
-            <div class="card-body">
+            <div class="card-body p-2">
                 <div class="table-responsive-sm">
-                    <table class="table table-bordered p-3" id="dataTable" width="105%">
+                    <table class="table table-bordered" id="dataTable" width="100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
