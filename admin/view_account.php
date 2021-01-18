@@ -3,6 +3,7 @@
   include("update_account.php");
   $id=$_GET['employee_id'];
 	$salary = 0;
+  $total = 0;
 
 $paytime = mysqli_query($con, "SELECT * FROM bookings WHERE employee_id='$id';");
 $array = mysqli_fetch_assoc($paytime);
@@ -24,6 +25,25 @@ $array = mysqli_fetch_assoc($paytime);
   }else{
     $rawl='New Employee';
   }
+
+$sqlf = mysqli_query($con, "SELECT COUNT(*) AS cnt FROM salary WHERE employee_id='$id';");
+$inct = mysqli_fetch_assoc($sqlf);
+$sqlop = mysqli_query($con, "SELECT * FROM salary WHERE employee_id='$id' ;");
+$sume = mysqli_fetch_assoc($sqlop);
+$numrows = mysqli_num_rows($sqlop);
+if ($numrows >= 15) {
+  $x=0;
+  while ($x < 15) {
+    $total = $total + $sume['total_salary'];
+    $x = $x + 1;
+  }
+} else {
+  $x=0;
+  while ($x < $numrows) {
+    $total = $total + $sume['total_salary'];
+    $x = $x + 1;
+  }
+}
 
 ?>
 
@@ -66,11 +86,12 @@ $array = mysqli_fetch_assoc($paytime);
   <div class="col-md-12 p-4" style="background:#fff;border: 1px solid #000; border-radius: 20px; height: 500px;">
 
 <form action="update_account.php" method="post" name="form">
-  <div class="col-sm-6">
-    <address>
-      <strong>J.HairSalon</strong>
+  <div class="col-sm-12 d-flex m-2 mt-0 pt-0">
+      <div class="p-2">
+        <strong>Sum of 15 days work: <p class="bg-warning" style="text-align: center;"><?php echo $total; ?></p></strong>
+      </div>
       <br>
-    </address>
+    
   </div>
 
 <div class="container">
@@ -127,8 +148,18 @@ $array = mysqli_fetch_assoc($paytime);
 </div>
 <div class="col-md-6 mt-4 mb-4">
     <div class="col-md-12 p-4" style="background:#fff;border: 1px solid #000; border-radius: 20px; height: 500px;">
-<div class="card-header py-4">
+<div class="card-header d-flex justify-content-between">
+  
+  <div class="d-flex flex-row p-2">
       <h5 class="m-0 font-weight-bold text-muted">Service Record</h5>
+  </div>
+  <div class="d-flex flex-row-reverse">
+    <p class="">Total of Days 
+      <span class="p-2 bg-info"><?php echo $inct['cnt']; ?></span>
+      before 15.
+    </p>
+  </div>
+
 </div>        
 <div class="card-body">
           <div class="table-responsive-sm">
