@@ -17,19 +17,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Links (sit on top) -->
 
 <div class="w3-top">
-  
+
   <div class="w3-row w3-large w3-light-grey">
-    
+
     <div class="w3-col s3">
       <a href="#" class="w3-button w3-block">Home</a>
-    </div>    
+    </div>
     <div class="w3-col s3">
       <a href="#about" class="w3-button w3-block">About</a>
     </div>
     <div class="w3-col s3">
       <a href="#contact" class="w3-button w3-block">Contact</a>
     </div>
-    <div class="w3-col s2">
+
+    <div class="w3-col s3">
       <a href="\Web_HairSalon\login.php" class="w3-button w3-block">Book Now!</a>
     </div>
 
@@ -43,67 +44,53 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
   <div class="w3-panel">
     <h1><b>JEREHARIS HAIR SALON</b></h1>
-    <p>Template by w3.css</p>
+    <!-- <p>Template by w3.css</p> -->
   </div>
 
   <!-- Slideshow -->
-  <div class="w3-container">
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/coffee.jpg" style="width:100%">
-      <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">Lorem ipsum</span>
-      </div>
-    </div>
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/workbench.jpg" style="width:100%">
-      <div class="w3-display-middle w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">Klorim tipsum</span>
-      </div>
-    </div>
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/sound.jpg" style="width:100%">
-      <div class="w3-display-topright w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">Blorum pipsum</span>
-      </div>
-    </div>
 
-    <!-- Slideshow next/previous buttons -->
-    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
-      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-    
-      <div class="w3-center">
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-      </div>
-    </div>
-  </div>
-  
+
   <!-- Grid -->
   <div class="w3-row w3-container">
     <div class="w3-center w3-padding-64">
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
     </div>
-    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+
+    <div class="w3-col l4 m6 w3-light-grey w3-container w3-padding-16">
+      <h3>Color</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l4 m6 w3-grey w3-container w3-padding-16">
+      <h3>Styling</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l4 m6 w3-dark-grey w3-container w3-padding-16">
+      <h3>Waxing</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l4 m6 w3-grey w3-container w3-padding-16">
+      <h3>Extensions</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l4 m6 w3-dark-grey w3-container w3-padding-16">
       <h3>Design</h3>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
 
-    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-      <h3>Branding</h3>
+    <div class="w3-col l4 m6 w3-light-grey w3-container w3-padding-16">
+      <h3>Grooming</h3>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
 
-    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
-      <h3>Consultation</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
+  <!-- How it Works -->
+  <!-- <div class="w3-row-padding" id="how">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">How it Works</span>
+    </div> -->
 
-    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
-      <h3>Promises</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
   </div>
 
   <!-- Grid -->
@@ -118,7 +105,25 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       </center>
     </div>
 
-  <!-- Contact -->
+<!-- Giapil nani sa About Us -->
+    <p style="text-align: center; font-family: lucida console; font-size: 40px;"> HOW IT WORKS </p>
+    <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16">
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Choose Service</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16">
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Book</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16">
+    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Dayon??</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+  </div>
+
+  <!-- Contact --> 
   <div class="w3-center w3-padding-64" id="contact">
     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
   </div>
@@ -150,7 +155,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Footer -->
 
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-  <h4>Footer</h4>
+  <!-- <h4>Footer</h4> -->
   <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -181,15 +186,15 @@ function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demodots");
-  if (n > x.length) {slideIndex = 1}    
+  if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length} ;
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" w3-white", "");
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-white";
 }
 </script>
