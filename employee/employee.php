@@ -61,7 +61,7 @@ StartScrolling();
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div style="text-align: left; padding: 1em 0; font-size: 200%;"> <h2> </h2>
+<div style="text-align: left; padding: 1em 0; font-size: 200%;" class="container"> <h2></h2>
 
   <body>
       <label id="lblGreetings"></label>
@@ -81,9 +81,59 @@ StartScrolling();
 
       document.getElementById('lblGreetings').innerHTML =
           '<b>' + greet + '</b> '+"<?php echo $name."!" ?>";
-  </script>
 
+  </script>
 </div>
+
+
+<!-- <img src="\Web_HairSalon\image\pic.png" alt="" width="520" height="520" class="container-fluid p-3"> -->
+<style>
+.vertical-menu {
+  width: 1100px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #DC7633;
+  color: white;
+}
+</style>
+<div class="vertical-menu">
+  <a href="#" class="active">REMINDERS:</a>
+  <a href="#">1. Provide hand sanitiser at the salon door and ask clients and visitors to use it upon arrival. </a>
+  <a href="#">2. Wash your hands often and thoroughly with an alcohol-based hand soap to kill viruses that might be on your hands.</a>
+  <a href="#">3. Keep at least 1 metre (3 feet) distance between you and anyone who’s coughing or sneezing, and give staff the option to wear a face mask when treating clients. </a>
+  <a href="#">4. Avoid touching your eyes, nose and mouth, because it’s easy for viruses to enter the body through </a>
+  <a href="#">5. Make sure you and the people around you follow good respiratory hygiene – this means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze, then throw the used tissue away immediately.</a>
+  <a href="#">6. If you or your staff have a fever, cough and difficulty breathing, stay home and call your doctor for advice.</a>
+  <a href="#">7. Stay informed on the latest developments about COVID-19, and follow advice given by your healthcare provider and your national and local public health authority on how to protect yourself and your clients from COVID-19.</a>
+</div>
+
+<style>
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+
+</style>
+<div class="container">
+	 <div class="bottom-right" style="font-family:Brush Script MT; font-size: 300%;" > J. HairSalon</div>
 </div>
 
 </body>

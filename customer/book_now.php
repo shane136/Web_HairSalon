@@ -87,7 +87,7 @@ $service_empty = 1;
          while ($row = mysqli_fetch_assoc($result_employee)) {
         $emp_id = $row['employee_id'];
         }
-
+        
         $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', '$emp_id', '0')";
 
         mysqli_query($con,$query);
