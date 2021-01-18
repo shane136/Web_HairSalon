@@ -285,7 +285,7 @@ $service_empty = 1;
        </div>
 
               <br>
-       <div class="h-auto rounded p-3" style="background: #ffe6e6;">
+       <div hidden class="h-auto rounded p-3" style="background: #ffe6e6;">
          <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOK SCHEDULE</p>
 
          <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
