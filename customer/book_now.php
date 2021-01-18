@@ -84,10 +84,25 @@ $service_empty = 1;
          $get_employee = "SELECT * FROM employee where job_type LIKE '$type_service'";
          $result_employee = mysqli_query($con,$get_employee);
          $emp_id = 0;
+         $i=0;
           while ($row = mysqli_fetch_assoc($result_employee)) {
-            
-            if () {              
+            $emp  = $row['employee_id'];
+            $count = mysqli_query($con, "SELECT COUNT(*) AS cnt FROM bookings WHERE employee_id='$emp' ;");
+            $countemp = mysqli_query($con, "SELECT COUNT(*) AS dcnt FROM employee WHERE job_type='$type_service' ;");            
+            $fetol = mysqli_fetch_assoc($count);
+            $fechl = mysqli_fetch_assoc($countemp);
+
+            $nuemp = $fechl['dcnt'];
+            $nujob = $fetol['cnt'];
+
+            $avg = $nujob / $nuemp;
+
+            if ($i<$avg) {
               $emp_id = $row['employee_id'];
+              $i = $i +1;
+            }else{
+              $emp_id = $row['employee_id'];
+              $i = $i +1;
             }
           }
 

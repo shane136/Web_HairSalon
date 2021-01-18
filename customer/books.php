@@ -145,6 +145,9 @@ $service_empty = 1;
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <!-- Bootstrap Core CSS -->
 <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -228,6 +231,7 @@ while($view = mysqli_fetch_assoc($sql)) {
 
   $comp = $view['notify_status'];
 ?>
+
   <li class="right">
     <div class="chat-body clearfix w-100">
 
@@ -253,31 +257,28 @@ while($view = mysqli_fetch_assoc($sql)) {
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
-
-
 <?php } ?>
   <div class="d-flex flex-row-reverse">
-    <a type="button" class="btn btn-primary m-1 mt-0">Update</a>
-
     <a type="button" class="btn btn-danger m-1 mt-0" onclick="return confirm('Are you sure you want to delete?');" href="bookDel.php?book_id=<?php echo $view['booking_id'];?>">Delete</a>
   </div>
 </div>
 
     </div>
   </li>
+
+
+
 <?php } ?>
         </ul>
     </div>
+
 <!-- /.panel-body -->
 
          </div>
+
       </div>
-
-
      </div>
 
-   </body>
- </html>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../js/bootstrap.min.js"></script>
@@ -285,3 +286,8 @@ while($view = mysqli_fetch_assoc($sql)) {
 <script src="../js/startmin.js"></script>
 <!-- jQuery -->
 <script src="../js/jquery.min.js"></script>
+
+   </body>
+ </html>
+
+

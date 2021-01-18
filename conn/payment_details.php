@@ -25,8 +25,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $update_bookings = "UPDATE bookings set status = '$paid' where transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
       mysqli_query($con, $update_bookings);
 
-      $sql = "INSERT INTO payment_details(payment_id, total_amount, cash, payment_type, user_id, booking_sched, payment_date) VALUES (NULL, '$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP());";
-      mysqli_query($con, $sql) or mysqli_error($con);
+$sql = "INSERT INTO payment_details(payment_id, total_amount, cash, payment_type, user_id, booking_sched, payment_date) VALUES (NULL, '$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP());";
+      
+      mysqli_query($con, $sql);
+      mysqli_error($con);
 
 
       $get_update = substr_replace($date_sched," ",10,1);
@@ -65,14 +67,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          $test = 1;
 
 $queue = mysqli_query($con, "SELECT * FROM salary WHERE day = '$getDate';");
+$ir = mysqli_num_rows($queue);
+         if(($ir > 0) && $salary_result){
+             $salary = "UPDATE salary set total_salary = total_salary + '$commission_rate', num_service_rendered = num_service_rendered + 1 WHERE employee_id = '$employee_id';";
 
-         if($salary_result && mysqli_num_rows($queue) > 0){
-             $salary = "UPDATE salary set total_salary = total_salary + '$commission_rate',
-             num_service_rendered = num_service_rendered + 1 WHERE employee_id = '$employee_id'";
              mysqli_query($con, $salary);
          }
          else {
              $salary = "INSERT INTO salary(salary_id, num_service_rendered, commission_rate, total_salary, employee_id, payment_id, day) VALUES (NULL,'$test','$rate','$commission_rate','$employee_id', '$payment_id', '$getDate');";
+
              mysqli_query($con, $salary);
          }
 
