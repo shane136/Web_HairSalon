@@ -284,6 +284,87 @@ $service_empty = 1;
 
        </div>
 
+              <br>
+       <div class="h-auto rounded p-3" style="background: #ffe6e6;">
+         <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOK SCHEDULE</p>
+
+         <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
+
+           <p class="col m-2" style="color:black">Service Name</p>
+           <p class="col m-2" style="color:black">Price</p>
+           <p class="col m-2" style="color:black">Schedule</p>
+
+         </div>
+
+         <?php
+
+         $get_id = "SELECT * FROM customer WHERE user_id ='$user_id'";
+         $get_result = mysqli_query($con, $get_id);
+         while($customer = mysqli_fetch_assoc($get_result))
+         {
+           $customer_id = $customer['customer_id'];
+         }
+
+         $sql = "SELECT * FROM bookings WHERE customer_id = '$customer_id' AND date_sched IS NOT NULL";
+         $result = mysqli_query($con, $sql);
+
+         while($rows = mysqli_fetch_assoc($result))
+         { $date_sched = $rows['date_sched'];
+
+           $service_id = $rows['service_id'];
+           $query = "SELECT * from services WHERE service_id = '$service_id'";
+           $get_query = mysqli_query($con, $query);
+
+           while($row = mysqli_fetch_assoc($get_query))
+           {
+             $service_name = $row['service_name'];
+             $service_price = $row['service_price'];
+           }
+           //getting the month
+           $get_month = substr($date_sched,0,10);
+
+           //getting the time
+           $time = substr($date_sched,11,2);
+           $last_part = substr($date_sched,14,2);
+
+           //test if time is past 12
+           if ($time > 12) {
+             $time = $time - 12;
+             $time_get = $get_month. " ".(string)$time . ":".$last_part." PM";
+           }
+
+           elseif($time == 0){
+             $time = 12;
+             $temp = substr($date_sched,0,11);
+             $check_time = substr($date_sched,14,2);
+             $time_get = $temp. " ".$time. ":".$check_time. " AM ";
+           }
+           elseif($time == 12) {
+             $temp = substr($date_sched,0,16);
+             $time_get = $temp." ". " NN";
+           }
+           else {
+             $temp = substr($date_sched,0,11);
+             $time = substr($date_sched,11,5);
+             $time_get = $temp." ".$time ." AM ";
+           }
+
+          ?>
+
+         <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
+
+           <p class="col m-2" style="color:black"><?php echo "$service_name"; ?></p>
+           <p class="col m-2" style="color:black">PHP<?php echo "$service_price"; ?></p>
+           <p class="col m-2" style="color:black"><?php echo "$time_get"; ?></p>
+
+         </div>
+
+         <?php
+
+        }
+          ?>
+      </div>
+
      </div>
 
    </body>
