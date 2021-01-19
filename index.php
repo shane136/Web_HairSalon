@@ -27,7 +27,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <a href="#about" class="w3-button w3-block">About</a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Contact</a>
+      <a href="#contact" class="w3-button w3-block">Address</a>
     </div>
 
     <div class="w3-col s3">

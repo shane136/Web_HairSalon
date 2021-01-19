@@ -26,9 +26,13 @@ $array = mysqli_fetch_assoc($paytime);
     $rawl='New Employee';
   }
 
-$sqlf = mysqli_query($con, "SELECT COUNT(*) AS cnt FROM salary WHERE employee_id='$id';");
+$sqlf = mysqli_query($con, "SELECT COUNT(*) AS cnt FROM salary WHERE employee_id='$id' AND commission_rate='0.30' ORDER BY day ASC;");
 $inct = mysqli_fetch_assoc($sqlf);
-$sqlop = mysqli_query($con, "SELECT * FROM salary WHERE employee_id='$id' ;");
+
+$sqlop = mysqli_query($con, "SELECT * FROM salary WHERE employee_id='$id' AND commission_rate='0.30' ORDER BY day ASC;");
+
+$sqlxc = mysqli_query($con, "SELECT * FROM salary WHERE employee_id='$id' AND commission_rate='0.30' ORDER BY day ASC;");
+$dating = mysqli_fetch_assoc($sqlxc);
 
 $numrows = mysqli_num_rows($sqlop);
 $x=0;
@@ -127,7 +131,7 @@ if ($numrows >= 15) {
          <tr>
 
              <td class="text-center"><?php echo "$fullname"; ?></td>
-             <td class="text-center"><?php echo "$total_salary"."00"; ?></td>
+             <td class="text-center"><?php echo "$total_salary"; ?></td>
              <td class="text-center"><?php echo $rawl; ?></td>
          </tr>
 <?php
@@ -177,7 +181,7 @@ if ($numrows >= 15) {
               <tbody>
                 
 <?php
-  $sql = mysqli_query($con, "SELECT * FROM salary WHERE employee_id = '$id';");
+  $sql = mysqli_query($con, "SELECT * FROM salary WHERE employee_id = '$id' AND commission_rate='0.30' ORDER BY day ASC;");
   $i=0;
   while ($check = mysqli_fetch_assoc($sql)) {
     $i=$i+1;
@@ -226,6 +230,7 @@ $checker=mysqli_num_rows($payroll_result);
             <form class="form-horizontal" action="" name="form" method="POST">
 
 							<input name="empl_id" type="hidden" value="<?php echo $emp_id;?>" />
+              <input type="hidden" name="daydate" value="<?php echo $dating['day']?>">
 
               <div class="form-group">
                 <label class="col-sm-12 control-label">Payroll</label>
