@@ -5,28 +5,55 @@ $counter = $_SESSION['counter'];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $total_amount = $_POST['total_price'];
-    $cash = $_POST['amount_paid'];
     $type = $_POST['payment_type'];
     $date_sched = $_POST['date_sched'];
 
     $get_Date = substr($date_sched,0,10);
 
-    $payment_type = "";
-    if($type == 1){
-      $payment_type = "Cash";
+    // $payment_type = "";
+    // if($type == 1){
+    //   $payment_type = "Cash";
+    // }
+    // else {
+    //   $payment_type = "Mobile Cash";
+    // }
+
+    $cust = "SELECT * FROM customer WHERE user_id = '$user_id'";
+    $result = mysqli_query($con, $cust);
+
+    while($row=mysqli_fetch_assoc($result)){
+    $customer = $row['customer_id'];
     }
-    else {
-      $payment_type = "Mobile Cash";
+
+    $card = "SELECT * FROM  account WHERE customer_id = '$customer'";
+    $result = mysqli_query($con, $card);
+
+    while($row=mysqli_fetch_assoc($result)){
+
+      if($row['type_name'] == $type){
+        $account = $row['account_id'];
+        $payment_type = $row['type_name'];
+        $balance = $row['amount'];
+
+
+      }
     }
-    
-    $restriction = 99999; //of input cash_amount 
-    if(($cash >= $total_amount) && ($restriction >= $cash)) {
+
+    $restriction = 99999; //of input cash_amount
+    if(($balance >= $total_amount) && ($restriction >= $balance)) {
       $paid = "Paid";
+      $cash = $balance;
+
+      $update_account = "UPDATE account set amount = amount - '$total_amount' WHERE account_id = '$account'";
+      mysqli_query($con, $update_account);
+
+
+
       $update_bookings = "UPDATE bookings set status = '$paid' where transaction = '$counter'"; //change counter sa db into -> 'transaction' :)
       mysqli_query($con, $update_bookings);
 
-$sql = "INSERT INTO payment_details(payment_id, total_amount, cash, payment_type, user_id, booking_sched, payment_date) VALUES (NULL, '$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP());";
-      
+      $sql = "INSERT INTO payment_details(payment_id, total_amount, cash, payment_type, user_id, booking_sched, payment_date) VALUES (NULL, '$total_amount','$cash', '$payment_type', '$user_id', '$date_sched', CURRENT_TIMESTAMP());";
+
       mysqli_query($con, $sql);
       mysqli_error($con);
 
@@ -98,7 +125,8 @@ $ir = mysqli_num_rows($queue);
             $_SESSION['Paid Successfully'] = 1;
             header("Location: \\Web_HairSalon\\customer\\payment.php");
       die;
-    }
+        }
+
 
     else {
       $_SESSION['Paid Successfully'] = 2;

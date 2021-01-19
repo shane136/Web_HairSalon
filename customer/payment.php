@@ -230,13 +230,13 @@ while($rows = mysqli_fetch_assoc($result)){
                         <select name="payment_type" style="margin-right: 10px;" required>
 
                             <option value="">Choose option</option>
-                            <option value = "1">Cash</option>
-                            <option value = "2">Mobile Cash</option>
+                            <option value = "Paymaya">Paymaya</option>
+                            <option value = "Gcash">Gcash</option>
                         </select>
 
                         <input type="hidden" name="date_sched" value="<?php echo "$date_sched"; ?>">
                         <input type="hidden" name="total_price" value="<?php echo "$total_price"; ?>">
-                        <input type="text" name="amount_paid" value="" class="text-center" style="margin-right: 10px;" placeholder="Input your cash" required>
+                        <input type="hidden" name="amount_paid" value="" class="text-center" style="margin-right: 10px;" placeholder="Input your cash" required>
 
                         <button type="submit" class="btn btn-success btn-lg btn-block">
                             Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
@@ -259,7 +259,7 @@ while($rows = mysqli_fetch_assoc($result)){
         ?>alert('Paid Successfully');<?php
       }
       else {
-        ?> alert('Input Valid Amount of Cash');<?php
+        ?> alert('Not Enough Balance!');<?php
       }
   ?>
     console.log(<?php echo $_SESSION['Paid Successfully']; ?>);

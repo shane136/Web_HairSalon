@@ -7,6 +7,7 @@ $ln = "";
 $contact_number = "";
 $email = "";
 $address = "";
+$customer_id = "";
 
 $result = mysqli_query($con,$sql);
 while ($rows = mysqli_fetch_assoc($result)) {
@@ -15,6 +16,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
   $contact_number = $rows['phone_number'];
   $email = $rows['email'];
   $address = $rows['address'];
+  $customer_id = $rows['customer_id'];
  // $address
 }
 ?>
@@ -94,9 +96,9 @@ while ($rows = mysqli_fetch_assoc($result)) {
         </div>
       </div>
 
-      <div class="container-fluid p-3" style="background: #0F222D;height: 75%;">
+      <div class="container-fluid p-3" style="background: #0F222D;height: 200%;">
             <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                <p class="h3" style="text-align:center; font-family: 'Courier New', Courier, monospace; font-size: 300%;">CUSTOMER PROFILE</p>
+                <p class="h3" style="text-align:center; font-family: 'Courier New', Courier, monospace; font-size: 200%;">CUSTOMER PROFILE</p>
 
                 <div class="input-group mb-3 w-50">
                   <div class="input-group-prepend">
@@ -113,8 +115,108 @@ while ($rows = mysqli_fetch_assoc($result)) {
                 </div>
 
             </div>
-      </div>
-    </div>
 
+            <div class="h-100 rounded p-3 mt-3" style="background: #ffe6e6;">
+
+        <!-- <test_account -->
+        <div class="container mt-3 " style="text-align: left; float:left;
+  margin-left:5px;">
+  <button type = "button" class=" btn btn-outline-dark rounded-0 pt-1 mt-2"
+  id="add_exercise"style="text-align:center; width:200px;"  data-toggle="modal" data-target="#addaccount">
+  <i class="fa fa-heartbeat"></i> Add Account
+  </button>
+
+  <div id="addaccount" class="modal fade">
+        <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Add Account</h1>
+                </div>
+
+                <div class="modal-body">
+                  <form role="form" method="POST" action="\Web_HairSalon\conn\customer_account.php">
+                    <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>">
+                      <div class="form-group">
+                        <label class="control-label" style="font-size:25px;">Account</label>
+                          <div class = "mt-2">
+                            <select  class="form-control" required name="account" id="account";>
+                              <option value="" style="font-size:20px;">Select Account Type</option>
+                              <option value="Paymaya" style="font-size:20px;">Paymaya</option>
+                              <option value="Gcash" style="font-size:20px;">Gcash</option>
+                            </select>
+
+                          </div>
+                          <div class="mt-2">
+                            <input type="text" name="Amount" value="" placeholder="Enter Amount" required>
+                          </div>
+                          <div class="col-12 col-sm-4 mt-2">
+                            <button type="submit" class="btn btn-primary"name="button" style="">submit</button>
+                          </div>
+                      </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+                        </div>
+
+                        <div class="d-flex flex-row">
+                          <?php
+                          $sql = "SELECT * FROM account WHERE customer_id = '$customer_id'";
+                          $result = mysqli_query($con,$sql);
+                          $account_id = "";
+                          while($data = mysqli_fetch_assoc($result)){
+                            $account_id = $data['account_id'];
+                            ?>
+            <div id="<?php echo $data['account_id']; ?>" class="border border-dark m-2 p-3 w-25 flex-column d-flex justify-content-center"
+
+            style="background: #f39c12;border-radius:10px;">
+            <form role="form" method="POST" action="\Web_HairSalon\conn\customer_account_update.php">
+              <p>Account ID: <?php echo $account_id ?></p>
+              <p>Account Type: <?php echo $data['type_name']; ?></p>
+              <p>Account Balance: <?php echo $data['amount']; ?> </p>
+
+                <button type = "button" class=" btn btn-outline-dark rounded-0 pt-1 mt-2" data-toggle="modal" data-target="#updateaccount"> Update Account Balance</button>
+
+                  <div id="updateaccount" class="modal fade">
+                        <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title"> Update Account</h1>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <input type="hidden" name="account_id" value="<?php echo "$account_id"; ?>">
+                                      <div class="form-group">
+                                        <label class="control-label" style="font-size:25px;"> Adding Account Balance</label>
+                                          <div class="mt-2">
+                                            <input type="text" name="Amount" value="" placeholder="Enter Amount" required>
+                                          </div>
+                                          <div class="col-12 col-sm-4 mt-2">
+                                            <button type="submit" class="btn btn-primary"name="button" style="">submit</button>
+                                          </div>
+                                      </div>
+                                  </form>
+                                </div>
+                              </div>
+                        </div>
+                  </div>
+
+
+              <!-- ternary operator -->
+            </div>
+            <?php
+          }
+        ?>
+      </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
   </body>
 </html>
