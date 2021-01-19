@@ -108,7 +108,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
                     <p class="h5"style="font-size:130%;font-family:Cambria;">Email: <?php echo $email; ?></p> <br>
                     <p class="h5"style="font-size:130%;font-family:Cambria;">Address: <?php echo $address; ?></p> <br>
 
-                   <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-outline-light rounded-0 pt-0" style=""> <p class="m-0"  style="color:black; font-size:130%; font-family:tahoma;">EDIT</p></a>
+                   <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-info btn-sm" style=""> <p class="m-0"  style="color:black; font-size:130%; font-family:tahoma;">EDIT</p></a>
 
                   </div>
 
@@ -122,8 +122,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
         <div class="container mt-3 " style="text-align: left; float:left;
   margin-left:5px;">
   <button type = "button" class=" btn btn-outline-dark rounded-0 pt-1 mt-2"
-  id="add_exercise"style="text-align:center; width:200px;"  data-toggle="modal" data-target="#addaccount">
-  <i class="fa fa-heartbeat"></i> Add Account
+  id="add_exercise"style="text-align:center; width:200px;"  data-toggle="modal" data-target="#addaccount"> Add Account
   </button>
 
   <div id="addaccount" class="modal fade">
@@ -144,7 +143,6 @@ while ($rows = mysqli_fetch_assoc($result)) {
                               <option value="Paymaya" style="font-size:20px;">Paymaya</option>
                               <option value="Gcash" style="font-size:20px;">Gcash</option>
                             </select>
-
                           </div>
                           <div class="mt-2">
                             <input type="text" name="Amount" value="" placeholder="Enter Amount" required>
@@ -157,7 +155,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
                 </div>
               </div>
         </div>
-                        </div>
+    </div>
 
                         <div class="d-flex flex-row">
                           <?php
@@ -167,54 +165,38 @@ while ($rows = mysqli_fetch_assoc($result)) {
                           while($data = mysqli_fetch_assoc($result)){
                             $account_id = $data['account_id'];
                             ?>
-            <div id="<?php echo $data['account_id']; ?>" class="border border-dark m-2 p-3 w-25 flex-column d-flex justify-content-center"
-
-            style="background: #f39c12;border-radius:10px;">
-            <form role="form" method="POST" action="\Web_HairSalon\conn\customer_account_update.php">
-              <p>Account ID: <?php echo $account_id ?></p>
-              <p>Account Type: <?php echo $data['type_name']; ?></p>
-              <p>Account Balance: <?php echo $data['amount']; ?> </p>
-
-                <button type = "button" class=" btn btn-outline-dark rounded-0 pt-1 mt-2" data-toggle="modal" data-target="#updateaccount"> Update Account Balance</button>
-
-                  <div id="updateaccount" class="modal fade">
-                        <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title"> Update Account</h1>
-                                </div>
-
-                                <div class="modal-body">
-
-                                    <input type="hidden" name="account_id" value="<?php echo "$account_id"; ?>">
-                                      <div class="form-group">
-                                        <label class="control-label" style="font-size:25px;"> Adding Account Balance</label>
-                                          <div class="mt-2">
-                                            <input type="text" name="Amount" value="" placeholder="Enter Amount" required>
-                                          </div>
-                                          <div class="col-12 col-sm-4 mt-2">
-                                            <button type="submit" class="btn btn-primary"name="button" style="">submit</button>
-                                          </div>
-                                      </div>
-                                  </form>
-                                </div>
-                              </div>
-                        </div>
-                  </div>
 
 
-              <!-- ternary operator -->
-            </div>
+  <div class="col-md-3"></div>
+	<div class="col-md-6 well">
+
+
+
+		<table class="table table-bordered">
+			<thead class="alert-success">
+				<tr>
+					<th>Account ID</th>
+					<th>Account Type</th>
+					<th>Account Balance</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody style="background-color:#fff;">
+
+				<tr>
+					<td><?php echo $account_id?></td>
+					<td><?php echo $data['type_name']?></td>
+					<td><?php echo $data['amount']?></td>
+					<td><button class="btn btn-warning" data-toggle="modal" type="button" data-target="#update_modal<?php echo $data['account_id']?>"><span class="glyphicon glyphicon-edit"></span> Edit</button></td>
+				</tr>
+
             <?php
+            include 'update_balance.php';
           }
         ?>
       </div>
 
-
-
-
                     </div>
-
                 </div>
             </div>
         </div>

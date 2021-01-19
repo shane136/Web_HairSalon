@@ -1,7 +1,6 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 $customer_id = "";
 $account_id = $_POST['account_id'];
