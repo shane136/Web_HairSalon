@@ -6,6 +6,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Icon -->
+<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
 <style>
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
@@ -29,7 +35,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-col s3">
       <a href="#contact" class="w3-button w3-block">Address</a>
     </div>
-
     <div class="w3-col s3">
       <a href="\Web_HairSalon\login.php" class="w3-button w3-block">Book Now!</a>
     </div>
@@ -118,17 +123,26 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 
     <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16">
-    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Dayon??</p>
+    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Beauty</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
   </div>
 
   <!-- Contact -->
   <div class="w3-center w3-padding-64" id="contact">
-    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+	    <span class="w3-xlarge w3-bottombar w3-padding-16">Located At:</span>
+	  <div class="w3-center w3-padding-16">
+	    <h4>Address:</h4>
+	    <p>Andres Bonifacio Ave, Tibanga, Iligan City</p>
+	    <h5>Contact Number:</h5>
+	    <p>+63947-678-4574 </p>
+	    <h5>Telephone Number:</h5>
+	    <p>+8052-1434</p>
+	  </div>
   </div>
 
-  <form class="w3-container" action="/action_page.php" target="_blank">
+  <div class="w3-center w3-padding-16 justify-content-center" style=" margin: auto;
+  width: 50%;" id="">
     <!--<div class="w3-section">
       <label>Name</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
@@ -146,10 +160,50 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
     </div>-->
 
-    <!--registration na customer-->
-    <button type="submit" class="w3-button w3-block w3-black">Send</button>
-  </form>
+<form method="POST" class="w3-container" action="\Web_HairSalon\conn\employee_reg.php">
+    <center style="padding-bottom: 15px;"><h2><b>CREATE ACCOUNT</b></h2></center>
 
+    <div style="width: 60%;">
+        <label for="name">First Name:</label>
+        <input type="text" name="f_name" class="name" required style="width: 100%;"/>
+    </div>
+
+    <div style="width: 60%;">
+        <label for="name">Last Name:</label>
+        <input type="text" name="l_name" class="name" required style="width: 100%;"/>
+    </div>
+
+    <div style="width: 60%;">
+        <label for="name">Username:</label>
+        <input type="text" name="username" class="name" required style="width: 100%;"/>
+    </div>
+
+    <div style="width: 60%;">
+        <label for="name">Password:</label>
+        <input type="password" name="password" class="name" required style="width: 100%;"/>
+    </div>
+
+    <div style="width: 60%;">
+        <label for="name">Address:</label>
+        <input type="text" name="address" class="name" required style="width: 100%;"/>
+    </div>
+
+    <div style="width: 60%;">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" name="p_number" class="name" required style="width: 100%;"/>
+    </div>
+
+    <div style="width: 60%;">
+        <label for="phone_number">Email:</label>
+        <input type="text" name="email" class="name"  required style="width: 100%;"/>
+    </div>
+<br>
+    <div style="width: 60%;">
+        <input type="submit" name="submit" class="w3-button w3-block w3-black" value="Send"/>
+    </div>
+</form>
+
+  </div>
 </div>
 
 <!-- Footer -->
@@ -198,6 +252,8 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-white";
 }
 </script>
-
+<script>
+	$('#myModal').modal('show')
+</script>
 </body>
 </html>
