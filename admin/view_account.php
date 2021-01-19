@@ -29,17 +29,18 @@ $array = mysqli_fetch_assoc($paytime);
 $sqlf = mysqli_query($con, "SELECT COUNT(*) AS cnt FROM salary WHERE employee_id='$id';");
 $inct = mysqli_fetch_assoc($sqlf);
 $sqlop = mysqli_query($con, "SELECT * FROM salary WHERE employee_id='$id' ;");
-$sume = mysqli_fetch_assoc($sqlop);
+
 $numrows = mysqli_num_rows($sqlop);
+$x=0;
 if ($numrows >= 15) {
-  $x=0;
-  while ($x < 15) {
+  while ($x <= 15) {
+    $sume = mysqli_fetch_assoc($sqlop);
     $total = $total + $sume['total_salary'];
     $x = $x + 1;
   }
 } else {
-  $x=0;
-  while ($x < $numrows) {
+  while ($x != $numrows) {
+    $sume = mysqli_fetch_assoc($sqlop);
     $total = $total + $sume['total_salary'];
     $x = $x + 1;
   }
@@ -88,7 +89,7 @@ if ($numrows >= 15) {
 <form action="update_account.php" method="post" name="form">
   <div class="col-sm-12 d-flex m-2 mt-0 pt-0">
       <div class="p-2">
-        <strong>Sum of 15 days work: <p class="bg-warning" style="text-align: center;"><?php echo $total; ?></p></strong>
+        <strong>Sum of 15 days work: <p class="bg-warning" style="text-align: center;"><?php echo $total.".00";?></p></strong>
       </div>
       <br>
 
@@ -126,7 +127,7 @@ if ($numrows >= 15) {
          <tr>
 
              <td class="text-center"><?php echo "$fullname"; ?></td>
-             <td class="text-center"><?php echo "$total_salary"; ?></td>
+             <td class="text-center"><?php echo "$total_salary"."00"; ?></td>
              <td class="text-center"><?php echo $rawl; ?></td>
          </tr>
 <?php
@@ -174,19 +175,21 @@ if ($numrows >= 15) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                
 <?php
   $sql = mysqli_query($con, "SELECT * FROM salary WHERE employee_id = '$id';");
   $i=0;
   while ($check = mysqli_fetch_assoc($sql)) {
     $i=$i+1;
 ?>
+<tr>
                   <td><p align="center"><?php echo $i;?></p></td>
                   <td><p align="center"><?php echo $check['num_service_rendered'];?></p></td>
                   <td><p align="center"><?php echo $check['commission_rate'];?></p></td>
-                  <td><p align="center"><?php echo $check['total_salary'];?></p></td>
+                  <td><p align="center"><?php echo $check['total_salary'].".00";?></p></td>
+</tr>                  
 <?php } ?>
-                </tr>
+                
               </tbody>
               </table>
             </form>
