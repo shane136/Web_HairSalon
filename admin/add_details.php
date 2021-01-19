@@ -20,7 +20,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-
+<style type="text/css">
+input#name {
+  width: 100%;
+}
+div.box {
+  width: 100%;
+}
+</style>
 <body class = "d-flex flex-row h-100">
 
 <div class="col-2 border border-danger h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
@@ -30,52 +37,54 @@
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout</small></p></a>
 </div>
 
-<div class="container mh-100 p-3" style="background: #0F222D;height:30vh;">
+<div class="container-fluid" style="background: #0F222D;">
+<div class="mh-100 p-3" style="height:30vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div class="row p-1 mt-4" style="width:250px; text-align:left; margin: auto;">
+<div class="container-fluid p-0 w-100 mt-4" style="text-align:left; margin: auto;">
 
-
-<form method="POST" action="submit_details.php">
+  <div class="col-md-12" style="padding: 10px;border: 1px solid #000; background-color: #fff;border-radius:5px;">
+    <div class="p-3 d-flex justify-content-center">
+    <form method="POST" action="submit_details.php">
 
 <label class="col-sm-1 control-label"></label>
-    <div class="col-sm-0">
+    <div class="col-sm-0 w-100">
       <h2><?php echo $row['user_name']; ?></h2>
     </div>
 
 <input name="user_id" type="hidden" value="<?php echo $emp_id; ?>" />
 
-        <div class="form-textbox">
+        <div class="form-textbox w-100">
             <label for="name">First Name:</label>
             <input type="text" name="f_name" id="name" required />
         </div>
 
-        <div class="form-textbox">
+        <div class="form-textbox w-100">
             <label for="name">Last Name:</label>
             <input type="text" name="l_name" id="name" required/>
         </div>
 
-        <div class="form-textbox">
+        <div class="form-textbox w-100">
             <label for="name">Address:</label>
             <input type="text" name="address" id="name" required />
         </div>
 
         <div class="form-textbox">
             <label for="phone_number">Phone Number:</label>
-            <input type="text" name="p_number" id="p_number" required/>
+            <input type="text" name="p_number" id="name" required/>
         </div>
 
         <div class="form-textbox">
             <label for="phone_number">Email:</label>
-            <input type="text" name="email" id="p_number"  required/>
+            <input type="text" name="email" id="name"  required/>
         </div>
 
         <div class="form-group">
           <label class="control-label">Job Type:</label>
-          <div class="col-sm-8">
-            <select name="job_type" class="form-control-sm" placeholder="Employee Type" required>
+          <div class="box">
+            <select name="job_type" class="form-control-sm" id="name" placeholder="Employee Type" required>
               <option value="">Job Type</option>
               <option value="1">Colourist</option>
               <option value="2">Senior Stylist</option>
@@ -95,7 +104,10 @@
 	</div>
 </div>
     </form>
+    </div>
+  </div>
 
+</div>
 </div>
 </div>
 </body>
