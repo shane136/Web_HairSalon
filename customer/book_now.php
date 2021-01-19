@@ -106,11 +106,13 @@ $service_empty = 1;
             }
           }
 
-        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', '$emp_id', '0')";
+        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter','NULL','Not Paid', '$emp_id', '0')";
 
         mysqli_query($con,$query);
       }
     }
+
+
 
  $sql = "SELECT * FROM customer where user_id = '$user_id'";
 
@@ -211,8 +213,8 @@ $service_empty = 1;
 
        <div class="container h-100 p-3" style="background: #0F222D;">
              <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                 <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOKING DETAILS</p>
-
+                 <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOKING DETAILS</p>                 
+                 
                  <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
                    <p class="col m-2" style="color:black">Service Name</p>
                    <p class="col m-2" style="color:black">Price</p>
@@ -220,7 +222,7 @@ $service_empty = 1;
                  </div>
 
                  <div class="list_of_product">
-                 <form class="" action="\Web_HairSalon\conn\update_booking.php" method="post">
+<form class="" action="\Web_HairSalon\conn\update_booking.php" method="post">
                    <?php
                      $total = 0;
                      $total_product_price = 0;
@@ -244,9 +246,10 @@ $service_empty = 1;
                      $total = $total + $total_product_price;
                  ?>
                     <div class="border h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-                      <input type="hidden" name="product_id[]" value="<?php echo "$id";?>">
-                      <input type="hidden" name="product_quantity[]" value="<?php echo "$product_quantity";?>">
-                      <input type="hidden" name="product_price[]" value="<?php echo "$product_price";?>">
+<input type="hidden" name="product_id[]" value="<?php echo "$id";?>">
+<input type="hidden" name="product_quantity[]" value="<?php echo "$product_quantity";?>">
+<input type="hidden" name="product_price[]" value="<?php echo "$product_price";?>">
+
                       <p class="col m-2"><?php echo $product_name;?></p>
                       <p class="col m-2"><?php echo $product_price;?></p>
                     </div>
@@ -263,26 +266,52 @@ $service_empty = 1;
                    <p class="col m-2"></p>
                    <p class="col m-2"></p>
                    <p class="col m-2">Book Schedule:</p>
-                   <input type="datetime-local" name="date_sched" value=""  required style="">
+                   <input type="date" name="date_sched" value=""  required style="">
+
+<div class="m-2" id="knight" style="display: none;">
+    <label for="time">What Time?:</label>
+    <select name="timing">
+        <option value=""></option>
+        <option value="AM" required>9:00 - 12:00 AM</option>
+        <option value="PM" required>1:00 - 6:00 PM</option>
+    </select>
+</div>
+<div class="m-2" id="king" style="display: none;">
+    <label for="time">What Time?:</label>
+    <select name="timing">
+        <option value=""></option>
+        <option value="AM" required>8:00 - 12:00 AM</option>
+        <option value="PM" required>1:00 - 4:00 PM</option>
+    </select>
+</div>
+
                    &nbsp &nbsp
                    <p class="col m-2">Total Amount:</p>
                    <p class="col m-2"><?php echo $total;?></p>
 
-
-                   <input type="hidden" name="service" value="<?php echo"$service_empty"; ?>">
-                   <input type="hidden" name="counter" value="<?php echo"$counter";?>">
-                   <input type="hidden" name="total_amount" value="<?php echo "$total";?>">
-
-
-
-
+<input type="hidden" name="service" value="<?php echo"$service_empty"; ?>">
+<input type="hidden" name="counter" value="<?php echo"$counter";?>">
+<input type="hidden" name="total_amount" value="<?php echo "$total";?>">
 
                    <button type="submit" class="btn btn-dark" name="button">Book</button>
                  </div>
 
-                 </form>
+</form>
 
-       </div>
+<div class="text-center p-0 mt-4" id="one" style="display:none">
+  <h4>We Are Open From 9AM-6PM, So Book Now!</h4>
+</div>
+<div class="text-center p-0 mt-4" id="two" style="display:none">
+  <h4>We Are Open From 8AM-4PM, Don't miss your Book Now!</h4>
+</div>
+<div class="text-center p-0 mt-4" id="three" style="display:none">
+  <h4>CLOSED YAY! content for div three</h4>
+</div>
+
+<div class="p-3 text-center" style="font-size: 22px;"><p class="p-0 m-0">Date today: <span class="p-0 m-0" style="width: 10%;" id="date"></span></p>
+</div>
+
+</div>
 
               <br>
        <div hidden class="h-auto rounded p-3" style="background: #ffe6e6;">
@@ -367,6 +396,73 @@ $service_empty = 1;
 
      </div>
 
+
+
+<script>
+window.setInterval(function(){
+  n =  new Date();
+  y = n.getFullYear();
+  m = n.getMonth();
+  d = n.getDate();
+  s = n.getDay()-1;
+
+var day = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+  if(day[s] == 'Mon'){
+    $('#one').show();
+    $('#two').hide();
+    $('#three').hide();
+    $('#knight').show();
+    $('#king').hide();
+  }
+  else if(day[s] == 'Tue'){
+    $('#one').show();
+    $('#two').hide();
+    $('#three').hide();    
+    $('#knight').show();
+    $('#king').hide();
+  }
+  else if(day[s] == 'Wed'){
+    $('#one').show();
+    $('#two').hide();
+    $('#three').hide();
+    $('#knight').show();
+    $('#king').hide();
+  }
+  else if(day[s] == 'Thu'){
+    $('#one').show();
+    $('#two').hide();
+    $('#three').hide();
+    $('#knight').show();
+    $('#king').hide();
+  }
+  else if(day[s] == 'Fri'){
+    $('#one').show();
+    $('#two').hide();
+    $('#three').hide();
+    $('#knight').show();
+    $('#king').hide();
+  }
+  else if(day[s] == 'Sat'){
+    $('#one').hide();
+    $('#two').show();
+    $('#three').hide();
+    $('#knight').hide();
+    $('#king').show();
+  }
+  else if(day[s] == 'Sun'){
+    $('#one').hide();
+    $('#two').hide();
+    $('#three').show();
+    $('#knight').hide();
+    $('#king').hide();
+  }
+
+  document.getElementById("date").innerHTML = month[m] + "-" + d + "," + " " + y;
+}, 2000);
+
+</script>
    </body>
  </html>
 
