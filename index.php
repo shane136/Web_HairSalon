@@ -62,7 +62,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row w3-container">
     <center>
-    <div class="w3-center w3-padding-64 w3-black" style="width:95%;">
+    <div class="w3-center w3-padding-64 w3-black" style="width:95%; margin-top:50px;">
         <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
     </div>
 
@@ -118,7 +118,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
     <center>
-    <div class="w3-center w3-padding-64 w3-black"style="width:95%; margin-top:10px;" >
+    <div class="w3-center w3-padding-64 w3-black"style="width:95%; margin-top:50px;" >
       <span class="w3-xlarge w3-bottombar  w3-border-dark-grey w3-padding-16">Who We Are</span>
     </div>
 
@@ -180,7 +180,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
     </div>-->
 
-<form method="POST" class="w3-container w3-pale-red w3-padding-64" action="\Web_HairSalon\conn\employee_reg.php">
+<form method="POST" class="w3-container w3-pale-red w3-padding-64" style="margin-top:40px;" action="\Web_HairSalon\conn\employee_reg.php">
   <center>
     <center style="padding-bottom: 15px;"><h2><b>CREATE ACCOUNT</b></h2></center>
     <div style="width: 60%; ">
