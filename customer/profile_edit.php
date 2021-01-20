@@ -131,16 +131,21 @@ while ($rows = mysqli_fetch_assoc($result)) {
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
                         </div>
-                        <input type="text" value = "<?php echo "$address"; ?>"name="address" placeholder="<?php echo "$address"; ?>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                          <input type="text" value = "<?php echo "$address"; ?>"name="address" placeholder="<?php echo "$address"; ?>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                       </div>
-                      <button type="submit" name="change_profile">Save</button>
+                      <button class="btn-info" type="submit" name="change_profile" onclick="myFunction()">  <i class="far fa-save"> Save Changes</i></button>
                     </form>
+
+                      <script>
+                      function myFunction(){
+                        alert("Save Changes.");
+                      }
+                      </script>
                     <!-- <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:130%;">EDIT</p></a> -->
                 </div>
-
             </div>
-      </div>
-    </div>
+          </div>
+        </div>
 
   </body>
 </html>

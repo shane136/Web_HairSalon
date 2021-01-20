@@ -84,7 +84,7 @@ StartScrolling();
             <div class="card-header border-0">
               <div class="row align-items-center">
                 <div class="col-8">
-                 <i class="far fa-user-circle" style="font-size:36px"> </i> <strong style="font-size: 32px"> My account</strong>
+                 <i class="far fa-user-circle" style="font-size:36px"> </i> <strong style="font-size: 32px"> MY PROFILE</strong>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ StartScrolling();
                   <h6 class="heading-small text-muted mb-4">User information</h6>
                 </div>
                 <div class="col-sm-6">
-                  <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-primary" style="float: right;">Settings</button>
+                  <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-primary" style="float: right;"> <i class="fas fa-sliders-h"> SETTINGS</i></button> 
                 </div>
                 </div>
                 <div class="pl-lg-4">

@@ -11,7 +11,7 @@
 						<div class="form-group">
 							<label>Adding Amount Balance</label>
 							<input type="hidden" name="account_id" value="<?php echo $data['account_id']?>"/>
-							<input type="text" name="Amount" value="" class="form-control" required="required"/>
+							<input type="text" name="Amount" value="" class="form-control" placeholder="Input Amount" required="required"/>
 						</div>
 					</div>
 				</div>

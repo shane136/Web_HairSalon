@@ -150,14 +150,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-center w3-padding-64" id="contact">
     <center>
     <div class="w3-center w3-padding-64 w3-black" style="width:95%;border-radius: 5px;">
-	    <span class="w3-xlarge w3-bottombar w3-padding-16"><b>Located At:</b></span>
+	    <span class="w3-xlarge w3-bottombar w3-padding-16"><b>Location</b></span>
 	  <div class="w3-center w3-padding-16">
 	    <h4>Address:</h4>
-	    <p>Andres Bonifacio Ave, Tibanga, Iligan City</p>
-	    <h5>Contact Number:</h5>
+	    <p>Andres Bonifacio Ave., Tibanga, Iligan City</p>
+	    <h5>Phone Number:</h5>
 	    <p>+63947-678-4574 </p>
 	    <h5>Telephone Number:</h5>
-	    <p>+8052-1434</p>
+	    <p>8052-1434</p>
 	  </div>
   </div>
 

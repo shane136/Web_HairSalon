@@ -191,7 +191,7 @@ input.name {
     </div>
 
     <div class="form-textboxx">
-        <label for="phone_number">Phone Number:</label>
+        <label for="phone_number">Contact:</label>
         <input type="text" name="p_number" class="name" required/>
     </div>
 

@@ -58,7 +58,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
   </head>
 
   <body class = "d-flex flex-row h-100">
-    <div class="col-2 border  flex-column d-flex"style="height:143%;background: #ffe6e6 !important;">
+    <div class="col-2 border  flex-column d-flex"style="height:195%;background: #ffe6e6 !important;">
       <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;text-align: left;"> <i class="fas fa-home"></i><small> Home </small></p></a>
 
       <a href="\Web_HairSalon\index.php" class=" btn btn-outline-light pt-0" onclick="return confirm('Are you sure you want to log out?');" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
@@ -106,7 +106,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
 
       <div class="container-fluid p-3" style="background: #0F222D;">
             <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                <p class="h3" style="text-align:center; font-family: 'Courier New', Courier, monospace; font-size: 200%;">CUSTOMER PROFILE</p>
+                <p class="h3" style="text-align:center; font-family: 'Courier New', Courier, monospace; font-size: 200%;">MY PROFILE</p>
 
                 <div class="input-group mb-3 w-50">
                   <div class="input-group-prepend">
@@ -116,7 +116,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
                     <p class="h5"style="font-size:130%;font-family:Cambria;">Email: <?php echo $email; ?></p> <br>
                     <p class="h5"style="font-size:130%;font-family:Cambria;">Address: <?php echo $address; ?></p> <br>
 
-                   <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-info btn-sm" style=""> <p class="m-0"  style="color:black; font-size:130%; font-family:tahoma;">EDIT</p></a>
+                   <a href="\Web_HairSalon\customer\profile_edit.php" class=" btn btn-danger btn-sm"  style=""> <p class="m-0"  style="color:black; font-size:130%; font-family:tahoma;"></p> <i class="fas fa-user-edit"> EDIT</i> </a>
 
                   </div>
 
@@ -125,12 +125,13 @@ while ($rows = mysqli_fetch_assoc($result)) {
             </div>
 
             <div class="container-fluid rounded p-3 mt-3" style="background: #ffe6e6;">
+              <p class="h3" style="text-align:center; font-size: 200%;">MY ACCOUNT</p>
 
         <!-- <test_account -->
         <div class="container mt-3 " style="text-align: left; float:left;
   margin-left:5px;">
-  <button type = "button" class=" btn btn-dark rounded-0 pt-1 mt-2"
-  id="add_exercise"style="text-align:center; width:200px;"  data-toggle="modal" data-target="#addaccount"> Add Account
+  <button type = "button" class=" btn btn-primary btn-lg rounded-0 pt-1 mt-2"
+  id="add_exercise"style="text-align:center; width:auto;"  data-toggle="modal" data-target="#addaccount"> <i class="fas fa-plus-square"> </i> ADD ACCOUNT
   </button>
 
   <div id="addaccount" class="modal fade">
@@ -172,7 +173,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
           <!-- /.panel-heading -->
           <div class="panel-body">
           <ul class="chat">
-          <div class="chat-body clearfix w-100">                          
+          <div class="chat-body clearfix w-100">
                           <?php
                           $sql = "SELECT * FROM account WHERE customer_id = '$customer_id'";
                           $result = mysqli_query($con,$sql);

@@ -22,7 +22,7 @@ while($rows = mysqli_fetch_assoc($result)){
   $book_2 = $rows['book_date'];
   $book_3 = substr($book_2,0,11);
 $timmmee = $rows['time_status'];
-  
+
   $service_id = $rows['service_id'];
   $query = "SELECT * FROM services where service_id = '$service_id'";
   $get_query = mysqli_query($con,$query);
@@ -123,11 +123,12 @@ $timmmee = $rows['time_status'];
                     <address>
                         <strong>J.HairSalon</strong>
                         <br>
-                        Andres Bonifacio, Tibanga
+                        Andres Bonifacio Ave., Tibanga
                         <br>
                         Iligan City
                         <br>
-                        <abbr title="Phone">P.:</abbr> (213) 484-6829
+                        <abbr title="Phone">Phone Number:</abbr> +63947-678-4574
+                        <abbr title="Telephone">Tel.: Number:</abbr> 8052-1434
                     </address>
                 </div>
 
@@ -168,7 +169,7 @@ $timmmee = $rows['time_status'];
 
                           $name = $var['service_name'];
                           $price = $var['service_price'];
-                          
+
                         }
                         $total_price = $total_price + $price;
 
