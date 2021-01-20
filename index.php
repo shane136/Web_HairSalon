@@ -134,18 +134,18 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Giapil nani sa About Us -->
     <p style="text-align: center; font-family: lucida console; font-size: 40px;"> HOW IT WORKS </p>
     <div class="w3-col l4 m6 w3-center w3-pale-red w3-container w3-padding-16" style="border-radius: 5px;">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Choose Service</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">I. Choose Service</p>
+      <p>Choose your desired Hair Goals!</p>
     </div>
 
     <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Book</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">II. Book</p>
+      <p>Book your desired Schedule!</p>
     </div>
 
     <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
-    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Beauty</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">III. Pay</p>
+      <p>Pay the Service Via Paymaya and Gcash</p>
     </div>
   </div>
 
