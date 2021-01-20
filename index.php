@@ -54,7 +54,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-panel" style="margin:auto;width:50%;">
     <center>
         <img style="width:40%;" src="\Web_HairSalon\logo.png">
-        <h1><b>JEREHARIS HAIR SALON</b></h1>
+        <!-- <h1><b>JEREHARIS HAIR SALON</b></h1> -->
         <!-- <p>Template by w3.css</p> -->
     </center>
   </div>

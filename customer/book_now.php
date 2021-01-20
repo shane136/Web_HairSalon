@@ -213,8 +213,8 @@ $service_empty = 1;
 
        <div class="container h-100 p-3" style="background: #0F222D;">
              <div class="h-auto rounded p-3" style="background: #ffe6e6;">
-                 <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOKING DETAILS</p>                 
-                 
+                 <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOKING DETAILS</p>
+
                  <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
                    <p class="col m-2" style="color:black">Service Name</p>
                    <p class="col m-2" style="color:black">Price</p>
@@ -269,7 +269,7 @@ $service_empty = 1;
 <input type="date" name="date_sched" value=""  required style="">
 
 <div class="m-2" id="knight" style="display: none;">
-    <label for="time">What Time?:</label>
+    <label for="time">What Time?: </label>
     <select name="timing">
         <option value=""></option>
         <option value="AM" required>AM</option>
@@ -411,7 +411,7 @@ var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct
   else if(day[s] == 'Tue'){
     $('#one').show();
     $('#two').hide();
-    $('#three').hide();    
+    $('#three').hide();
     $('#knight').show();
   }
   else if(day[s] == 'Wed'){
