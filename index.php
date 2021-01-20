@@ -150,10 +150,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">03. Pay</p>
       <p>Pay the Service Via Paymaya and Gcash</p>
-
-    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">III. Pay</p>
-      <p>Pay the online via Paymaya and Gcash</p>
-
     </div>
   </div>
 
