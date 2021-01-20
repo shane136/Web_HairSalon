@@ -56,7 +56,7 @@ StartScrolling();
 
 <body class = "d-flex h-100">
 
-<div class="col-2 border flex-column d-flex"style="height:118%;background: #ffe6e6 !important;">
+<div class="col-2 border flex-column d-flex"style="height:100%;background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
@@ -72,12 +72,14 @@ StartScrolling();
 
 </div>
 
+<div class="container-fluid" style="background:#0F222D;">
 <div class="container-fluid mh-100 p-3" style="background:#0F222D;height:20vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div class="container-fluid col-lg-12 p-1 mt-4" style ="background: #ffe6e6; border-radius: 10px;">
+
+<div class="col-lg-12 p-1 mt-4" style ="background: #ffe6e6; border-radius: 10px;">
 
 <div class="col-lg-12 p-3">
           <div class="card bg-secondary shadow">
@@ -164,6 +166,7 @@ StartScrolling();
             </div>
           </div>
         </div>
+</div>
 </div>
 <div class="modal fade" id="edit" role="dialog">
 <div class="modal-dialog">
