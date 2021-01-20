@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    background: url('../image/pic.png');
     background: #0F222D!important;
   }
   .user_card {
@@ -11,7 +12,7 @@
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: #E9F7EF;
+    background:#ffb6c1;
     position: relative;
     display: flex;
     justify-content: center;
