@@ -145,7 +145,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
     <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">III. Pay</p>
-      <p>Pay the Service Via Paymaya and Gcash</p>
+      <p>Pay the online via Paymaya and Gcash</p>
     </div>
   </div>
 
