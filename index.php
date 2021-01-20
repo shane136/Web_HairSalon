@@ -17,9 +17,11 @@
 
 <style>
 
-body {background-image: url("/Web_HairSalon/image/back.jpg");
-        background-repeat:repeat-y;
-       background-size:contain;}
+body {background-image: url("/Web_HairSalon/image/salon.jpg");
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+       background-size:cover;
+     background-size: 100% 100%}
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
@@ -73,21 +75,21 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <span class="w3-xlarge w3-bottombar w3-border-grey w3-padding-16">What We Offer</span>
     </div>
 
-    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffe6e6">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:20px; height:180px;background:#ffe6e6">
       <center>
       <h3 style="font-size: 40px;font-family:Courier New,monospace"><b>COLOR</b></h3>
       <p></p>
       <a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffc1cc">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:20px; height:180px;background:#ffc1cc">
         <center>
       <h3 style="font-size: 40px; font-family:garamond,serif"><b>Styling</b></h3>
       <p></p>
 <a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffe6e6">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:20px; height:180px;background:#ffe6e6">
         <center>
       <h3 style="font-size: 40px;font-family:Courier New,monospace"><b>WAXING</b></h3>
       <p></p>
@@ -125,18 +127,18 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
     <center>
-    <div class="w3-center w3-padding-64"style="width:95%; margin-top:50px;background:black;color:white" >
+    <div class="w3-center w3-padding-64"style="width:95%; margin-top:60px;background:black;color:white" >
       <span class="w3-xlarge w3-bottombar w3-border-grey w3-padding-16">Who We Are</span>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12"style="margin-top:15px">
       <center>
       <img src="\Web_HairSalon\about.png" style="height: 70%;width: 90%;">
       </center>
     </div>
 
 <!-- Giapil nani sa About Us -->
-    <p style="text-align: center; font-family: lucida console; font-size: 40px;background:black;color:white;margin-bottom:10px"> HOW IT WORKS </p>
+    <p style="text-align: center; font-family: lucida console; font-size: 40px;background:black;color:white;margin-bottom:10px; margin-top:60px"> HOW IT WORKS </p>
     <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px; background:burlywood">
 
 
