@@ -27,8 +27,9 @@
   </head>
 
   <body class = "d-flex flex-row h-100">
-    <div class="col-2 border  flex-column d-flex h-auto"style="background: #ffe6e6 !important;">
-      <a href="profile.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-user"></i><small> Profile </small></p></a>
+    <div class="col-2 border  flex-column d-flex h-auto"style="background: #0f222d !important;">
+      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="outline-color:black; font-size:90%;text-align: center;"> <i class="fas fa-home"></i><b> Home </b></p></a>
+      <a href="profile.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="outline-color:black; font-size:100%; text-align:left;"> <i class="fas fa-user"></i><small> Profile </small></p></a>
 
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
@@ -53,13 +54,13 @@
 
       <!--<a href="\Web_HairSalon\customer\book_now.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="far fa-calendar-check"></i><small> Booking Details </small></p></a>-->
 
-      <a href="\Web_HairSalon\customer\payment.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fa fa-credit-card"></i><small> Payment </small></p></a>
+      <a href="\Web_HairSalon\customer\payment.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="outline-color:black; font-size:100%; text-align:left;"> <i class="fa fa-credit-card"></i><small> Payment </small></p></a>
 
-      <a href="\Web_HairSalon\customer\books.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fa fa-calendar"></i><small> Book Schedules </small></p></a>
+      <a href="\Web_HairSalon\customer\books.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="outline-color:black; font-size:100%; text-align:left;"> <i class="fa fa-calendar"></i><small> Book Schedules </small></p></a>
 
-      <a href="\Web_HairSalon\customer\about.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-info-circle"></i><small> About </small></p></a>
+      <a href="\Web_HairSalon\customer\about.php" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="outline-color:black; font-size:100%; text-align:left;"> <i class="fas fa-info-circle"></i><small> About </small></p></a>
 
-      <a href="\Web_HairSalon\index.php" onclick="return confirm('Are you sure you want to log out?');" class="btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i></i><small> Logout </small></p></a>
+      <a href="\Web_HairSalon\index.php" onclick="return confirm('Are you sure you want to log out?');" class="btn btn-outline-light pt-0" style=""><p class="m-0" style="outline-color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i></i><small> Logout </small></p></a>
 
     </div>
 
@@ -70,13 +71,13 @@
         </div>
       </div> -->
 
-      <div class="w-100 p-3" style="background: #0F222D;height:30vh;">
+      <div class="w-100 p-3" style="background:firebrick;height:30vh;">
         <div class="h-100 d-flex justify-content-center" style="background:#ffe6e6;">
         <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
         </div>
       </div>
 
-        <img src="\Web_HairSalon\home.png" class="center" alt="" style="width: 100%; height: 490px; display: block; margin-left: auto; margin-right: auto;">
+        <img src="\Web_HairSalon\home.png" class="center" alt="" style="width: 100%; height: 460px; display: block; margin-left: auto; margin-right: auto;">
 
 
     </div>

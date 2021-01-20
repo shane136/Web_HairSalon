@@ -55,7 +55,7 @@
 <!-- <div style="text-align:right; padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila" width="175%" height="140" frameborder="0" seamless></iframe>
 </div> -->
 
-<div class="container-fluid mt-4 p-4" style="height:255%;text-align:left;background: #ffe6e6;font-size: 200%;"> 
+<div class="container-fluid mt-4 p-4" style="height:255%;text-align:left;background: #ffe6e6;font-size: 200%;">
 
 <div class="col-md-12 p-1 text-center">
   <label id="lblGreetings"></label>
@@ -69,9 +69,9 @@
   <div style="padding:0px;float: right;" class="">
     <h2>
       <a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a>
-    </h2> 
+    </h2>
     <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila"  width="100%" height="140" frameborder="0"  seamless></iframe>
-  </div>      
+  </div>
 
 </div>
 

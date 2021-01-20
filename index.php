@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -16,7 +17,9 @@
 
 <style>
 
-body {background-color:#0f222d ;}
+body {background-image: url("/Web_HairSalon/image/back.jpg");
+        background-repeat:repeat-y;
+       background-size:contain;}
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
@@ -28,19 +31,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 <div class="w3-top">
 
-  <div class="w3-row w3-large w3-white" >
+  <div class="w3-row w3-large " style="background:#0F222D">
+
 
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3">Home</a>
+      <a href="#" class="w3-button w3-block "style="color:white">Home</a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3">About</a>
+      <a href="#about" class="w3-button w3-block "style="color:white">About</a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Address</a>
+      <a href="#contact" class="w3-button w3-block"style="color:white">Address</a>
     </div>
     <div class="w3-col s3">
-      <a href="\Web_HairSalon\login.php" class="w3-button w3-block">Book Now!</a>
+      <a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="color:white">Book Now!</a>
     </div>
 
   </div>
@@ -49,10 +53,10 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <!-- Content -->
-<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px;background:#ffb6c1;box-shadow: 0 0.3em 1em #000;">
+<div class="w3-content" style="max-width:1100px;margin-top:120px;margin-bottom:80px">
 
-  <div class="w3-panel">
-    <h1><b>JEREHARIS HAIR SALON</b></h1>
+  <div class="w3-container"style="background:burlywood">
+    <h1 style="font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;: 'Lobster Two', Helvetica, sans-serif;font-size:30px; margin-top:10px;color:#0f222d;">Jereharis Hair Salon</h1>
     <!-- <p>Template by w3.css</p> -->
   </div>
 
@@ -62,50 +66,50 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row w3-container">
     <center>
-    <div class="w3-center w3-padding-64 w3-black" style="width:95%; margin-top:50px;">
-        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
+    <div class="w3-center w3-padding-64" style="width:95%; margin-top:30px;background:black;color:white">
+        <span class="w3-xlarge w3-bottombar w3-border-grey w3-padding-16">What We Offer</span>
     </div>
 
-    <div class="w3-col l4 m6 w3-light-grey w3-container w3-padding-16"style="margin-top:10px; height: auto;">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffe6e6">
       <center>
-      <h3 style="font-size: 50px;font-family:'Brush Script MT', cursive;"><b>Color!</b></h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:#c0392b;">Book Now ></a>
+      <h3 style="font-size: 40px;font-family:Courier New,monospace"><b>COLOR</b></h3>
+      <p></p>
+      <a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-grey w3-container w3-padding-16"style="margin-top:10px; height: auto;">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffc1cc">
         <center>
-      <h3 style="font-size: 50px; font-family:'Brush Script MT', cursive;"><b>Styling!</b></h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:#c0392b;">Book Now ></a>
+      <h3 style="font-size: 40px; font-family:garamond,serif"><b>Styling</b></h3>
+      <p></p>
+<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-light-grey w3-container w3-padding-16"style="margin-top:10px; height: auto;">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffe6e6">
         <center>
-      <h3 style="font-size: 50px;font-family:'Brush Script MT', cursive;"><b>Waxing!</b></h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:#c0392b;">Book Now ></a>
+      <h3 style="font-size: 40px;font-family:Courier New,monospace"><b>WAXING</b></h3>
+      <p></p>
+<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-grey w3-container w3-padding-16"style="margin-top:10px; height: auto;">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffc1cc">
         <center>
-      <h3 style="font-size: 50px;font-family:'Brush Script MT', cursive;"><b>Extensions!</b></h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:#c0392b;">Book Now ></a>
+      <h3 style="font-size: 40px;font-family:garamond,serif"><b>Extensions</b></h3>
+      <p></p>
+<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-light-grey w3-container w3-padding-16"style="margin-top:10px; height: auto;">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffe6e6">
           <center>
-      <h3 style="font-size: 50px;font-family:'Brush Script MT', cursive;"><b>Design!</b></h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:#c0392b;">Book Now ></a>
+      <h3 style="font-size: 40px;font-family:Courier New,monospace"><b>DESIGN</b></h3>
+      <p></p>
+<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
-    <div class="w3-col l4 m6 w3-grey w3-container w3-padding-16"style="margin-top:10px; height: auto;">
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="margin-top:10px; height:180px;background:#ffc1cc">
         <center>
-      <h3 style="font-size: 50px;font-family:'Brush Script MT', cursive;"><b>Grooming!</b></h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:#c0392b;">Book Now ></a>
+      <h3 style="font-size: 40px;font-family:garamond,serif"><b>Grooming</b></h3>
+      <p></p>
+<a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="background:firebrick;color:white">Book Now ></a>
     </div>
 
   <!-- How it Works -->
@@ -118,8 +122,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- Grid -->
   <div class="w3-row-padding" id="about">
     <center>
-    <div class="w3-center w3-padding-64 w3-black"style="width:95%; margin-top:50px;" >
-      <span class="w3-xlarge w3-bottombar  w3-border-dark-grey w3-padding-16">Who We Are</span>
+    <div class="w3-center w3-padding-64"style="width:95%; margin-top:50px;background:black;color:white" >
+      <span class="w3-xlarge w3-bottombar w3-border-grey w3-padding-16">Who We Are</span>
     </div>
 
     <div class="col-md-12">
@@ -129,20 +133,17 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 
 <!-- Giapil nani sa About Us -->
-    <p style="text-align: center; font-family: lucida console; font-size: 40px;"> HOW IT WORKS </p>
-    <div class="w3-col l4 m6 w3-center w3-pale-red w3-container w3-padding-16" style="border-radius: 5px;">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Choose Service</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
+    <p style="text-align: center; font-family: lucida console; font-size: 40px;background:black;color:white;margin-bottom:10px"> HOW IT WORKS </p>
+    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px;background:burlywood">
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px">Choose Service</p>
+  </div>
 
-    <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
+    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px;background:burlywood">
       <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Book</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
 
-    <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
+    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px;background:burlywood">
     <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Beauty</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     </div>
   </div>
 
@@ -180,7 +181,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
     </div>-->
 
-<form method="POST" class="w3-container w3-pale-red w3-padding-64" style="margin-top:40px;" action="\Web_HairSalon\conn\employee_reg.php">
+<form method="POST" class="w3-container w3-padding-64" style="margin-top:40px;background:pink;" action="\Web_HairSalon\conn\employee_reg.php">
   <center>
     <center style="padding-bottom: 15px;"><h2><b>CREATE ACCOUNT</b></h2></center>
     <div style="width: 60%; ">
@@ -227,7 +228,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 <!-- Footer -->
 
-<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+<footer class="w3-container w3-padding-32 w3-black w3-center">
   <!-- <h4>Footer</h4> -->
   <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">

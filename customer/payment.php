@@ -62,10 +62,10 @@ $timmmee = $rows['time_status'];
    </head>
 
    <body class = "d-flex flex-row h-100">
-     <div class="col-2 border  flex-column d-flex"style="height:130%;background: #ffe6e6 !important;">
-       <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home </small></p></a>
+     <div class="col-2 border flex-column d-flex"style="height:130%;background: #0f222d!important;">
+       <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="outline-color:black; font-size:115%; text-align: left;"> <i class="fas fa-home"></i><small> Home </small></p></a>
 
-       <a href="\Web_HairSalon\index.php" class=" btn btn-outline-light pt-0" onclick="return confirm('Are you sure you want to log out?');" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
+       <a href="\Web_HairSalon\index.php" class=" btn btn-outline-light pt-0" onclick="return confirm('Are you sure you want to log out?');" style=""><p class="m-0" style="outline-color:black; font-size:115%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
        <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
        <!-- <a href="" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;"><small>Color</small></p></a>
@@ -102,20 +102,20 @@ $timmmee = $rows['time_status'];
          </div>
        </div> -->
 
-       <div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
+       <div class="container-fluid mh-100 p-3" style="background:firebrick;height:25vh;">
          <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
          <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
          </div>
        </div>
 
-       <div class="container-fluid p-3" style="background: #0F222D;height:130%;">
+       <div class="container-fluid p-3" style="background:wheat;height:105%;">
             <form class="" action="\Web_HairSalon\conn\payment_details.php" method="post">
 
               <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
               <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
               <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<div class="container">
+<div class="container ">
     <div class="row">
         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
             <div class="row">
