@@ -50,7 +50,7 @@ span{
 }
 </style>
 <body class = "d-flex flex-row w-100 h-100">
-<div class="col-2 border flex-column d-flex"style="height:115%; background: #ffe6e6 !important;">
+<div class="col-2 border flex-column d-flex"style="height:100%; background: #ffe6e6 !important;">
 
 <a href="employee.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;"> <i class="fas fa-home"></i><small> Home</small></p></a>
 
@@ -65,31 +65,31 @@ span{
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout</small></p></a>
 
 </div>
-<div class="container-fluid m-0 p-2" style="background: #0F222D;">
-<div class="container-fluid p-4" style="height:25vh;">
-	<div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
+<div class="container-fluid m-0 p-2" style="background: #0F222D;height:100%;">
+<div class="container-fluid p-5 pt-3 mt-0" style="height:25vh;">
+	<div class="w-auto h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 	<img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 	</div>
 
 </div>
 
-<div class="container-fluid" style="background: #0F222D; height: 90%;">
+<div class="container p-4 bg-white">
 <?php
 $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDER BY date_sched ASC;");
 ?>
-<div class="row p-2">
-  <div class="col-md-6 mt-4">
-<div class="card shadow">
-<div class="card-header">
-  <b style="float: left; font-size: 25px;">Booked Customer -</b>
-  <p id="date" style="float: left; font-size: 25px;"></p>
-</div>
-<div class="card-body">
-    <div class="col-12 p-3" style="border: 1px solid #000; height: 100%;">
-  <div class="chat-panel panel panel-default" >
-    <!-- /.panel-heading -->
-    <div class="panel-body">
-        <ul class="chat">
+
+    <div class="col-md-6 mt-4">
+    <div class="card shadow">
+    <div class="card-header">
+      <b style="float: left; font-size: 25px;">Booked Customer -</b>
+      <p id="date" style="float: left; font-size: 25px;"></p>
+    </div>
+  <div class="card-body">
+        <div class="col-12 p-3" style="border: 1px solid #000; height: 100%;">
+        <div class="chat-panel panel panel-default" >
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <ul class="chat">
 <?php
 $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDER BY date_sched ASC;");
           while ($wow = mysqli_fetch_assoc($sql)) {
@@ -109,12 +109,12 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
                         <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar"
                              class="img-circle"/>
                     </span>-->
-                <div class="chat-body clearfix">
-<div class="header col-12">
+<div class="chat-body clearfix">
+  <div class="header col-12">
 <?php if($wow['notify_status']!=0){ ?>
-<div class="col-2" style="float:right;font-size:16px;margin-left: 30px;">
-    <i class="fa fa-bell fa-fw"></i>
-</div>
+    <div class="col-2" style="float:right;font-size:16px;margin-left: 30px;">
+      <i class="fa fa-bell fa-fw"></i>
+    </div>
 <?php }else{ ?>
 <div hidden class="col-2" style="float:right;font-size:16px;margin-left: 30px;">
     <i class="fa fa-bell fa-fw"></i>:
@@ -149,8 +149,8 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
                           <button type="submit" name="submit" class="btn btn-info">Accept</button>
                           <button type="submit" name="cancel" class="btn btn-warning">Cancel</button>
                         </div>
+  </div><!--wwww-->
 </div>
-                </div>
             </li>
 </form>
 <?php } }
@@ -158,17 +158,18 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
         </ul>
     </div>
     <!-- /.panel-body -->
-
     </div>
     <!-- /.chat panel enddahdahdah -->
-</div>
+    </div>
+
 <hr>
-</div>
+
   </div>
-</div>
+  </div>
+  </div>
 <!--Customer Service Booked Details-->
-<div class="col-md-6 mt-4">
-  <div class="card shadow h-100">
+<div class="col-md-6 mt-4 h-100">
+  <div class="card shadow h-auto">
     <div class="card-header">
       <h2>Customer Service</h2>
     </div>
@@ -217,7 +218,8 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
 </div>
 	</div><!--ROW ni-->
 </div><!---->
-</div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
