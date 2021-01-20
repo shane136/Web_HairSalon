@@ -51,9 +51,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px;background:#ffb6c1;box-shadow: 0 0.3em 1em #000;">
 
-  <div class="w3-panel">
-    <h1><b>JEREHARIS HAIR SALON</b></h1>
-    <!-- <p>Template by w3.css</p> -->
+  <div class="w3-panel" style="margin:auto;width:50%;">
+    <center>
+        <img style="width:40%;" src="\Web_HairSalon\logo.png">
+        <h1><b>JEREHARIS HAIR SALON</b></h1>
+        <!-- <p>Template by w3.css</p> -->
+    </center>
   </div>
 
   <!-- Slideshow -->
