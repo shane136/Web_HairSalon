@@ -191,37 +191,37 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <center>
     <center style="padding-bottom: 15px;"><h2><b>CREATE ACCOUNT</b></h2></center>
     <div style="width: 60%; ">
-        <label for="name">First Name:</label>
+        <label for="name">First Name</label>
         <input type="text" name="f_name" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Last Name:</label>
+        <label for="name">Last Name</label>
         <input type="text" name="l_name" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Username:</label>
+        <label for="name">Username</label>
         <input type="text" name="username" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Password:</label>
+        <label for="name">Password</label>
         <input type="password" name="password" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Address:</label>
+        <label for="name">Address</label>
         <input type="text" name="address" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="phone_number">Phone Number:</label>
+        <label for="phone_number">Phone Number</label>
         <input type="text" name="p_number" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="phone_number">Email:</label>
+        <label for="phone_number">Email</label>
         <input type="text" name="email" class="name"  required style="width: 100%;"/>
     </div>
 <br>
