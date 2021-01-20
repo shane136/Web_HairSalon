@@ -46,19 +46,43 @@
 <a href="\Web_HairSalon\conn\logout.php" onclick="return confirm('Are you sure you want to log out?');" class=" btn btn-outline-light pt-0" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout</small></p></a>
 </div>
 
+<div class="container-fluid" style="background:#0F222D;">
 <div class="container-fluid mh-100 p-3" style="background: #0F222D;height:30vh;">
-<div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
+<div class="h-100 rounded d-flex justify-content-center" style="background:#ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
 <!-- <div style="text-align:right; padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila" width="175%" height="140" frameborder="0" seamless></iframe>
 </div> -->
 
-<div style="text-align: left; padding: 1em 0; font-size: 200%;"> <h2> </h2>
+<div class="container-fluid mt-4 p-4" style="height:255%;text-align:left;background: #ffe6e6;font-size: 200%;"> 
 
-  <body>
-      <label id="lblGreetings"></label>
-  </body>
+<div class="col-md-12 p-1 text-center">
+  <label id="lblGreetings"></label>
+</div>
+
+<div class="container mt-3 border border-dark rounded" style="height:86%;">
+
+<div class="row">
+
+<div class="col-md-6 col-lg-12 d-flex justify-content-center">
+  <div style="padding:0px;float: right;" class="">
+    <h2>
+      <a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a>
+    </h2> 
+    <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila"  width="100%" height="140" frameborder="0"  seamless></iframe>
+  </div>      
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+</div>
 
   <script>
       var myDate = new Date();
@@ -76,26 +100,6 @@
       document.getElementById('lblGreetings').innerHTML =
           '<b>' + greet + '</b> and Welcome to Admin Page';
   </script>
-
-
-<section>
-  <div style="text-align:right; padding:1em 0;" class="bottom-right"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/1711084"> <span style="color:black;"></span><br/>Iligan City, Philippines</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FManila"  width="175%" height="140" frameborder="0"  seamless></iframe>
-  </div>
-</section>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
 
 </body>
 </html>
