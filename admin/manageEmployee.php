@@ -116,7 +116,7 @@ if ($products['job_type']==0) {
 
 ?>
 
-    <td align="center"><a class="btn btn-danger" href="delete.php?employee_id=<?php echo $products["employee_id"]; ?>">Delete</a></td>
+    <td align="center"><a class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?');" href="delete.php?employee_id=<?php echo $products["employee_id"]; ?>">Delete</a></td>
 <?php
 	                            		echo '</tr>';
                                   }

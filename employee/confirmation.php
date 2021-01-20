@@ -1,7 +1,6 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
-
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +18,7 @@ $user_id = $_SESSION['user_id'];
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="main">
-        <h1>J.HairSalon</h1>
+    <div class="main">        
         <div class="container">
             <div class="sign-up-content">
                 <form method="POST" class="signup-form">
@@ -31,7 +29,7 @@ $user_id = $_SESSION['user_id'];
                     </div>
 
                     <div class="form-group">
-                        <input required type="checkbox" name="agree-term" id="agree-term" class="agree-term">
+                        <input required type="checkbox" name="agree-term" id="agree-term" class="agree-term" required>
                         <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                     </div>
 
@@ -55,9 +53,10 @@ $user_id = $_SESSION['user_id'];
 
         if ($key == $value) {
             mysqli_query($con, "UPDATE user_account SET status=1 WHERE user_id='$user_id';") or mysqli_error($con);
-            header("Location: \\Web_HairSalon\\employee\\empProfile.php");
+            
             ?><script>
-                alert('Welcome Employee! Please enter youre details. CLICK Settings.')
+                alert('Welcome Employee! Please enter youre details. CLICK Settings.');
+                window.location.href = "/Web_HairSalon/login.php";
             </script><?php
         }else
         {
