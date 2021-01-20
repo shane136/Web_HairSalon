@@ -61,7 +61,7 @@ StartScrolling();
 
 <div class="col border  h-100">
 
-<div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
+<div class="container-fluid mh-100 p-5" style="background: #0F222D;height:25vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>

@@ -28,7 +28,7 @@
 
   <body class = "d-flex flex-row h-100">
     <div class="col-2 border  flex-column d-flex h-auto"style="background: #0f222d !important;">
-      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="outline-color:black; font-size:90%;text-align: center;"> <i class="fas fa-home"></i><b> Home </b></p></a>
+    <p class="m-0"  style="color:white; font-size:95%;text-align: center;"> <i class="fas fa-home"></i><b> Home </b></p></a>
       <a href="profile.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="outline-color:black; font-size:100%; text-align:left;"> <i class="fas fa-user"></i><small> Profile </small></p></a>
 
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->

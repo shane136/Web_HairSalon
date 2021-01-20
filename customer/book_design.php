@@ -44,8 +44,8 @@ $products[]= $products_row;
   </head>
 
   <body class = "d-flex flex-row h-100">
-    <div class="col-2 border  h-100 flex-column d-flex"style="height:50px;background: #ffe6e6 !important;">
-      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%; text-align: left;">  <i class="fas fa-home"></i><small> Home</small></p></a>
+    <div class="col-2 border  h-100 flex-column d-flex"style="height:50px;background: #0f222d !important;">
+      <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="outline-color: black; font-size:100%; text-align: left;">  <i class="fas fa-home"></i><small> Home</small></p></a>
 
       <!-- <p class="m-0" style="color:black; font-size:100%; text-align:center;"><small>Offered Services</small></p> -->
 
@@ -67,7 +67,7 @@ $products[]= $products_row;
             <p align="center" style="margin: 5px;"><a href="\Web_HairSalon\customer\book_grooming.php" style="width: 100%;" class="btn btn-outline-dark rounded-1 pt-0"><small>Grooming</small></p></a>
           </div>
 
-          <button id="book_now" class="btn btn-outline-light rounded-0 pt-0" style="color:black; font-size:100%; text-align: left;">
+          <button id="book_now" class="btn btn-outline-light rounded-0 pt-0" style="outline-color: black; font-size:100%; text-align: left;">
             <p class="m-0">
               <i class="fas fa-shopping-cart"></i>
               <!-- <small id="num_of_items"> (0)</small> -->
@@ -86,7 +86,7 @@ $products[]= $products_row;
         </div>
       </div> -->
 
-      <div class="container mh-100 p-3" style="background: #0F222D;height:25vh;">
+      <div class="container-fluid mh-100 p-3" style="background: #0F222D;height:25vh;">
         <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
         <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
         </div>
@@ -101,7 +101,7 @@ $products[]= $products_row;
      foreach($products as $record => $data) {
    ?>
 
-   <div class="col-4 m-2 p-3 w-25 flex-column d-flex justify-content-center" style ="background: #ffe6e6; border-radius: 10px;">
+   <div class="col-4 m-2 p-3 w-25 flex-column d-flex justify-content-center" style ="background:wheat; border-radius: 10px;">
      <p class = "m-0 h5 text-dark text-center h-75"> <?php echo $data['service_name']; ?> </p>
      <p class = "m-0 text-dark text-center h-25 p-2"> PHP<?php echo $data['service_price']; ?> </p>
 

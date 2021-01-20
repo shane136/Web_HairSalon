@@ -31,20 +31,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 <div class="w3-top">
 
-  <div class="w3-row w3-large " style="background:#0F222D">
+  <div class="w3-row w3-large " style="background:wheat">
 
 
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block "style="color:white">Home</a>
+      <a href="#" class="w3-button w3-block w3"><i class="fa fa-home" style="font-size:20px;color:black"> Home</i></a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block "style="color:white">About</a>
+      <a href="#about" class="w3-button w3-block w3"><i class="fa fa-info-circle" style="font-size:20px;color:black"> About</i></a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block"style="color:white">Address</a>
+      <a href="#contact" class="w3-button w3-block"><i class="fa fa-location-arrow" style="font-size:20px;color:black"> Location</i></a>
     </div>
     <div class="w3-col s3">
-      <a href="\Web_HairSalon\login.php" class="w3-button w3-block"style="color:white">Book Now!</a>
+      <a href="\Web_HairSalon\login.php" class="w3-button w3-block"><i class="fa fa-calendar"style="font-size:20px;color:black"> Book Now</i></a> <!--wala ko kabalo sa icon-->
     </div>
 
   </div>
@@ -55,9 +55,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:120px;margin-bottom:80px">
 
-  <div class="w3-container"style="background:burlywood">
-    <h1 style="font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;: 'Lobster Two', Helvetica, sans-serif;font-size:30px; margin-top:10px;color:#0f222d;">Jereharis Hair Salon</h1>
-    <!-- <p>Template by w3.css</p> -->
+  <div class="w3-panel" style="margin:auto;width:50%;">
+    <center>
+        <img style="width:40%;" src="\Web_HairSalon\logo.png">
+        <!-- <h1><b>JEREHARIS HAIR SALON</b></h1> -->
+        <!-- <p>Template by w3.css</p> -->
+    </center>
   </div>
 
   <!-- Slideshow -->
@@ -134,16 +137,23 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 <!-- Giapil nani sa About Us -->
     <p style="text-align: center; font-family: lucida console; font-size: 40px;background:black;color:white;margin-bottom:10px"> HOW IT WORKS </p>
-    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px;background:burlywood">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px">Choose Service</p>
-  </div>
+    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px; background:burlywood">
 
-    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px;background:burlywood">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Book</p>
+
+
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px; ">01. Choose Service</p>
+      <p>Select from a variety of services we offer</p>
     </div>
 
-    <div class="w3-col l4 m6 w3-center w3-container w3-padding-16" style="border-radius: 5px;background:burlywood">
-    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">Beauty</p>
+    <div class="w3-col l4 m6 w3-container w3-padding-16"style="border-radius: 5px; background:burlywood">
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">02. Book</p>
+      <p>Book your desired Schedule</p>
+    </div>
+
+    <div class="w3-col l4 m6  w3-container w3-padding-16"style="border-radius: 5px; background:burlywood">
+
+    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">03. Pay</p>
+      <p>Pay Online Via Paymaya and Gcash</p>
     </div>
   </div>
 
@@ -181,46 +191,46 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
     </div>-->
 
-<form method="POST" class="w3-container w3-padding-64" style="margin-top:40px;background:pink;" action="\Web_HairSalon\conn\employee_reg.php">
+<form method="POST" class="w3-container w3-padding-64 w3-pale-red" style="margin-top:40px;" action="\Web_HairSalon\conn\employee_reg.php">
   <center>
     <center style="padding-bottom: 15px;"><h2><b>CREATE ACCOUNT</b></h2></center>
     <div style="width: 60%; ">
-        <label for="name">First Name:</label>
+        <label for="name">First Name</label>
         <input type="text" name="f_name" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Last Name:</label>
+        <label for="name">Last Name</label>
         <input type="text" name="l_name" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Username:</label>
+        <label for="name">Username</label>
         <input type="text" name="username" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Password:</label>
+        <label for="name">Password</label>
         <input type="password" name="password" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="name">Address:</label>
+        <label for="name">Address</label>
         <input type="text" name="address" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="phone_number">Phone Number:</label>
+        <label for="phone_number">Phone Number</label>
         <input type="text" name="p_number" class="name" required style="width: 100%;"/>
     </div>
 
     <div style="width: 60%;">
-        <label for="phone_number">Email:</label>
+        <label for="phone_number">Email</label>
         <input type="text" name="email" class="name"  required style="width: 100%;"/>
     </div>
 <br>
     <div style="width: 60%;">
-        <input type="submit" name="submit" class="w3-button w3-block w3-black" value="Send"/>
+        <input type="submit" name="submit" class="w3-button w3-block w3-black" value="Confirm"/>
     </div>
 </form>
   </div>
@@ -232,14 +242,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <!-- <h4>Footer</h4> -->
   <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <img src="\Web_HairSalon\image\je.png" alt="" class="h-100" style="border-radius: 50%;">
+    <img src="\Web_HairSalon\image\re.png" alt="" class="h-100" style="border-radius: 50%;">
+    <img src="\Web_HairSalon\image\ha.png" alt="" class="h-100" style="border-radius: 50%;">
+    <img src="\Web_HairSalon\image\ris.png" alt="" class="h-100" style="border-radius: 50%;">
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Powered by <a class="">JEREHARIS</a></p>
 </footer>
 
 

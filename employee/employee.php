@@ -56,12 +56,14 @@ StartScrolling();
 
 </div>
 
-<div class="container-fluid mh-100 p-3" style="background:#0F222D;height:20vh;">
+<div class="container-fluid" style="background:#0F222D;">
+<div class="mh-100 p-3" style="background:#0F222D;height:20vh;">
 <div class="h-100 rounded d-flex justify-content-center" style="background:  #ffe6e6;">
 <img src="\Web_HairSalon\image\logo.png" alt="" class="h-100" style="border-radius: 50%;">
 </div>
 
-<div style="text-align: left; padding: 1em 0; font-size: 200%;" class="container"> <h2></h2>
+<div class="container-fluid border border-dark rounded bg-white mt-4 p-5">
+<div style="text-align: left; padding: 1em 0; font-size: 200%;" class="container"> 
 
   <body>
       <label id="lblGreetings"></label>
@@ -89,8 +91,8 @@ StartScrolling();
 <!-- <img src="\Web_HairSalon\image\pic.png" alt="" width="520" height="520" class="container-fluid p-3"> -->
 <style>
 .vertical-menu {
-  width: 1100px;
-  height: 200px;
+  width: 100%;
+  height: 330px;
   overflow-y: auto;
 }
 
@@ -132,7 +134,9 @@ StartScrolling();
 </style>
 
 <div class="container">
-	 <div class="bottom-right" style="font-family:Brush Script MT; font-size: 300%;" > J. Hair Salon</div>
+	 <div class="bottom-right p-1 m-2" style="font-family:Brush Script MT; font-size: 300%;color:white;" > J. Hair Salon</div>
+</div>
+</div>
 </div>
 
 </body>
