@@ -129,11 +129,10 @@ StartScrolling();
   bottom: 8px;
   right: 16px;
 }
-
-
 </style>
+
 <div class="container">
-	 <div class="bottom-right" style="font-family:Brush Script MT; font-size: 300%;" > J. HairSalon</div>
+	 <div class="bottom-right" style="font-family:Brush Script MT; font-size: 300%;" > J. Hair Salon</div>
 </div>
 
 </body>
