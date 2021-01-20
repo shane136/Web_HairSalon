@@ -31,13 +31,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-row w3-large w3-white" >
 
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3">Home</a>
+      <a href="#" class="w3-button w3-block w3"><i class="fa fa-home" style="font-size:20px;color:black"> Home</i></a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3">About</a>
+      <a href="#about" class="w3-button w3-block w3"><i class="fa fa-info-circle" style="font-size:20px;color:black"> About</i></a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Address</a>
+      <a href="#contact" class="w3-button w3-block"><i class="fa fa-location-arrow" style="font-size:20px;color:black"> Location</i></a>
     </div>
     <div class="w3-col s3">
       <a href="\Web_HairSalon\login.php" class="w3-button w3-block">Book Now!</a>
@@ -134,17 +134,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Giapil nani sa About Us -->
     <p style="text-align: center; font-family: lucida console; font-size: 40px;"> HOW IT WORKS </p>
     <div class="w3-col l4 m6 w3-center w3-pale-red w3-container w3-padding-16" style="border-radius: 5px;">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">I. Choose Service</p>
-      <p>Choose your desired Hair Goals!</p>
+
+
+
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px; ">01. Choose Service</p>
+      <p>Select from a variety of services we offer</p>
     </div>
 
     <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
-      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">II. Book</p>
-      <p>Book your desired Schedule!</p>
+      <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">02. Book</p>
+      <p>Book your desired Schedule</p>
     </div>
 
     <div class="w3-col l4 m6 w3-pale-red w3-container w3-padding-16"style="border-radius: 5px;">
-    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">III. Pay</p>
+    <p style="text-align: center; font-family: fantasy, copperplate; font-size: 30px;">03. Pay</p>
       <p>Pay the Service Via Paymaya and Gcash</p>
     </div>
   </div>
@@ -222,7 +225,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 <br>
     <div style="width: 60%;">
-        <input type="submit" name="submit" class="w3-button w3-block w3-black" value="Send"/>
+        <input type="submit" name="submit" class="w3-button w3-block w3-black" value="Confirm"/>
     </div>
 </form>
   </div>
