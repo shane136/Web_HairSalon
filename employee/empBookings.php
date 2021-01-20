@@ -93,7 +93,7 @@ $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDE
 <?php
 $sql = mysqli_query($con, "SELECT * from bookings WHERE employee_id = $emid ORDER BY date_sched ASC;");
           while ($wow = mysqli_fetch_assoc($sql)) {
-                  $date = date_create($wow['date_sched']);
+                  $date = $wow['date_sched']." ".$wow['time_status'];
                   $boDe = date_create($wow['book_date']);
                   $customer=$wow['customer_id'];
                   $service=$wow['service_id'];
@@ -131,7 +131,7 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
                         </div>
                         <div class="col-8" style="float:left;clear:both;font-size:16px;margin-left: 30px;">
                             <i class="fa fa-calendar-check-o fa-fw"></i>Date Scheduled:
-                            <?php echo date_format($date, "F/d/Y, g:i A");?>
+                            <?php echo $date;?>
                         </div>
                         <div class="col-8" style="float:left;clear:both;font-size:16px;margin-left: 30px;">
                             <i class="fa fa-clock-o fa-fw"></i>Booked Date:

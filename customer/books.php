@@ -242,7 +242,7 @@ while($view = mysqli_fetch_assoc($sql)) {
 
   <p><i class="fa fa-bell fa-fw" style="color:blue;"></i> Message: <span style="color:blue;"> Book Confirmed </span><span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
   <p>Book Date: <?php echo $view['book_date'];?></p>
-  <p>Date Scheduled: <?php echo $view['date_sched'];?></p>
+  <p>Date Scheduled: <?php echo $view['date_sched']." ".$view['time_status'];?></p>
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 
@@ -253,7 +253,7 @@ while($view = mysqli_fetch_assoc($sql)) {
   <p><i class="fa fa-bell fa-fw"></i> Message: Book Pending <span style="float: right;">Payment Status: <?php echo $view['status'];?></span></p>
 
   <p>Book Date: <?php echo $view['book_date'];?></p>
-  <p>Date Scheduled: <?php echo $view['date_sched'];?></p>
+  <p>Date Scheduled: <?php echo $view['date_sched']." ".$view['time_status'];?></p>
   <p><b>Employee Name:</b> <?php echo $fetchdata['f_name'].' '.$fetchdata['l_name'];?></p>
   <p>Service Name: <?php echo $fetchser['service_name'];?></p>
 

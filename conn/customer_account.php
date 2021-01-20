@@ -8,11 +8,35 @@ $customer_id = $_POST['customer_id'];
 $account_type = $_POST['account'];
 $amount = $_POST['Amount'];
 
-$acc = "INSERT INTO account VALUES(NULL, '$account_type', '$amount', '$customer_id')";
-mysqli_query($con, $acc);
+$restriction = 5000; //of input cash_amount
+if(($amount < 100)) {
+	
+?>
 
-header("Location:\\Web_HairSalon\\customer\\profile.php");
-die;
+	<script type="text/javascript">
+    	alert('Error! Value must Above: 0 and Below: PHP5,000');
+    	window.location.href = "/Web_HairSalon/customer/profile.php";
+	</script>
+
+<?php
+}
+else if ($amount >= $restriction) {
+		
+?>
+	
+	<script type="text/javascript">
+    	alert('Error! Value must Above: 0 and Below: PHP5,000');
+    	window.location.href = "/Web_HairSalon/customer/profile.php";
+	</script>
+    
+<?php
+}
+else{
+	$acc = "INSERT INTO account VALUES(NULL, '$account_type', '$amount', '$customer_id')";
+	mysqli_query($con, $acc) or die(mysqli_error($con));
+	header("Location:\\Web_HairSalon\\customer\\profile.php");
+	die;
+}
 }
 
 ?>

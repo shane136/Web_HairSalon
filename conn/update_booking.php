@@ -74,9 +74,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     die;
   }
   if ($tester == 0) {*/
-    $data = $date_sched." ".$time;
-  $sql = "UPDATE bookings SET date_sched = '$data' WHERE transaction = '$counter';";
-  mysqli_query($con,$sql) or die(mysqli_error($con));
+
+  $sql = "UPDATE bookings SET date_sched = '$date_sched', time_status = '$time' WHERE transaction = '$counter';";
+  mysqli_query($con, $sql) or die(mysqli_error($con));
 //"INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter',NULL,'Not Paid', '$emp_id', '0')"; 
 
     //change counter sa db into -> 'transaction' :)
@@ -85,6 +85,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['date_sched'] = $date_sched;
     $_SESSION['counter'] = $counter;
     $_SESSION['book'] = 1;
+    $_SESSION['timing'] = $time;
     // $_SESSION['count'] = $counter;
     header("Location: \\Web_HairSalon\\customer\\payment.php");
     die;

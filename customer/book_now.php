@@ -106,7 +106,7 @@ $service_empty = 1;
             }
           }
 
-        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter','NULL','Not Paid', '$emp_id', '0')";
+        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter','NULL','Not Paid', '$emp_id', '0', 'NULL')";
 
         mysqli_query($con,$query);
       }
@@ -266,28 +266,21 @@ $service_empty = 1;
                    <p class="col m-2"></p>
                    <p class="col m-2"></p>
                    <p class="col m-2">Book Schedule:</p>
-                   <input type="date" name="date_sched" value=""  required style="">
+<input type="date" name="date_sched" value=""  required style="">
 
 <div class="m-2" id="knight" style="display: none;">
     <label for="time">What Time?:</label>
     <select name="timing">
         <option value=""></option>
-        <option value="AM" required>9:00 - 12:00 AM</option>
-        <option value="PM" required>1:00 - 6:00 PM</option>
-    </select>
-</div>
-<div class="m-2" id="king" style="display: none;">
-    <label for="time">What Time?:</label>
-    <select name="timing">
-        <option value=""></option>
-        <option value="AM" required>8:00 - 12:00 AM</option>
-        <option value="PM" required>1:00 - 4:00 PM</option>
+        <option value="AM" required>AM</option>
+        <option value="PM" required>PM</option>
     </select>
 </div>
 
                    &nbsp &nbsp
                    <p class="col m-2">Total Amount:</p>
                    <p class="col m-2"><?php echo $total;?></p>
+
 
 <input type="hidden" name="service" value="<?php echo"$service_empty"; ?>">
 <input type="hidden" name="counter" value="<?php echo"$counter";?>">
@@ -314,7 +307,7 @@ $service_empty = 1;
 </div>
 
               <br>
-       <div hidden class="h-auto rounded p-3" style="background: #ffe6e6;">
+<!--<div hidden class="h-auto rounded p-3" style="background: #ffe6e6;">
          <p class="h3" style="text-align:center;font-family: 'Courier New', Courier, monospace; font-size: 300%;">BOOK SCHEDULE</p>
 
          <div class="h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
@@ -326,7 +319,7 @@ $service_empty = 1;
          </div>
 
          <?php
-
+/*
          $get_id = "SELECT * FROM customer WHERE user_id ='$user_id'";
          $get_result = mysqli_query($con, $get_id);
          while($customer = mysqli_fetch_assoc($get_result))
@@ -390,10 +383,10 @@ $service_empty = 1;
 
          <?php
 
-        }
+        }*/
           ?>
       </div>
-
+-->
      </div>
 
 
@@ -414,49 +407,42 @@ var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct
     $('#two').hide();
     $('#three').hide();
     $('#knight').show();
-    $('#king').hide();
   }
   else if(day[s] == 'Tue'){
     $('#one').show();
     $('#two').hide();
     $('#three').hide();    
     $('#knight').show();
-    $('#king').hide();
   }
   else if(day[s] == 'Wed'){
     $('#one').show();
     $('#two').hide();
     $('#three').hide();
     $('#knight').show();
-    $('#king').hide();
   }
   else if(day[s] == 'Thu'){
     $('#one').show();
     $('#two').hide();
     $('#three').hide();
     $('#knight').show();
-    $('#king').hide();
   }
   else if(day[s] == 'Fri'){
     $('#one').show();
     $('#two').hide();
     $('#three').hide();
     $('#knight').show();
-    $('#king').hide();
   }
   else if(day[s] == 'Sat'){
     $('#one').hide();
     $('#two').show();
     $('#three').hide();
-    $('#knight').hide();
-    $('#king').show();
+    $('#knight').show();
   }
   else if(day[s] == 'Sun'){
     $('#one').hide();
     $('#two').hide();
     $('#three').show();
     $('#knight').hide();
-    $('#king').hide();
   }
 
   document.getElementById("date").innerHTML = month[m] + "-" + d + "," + " " + y;

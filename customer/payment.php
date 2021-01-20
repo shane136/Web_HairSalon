@@ -5,20 +5,24 @@ $user_id = $_SESSION['user_id'];
 $counter = "";
 $book_2 = "";//book_date
 $book_3 = ""; //Receipt_date
+$time = "";
 
 if(isset($_SESSION['counter'])){
-  $counter = $_SESSION['counter'];
+  $counter  = $_SESSION['counter'];
+}
+if(isset($_SESSION['date_sched'])){
+  $date_sched = $_SESSION['date_sched'];
 }
 
-if(isset($_SESSION['date_sched'])){
-  $date_sched =  $_SESSION['date_sched'];
-}
+
 $total_price = 0;
 $sql = "SELECT * FROM bookings where date_sched = '$date_sched'";
 $result = mysqli_query($con,$sql);
 while($rows = mysqli_fetch_assoc($result)){
   $book_2 = $rows['book_date'];
   $book_3 = substr($book_2,0,11);
+$timmmee = $rows['time_status'];
+  
   $service_id = $rows['service_id'];
   $query = "SELECT * FROM services where service_id = '$service_id'";
   $get_query = mysqli_query($con,$query);
@@ -164,12 +168,12 @@ while($rows = mysqli_fetch_assoc($result)){
 
                           $name = $var['service_name'];
                           $price = $var['service_price'];
-
+                          
                         }
                         $total_price = $total_price + $price;
 
                         //getting the month
-                        $get_month = substr($date,0,10);
+                /*        $get_month = substr($date,0,10);
 
                         //getting the time
                         $time = substr($date,11,2);
@@ -194,11 +198,11 @@ while($rows = mysqli_fetch_assoc($result)){
                           $temp = substr($date,0,11);
                           $time = substr($date,11,5);
                           $time_get = $temp." ".$time ." AM ";
-                        }
+                        }*/
                        ?>
                         <tr>
                             <td><?php echo "$name"; ?></td>
-                            <td class="text-center"><?php echo "$time_get";?></td>
+                            <td class="text-center"><?php echo $date_sched.' '.$timmmee;?></td>
                             <td class="text-center"><?php echo "$price"; ?></td>
                             <!-- <td class="text-right"> -->
                         </tr>

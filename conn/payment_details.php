@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $type = $_POST['payment_type'];
     $date_sched = $_POST['date_sched'];
 
-    $get_Date = substr($date_sched,0,10);
+    $get_Date = $date_sched;
 
     // $payment_type = "";
     // if($type == 1){
@@ -34,7 +34,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $account = $row['account_id'];
         $payment_type = $row['type_name'];
         $balance = $row['amount'];
-
 
       }
     }

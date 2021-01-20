@@ -98,7 +98,7 @@ $price = $_POST['price'];
     {
 ?>
       <script type="text/javascript">
-        alert('Error! Try using Proper Naming and Pricing')
+        alert('Error! Try using Proper Naming and Pricing');
         window.location.href = '/Web_HairSalon/admin/manageService.php';
       </script>
 <?php

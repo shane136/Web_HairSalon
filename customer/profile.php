@@ -46,11 +46,19 @@ while ($rows = mysqli_fetch_assoc($result)) {
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- Bootstrap Core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="../css/startmin.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
   </head>
 
   <body class = "d-flex flex-row h-100">
-    <div class="col-2 border  flex-column d-flex"style="height:100%;background: #ffe6e6 !important;">
+    <div class="col-2 border  flex-column d-flex"style="height:143%;background: #ffe6e6 !important;">
       <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style="color:black; font-size:100%;text-align: left;"> <i class="fas fa-home"></i><small> Home </small></p></a>
 
       <a href="\Web_HairSalon\index.php" class=" btn btn-outline-light pt-0" onclick="return confirm('Are you sure you want to log out?');" style=""><p class="m-0" style="color:black; font-size:100%; text-align:left;"> <i class="fas fa-sign-out-alt"></i><small> Logout </small></p></a>
@@ -96,7 +104,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
         </div>
       </div>
 
-      <div class="container-fluid p-3" style="background: #0F222D;height: 200%;">
+      <div class="container-fluid p-3" style="background: #0F222D;">
             <div class="h-auto rounded p-3" style="background: #ffe6e6;">
                 <p class="h3" style="text-align:center; font-family: 'Courier New', Courier, monospace; font-size: 200%;">CUSTOMER PROFILE</p>
 
@@ -116,12 +124,12 @@ while ($rows = mysqli_fetch_assoc($result)) {
 
             </div>
 
-            <div class="h-100 rounded p-3 mt-3" style="background: #ffe6e6;">
+            <div class="container-fluid rounded p-3 mt-3" style="background: #ffe6e6;">
 
         <!-- <test_account -->
         <div class="container mt-3 " style="text-align: left; float:left;
   margin-left:5px;">
-  <button type = "button" class=" btn btn-outline-dark rounded-0 pt-1 mt-2"
+  <button type = "button" class=" btn btn-dark rounded-0 pt-1 mt-2"
   id="add_exercise"style="text-align:center; width:200px;"  data-toggle="modal" data-target="#addaccount"> Add Account
   </button>
 
@@ -157,7 +165,14 @@ while ($rows = mysqli_fetch_assoc($result)) {
         </div>
     </div>
 
-                        <div class="d-flex flex-row">
+<div class="d-flex flex-row justify-content-center">
+          <div class="col-md-6 well">
+
+          <div class="chat-panel panel panel-default w-100 p-3">
+          <!-- /.panel-heading -->
+          <div class="panel-body">
+          <ul class="chat">
+          <div class="chat-body clearfix w-100">                          
                           <?php
                           $sql = "SELECT * FROM account WHERE customer_id = '$customer_id'";
                           $result = mysqli_query($con,$sql);
@@ -168,10 +183,6 @@ while ($rows = mysqli_fetch_assoc($result)) {
 
 
   <div class="col-md-3"></div>
-	<div class="col-md-6 well">
-
-
-
 		<table class="table table-bordered">
 			<thead class="alert-success">
 				<tr>
@@ -194,11 +205,21 @@ while ($rows = mysqli_fetch_assoc($result)) {
             include 'update_balance.php';
           }
         ?>
-      </div>
-
+      </tbody>
+    </table>
+</div>
+</ul>
+</div>
+</div>
                     </div>
                 </div>
             </div>
         </div>
-  </body>
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="../js/startmin.js"></script>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+</body>
 </html>
