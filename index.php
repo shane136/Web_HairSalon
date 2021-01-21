@@ -172,6 +172,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 	    <h5>Telephone Number:</h5>
 	    <p>8052-1434</p>
 	  </div>
+    <div class="w3-center w3-padding-14">
+	    <h4>WORKING HOURS</h4>
+	    <p>MON-FRI: 9AM-6PM</p>
+	    <p>SAT: 8AM-4PM</p>
+	    <p>SUN: CLOSED</p>
+	  </div>
   </div>
 
   <div class="w3-center w3-padding-16 justify-content-center" style=" margin: auto;
