@@ -56,7 +56,11 @@ while ($rows = mysqli_fetch_assoc($result)) {
 <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
   </head>
-
+<style type="text/css">
+.modal-backdrop {
+  z-index: -1;
+}
+</style>
   <body class = "d-flex flex-row h-100">
     <div class="col-2 border  flex-column d-flex"style="height:188%;background: #0f222d !important;">
       <a href="\Web_HairSalon\customer\index.php" class=" btn btn-outline-light rounded-0 pt-0" style=""><p class="m-0"  style=" outline-color:black;font-size:115%;text-align: left;"> <i class="fas fa-home"></i><small> Home </small></p></a>
@@ -134,38 +138,6 @@ while ($rows = mysqli_fetch_assoc($result)) {
   id="add_exercise"style="text-align:center; width:auto;"  data-toggle="modal" data-target="#addaccount"> <i class="fas fa-plus-square"> </i> ADD ACCOUNT
   </button>
 
-  <div id="addaccount" class="modal fade">
-        <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title">Add Account</h1>
-                </div>
-
-                <div class="modal-body">
-                  <form role="form" method="POST" action="\Web_HairSalon\conn\customer_account.php">
-                    <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>">
-                      <div class="form-group">
-                        <label class="control-label" style="font-size:25px;">Account</label>
-                          <div class = "mt-2">
-                            <select  class="form-control" required name="account" id="account";>
-                              <option value="" style="font-size:20px;">Select Account Type</option>
-                              <option value="Paymaya" style="font-size:20px;">Paymaya</option>
-                              <option value="Gcash" style="font-size:20px;">Gcash</option>
-                            </select>
-                          </div>
-                          <div class="mt-2">
-                            <input type="text" name="Amount" value="" placeholder="Enter Amount" required>
-                          </div>
-                          <div class="col-12 col-sm-4 mt-2">
-                            <button type="submit" class="btn btn-primary"name="button" style="">submit</button>
-                          </div>
-                      </div>
-                  </form>
-                </div>
-              </div>
-        </div>
-    </div>
-
 <div class="d-flex flex-row justify-content-center">
           <div class="col-md-6 well">
 
@@ -216,6 +188,37 @@ while ($rows = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
         </div>
+<div id="addaccount" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Add Account</h1>
+                </div>
+
+                <div class="modal-body">
+                  <form role="form" method="POST" action="\Web_HairSalon\conn\customer_account.php">
+                    <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>">
+                      <div class="form-group">
+                        <label class="control-label" style="font-size:25px;">Account</label>
+                          <div class = "mt-2">
+                            <select  class="form-control" required name="account" id="account";>
+                              <option value="" style="font-size:20px;">Select Account Type</option>
+                              <option value="Paymaya" style="font-size:20px;">Paymaya</option>
+                              <option value="Gcash" style="font-size:20px;">Gcash</option>
+                            </select>
+                          </div>
+                          <div class="mt-2">
+                            <input type="text" name="Amount" value="" placeholder="Enter Amount" required>
+                          </div>
+                          <div class="col-12 col-sm-4 mt-2">
+                            <button type="submit" class="btn btn-primary"name="button" style="">submit</button>
+                          </div>
+                      </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+    </div>
 <!-- Bootstrap Core JavaScript -->
 <script src="../js/bootstrap.min.js"></script>
 <!-- Custom Theme JavaScript -->

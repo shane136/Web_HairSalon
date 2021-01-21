@@ -2,7 +2,7 @@
 require($_SERVER['DOCUMENT_ROOT']."/Web_HairSalon/conn/connection.php");
 $user_id = $_SESSION['user_id'];
 $counter = 1;
-$service_empty = 1;
+$service_empty = 0;
   if(isset($_GET['pid'])){
       $user_id = $_SESSION['user_id'];
       $product_id = $_GET['pid'];
