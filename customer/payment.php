@@ -241,7 +241,7 @@ $timmmee = $rows['time_status'];
 
                         <input type="hidden" name="date_sched" value="<?php echo "$date_sched"; ?>" required>
                         <input type="hidden" name="total_price" value="<?php echo "$total_price"; ?>" required>
-                        <input type="hidden" name="time" value="<?php echo $counter?>" required>
+                        <input type="hidden" name="timing" value="<?php echo $counter?>" required>
                         <!--<input type="text" name="amount_paid" value="" class="text-center" style="margin-right: 10px;" placeholder="Input your cash" required>
 -->
                         <button type="submit" class="btn btn-success btn-lg btn-block">
