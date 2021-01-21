@@ -56,9 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       mysqli_query($con, $sql);
       mysqli_error($con);
 
-
-      $get_update = substr_replace($date_sched," ",10,1);
-      $final_date = $get_update.":00";
+      $final_date = $get_update;
 
 
       // //getting the payment_id using $date_sched

@@ -106,8 +106,9 @@ $service_empty = 0;
             }
           }
 
-        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter','NULL','Not Paid', '$emp_id', '0', 'NULL')";
+        	
 
+        $query = "INSERT INTO bookings VALUES(NULL,CURRENT_TIMESTAMP(),'$customer_id','$key','$counter','NULL','Not Paid', '$emp_id', '0', 'NULL')";
         mysqli_query($con,$query);
       }
     }
@@ -246,9 +247,9 @@ $service_empty = 0;
                      $total = $total + $total_product_price;
                  ?>
                     <div class="border h-auto rounded p-3 d-flex flex-row text-center" style="background: #FFFF;">
-<input type="hidden" name="product_id[]" value="<?php echo "$id";?>">
-<input type="hidden" name="product_quantity[]" value="<?php echo "$product_quantity";?>">
-<input type="hidden" name="product_price[]" value="<?php echo "$product_price";?>">
+<input type="hidden" name="product_id[]" value="<?php echo "$id";?>" required>
+<input type="hidden" name="product_quantity[]" value="<?php echo "$product_quantity";?>" required>
+<input type="hidden" name="product_price[]" value="<?php echo "$product_price";?>" required>
 
                       <p class="col m-2"><?php echo $product_name;?></p>
                       <p class="col m-2"><?php echo $product_price;?></p>
