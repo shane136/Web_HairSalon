@@ -269,11 +269,11 @@ $service_empty = 0;
 <input type="date" name="date_sched" value=""  required style="">
 
 <div class="m-2" id="knight" style="display: none;">
-    <label for="time">What Time?: </label>
+    <label for="time">Preferred Time: </label>
     <select name="timing">
         <option value=""></option>
-        <option value="AM" required>AM</option>
-        <option value="PM" required>PM</option>
+        <option value="Morning" required>Morning</option>
+        <option value="Afternoon" required>Afternoon</option>
     </select>
 </div>
 
@@ -292,10 +292,14 @@ $service_empty = 0;
 </form>
 
 <div class="text-center p-0 mt-4" id="one" style="display:none">
-  <h4>We Are Open From 9AM-6PM, So Book Now!</h4>
+  <h2>We Are Open! So Book Now!</h2>
+  <h4>Morning: 9PM-12NN </h4>
+  <h4>Afternoon: 1PM-6PM </h4>
 </div>
 <div class="text-center p-0 mt-4" id="two" style="display:none">
-  <h4>We Are Open From 8AM-4PM, Don't miss your Book Now!</h4>
+  <h2>We Are Open! Don't miss your Book Now!</h2>
+  <h4>Morning: 8AM- 12NN </h4>
+  <h4>Afternoon: 1PM- 4PM </h4>
 </div>
 <div class="text-center p-0 mt-4" id="three" style="display:none">
   <h4>CLOSED YAY! content for div three</h4>
