@@ -264,7 +264,7 @@ $timmmee = $rows['time_status'];
         ?>alert('Paid Successfully');<?php
       }
       else {
-        ?> alert('Not Enough Balance!');<?php
+        ?> alert('Not Enough Balance! Go to Profile -> My Account.');<?php
       }
   ?>
     console.log(<?php echo $_SESSION['Paid Successfully']; ?>);
