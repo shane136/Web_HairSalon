@@ -302,7 +302,7 @@ $service_empty = 0;
   <h4>Afternoon: 1PM- 4PM </h4>
 </div>
 <div class="text-center p-0 mt-4" id="three" style="display:none">
-  <h4>CLOSED YAY! content for div three</h4>
+  <h4>We are CLOSED Every Sunday!</h4>
 </div>
 
 <div class="p-3 text-center" style="font-size: 22px;"><p class="p-0 m-0">Date today: <span class="p-0 m-0" style="width: 10%;" id="date"></span></p>
