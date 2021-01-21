@@ -271,7 +271,7 @@ $service_empty = 0;
 
 <div class="m-2" id="knight" style="display: none;">
     <label for="time">Preferred Time: </label>
-    <select name="timing">
+    <select name="timing" required>
         <option value=""></option>
         <option value="Morning" required>Morning</option>
         <option value="Afternoon" required>Afternoon</option>
