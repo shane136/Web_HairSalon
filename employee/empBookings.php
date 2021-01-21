@@ -141,7 +141,7 @@ if ($wow['status']!='complete'&&$wow['status']!='remove') {
 <input type="hidden" name="id" value="<?php echo $wow['booking_id']?>">
 <input type="hidden" name="user_id" value="<?php echo $reCus['user_id'];?>">
 <input type="hidden" name="book" value="<?php echo date_format($boDe, "F/d/Y, g:i A");?>">
-<input type="hidden" name="sched" value="<?php echo date_format($date, "F/d/Y, g:i A");?>">
+<input type="hidden" name="sched" value="<?php echo $wow['date_sched'];?>">
 <input type="hidden" name="service" value="<?php echo $reSer['service_name'];?>">
 <input type="hidden" name="status" value="<?php echo $wow['status'];?>">
                         <div style="float: right;margin-left: 50px;">
